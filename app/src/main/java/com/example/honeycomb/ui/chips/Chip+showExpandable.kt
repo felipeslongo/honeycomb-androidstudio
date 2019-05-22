@@ -15,7 +15,7 @@ fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int) : PopupWi
     // Set an elevation value for popup window
     // Call requires API level 21
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        popupWindow.elevation = 50.0f
+        popupWindow.elevation = 25.0f
     }
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -27,6 +27,7 @@ fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int) : PopupWi
     }catch (e: WindowManager.BadTokenException){
         //android.view.WindowManager$BadTokenException: Unable to add window -- token null is not valid; is your activity running?
         Log.e("Chip.showExpandable", "Ensure you call this method after your activity gets started and running, because there is no window", e)
+        throw e
     }
 
     view.setOnTouchListener { v, event ->
