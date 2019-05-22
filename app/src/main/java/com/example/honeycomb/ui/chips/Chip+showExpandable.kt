@@ -1,0 +1,38 @@
+package com.example.honeycomb.ui.chips
+
+import android.os.Build
+import android.util.Log
+import android.view.*
+import android.widget.PopupWindow
+import com.google.android.material.chip.*
+
+fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int) : PopupWindow {
+
+    var view = layoutInflater.inflate(layoutId, null)
+    var allowTapOutsideToDismiss = true
+    var popupWindow = PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, allowTapOutsideToDismiss)
+
+    // Set an elevation value for popup window
+    // Call requires API level 21
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        popupWindow.elevation = 50.0f
+    }
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        popupWindow.overlapAnchor = true
+    }
+
+    //android.view.WindowManager$BadTokenException: Unable to add window -- token null is not valid; is your activity running?
+    try {
+        popupWindow.showAsDropDown(this, 0, 0, Gravity.CENTER)
+    }catch (e: WindowManager.BadTokenException){
+        Log.e("Chip.showExpandable", "Ensure you call this method after your activity gets started and running, because there is no window", e)
+    }
+
+    view.setOnTouchListener { v, event ->
+        popupWindow.dismiss()
+        true
+    }
+
+    return popupWindow
+}
