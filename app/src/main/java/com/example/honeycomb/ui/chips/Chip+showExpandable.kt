@@ -4,9 +4,14 @@ import android.os.Build
 import android.util.Log
 import android.view.*
 import android.widget.PopupWindow
+import com.example.honeycomb.R
 import com.google.android.material.chip.*
 
-fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int) : PopupWindow {
+fun Chip.showExpandable(layoutInflater: LayoutInflater, closeClicked: () -> Unit) : PopupWindow {
+    return this.showExpandable(layoutInflater, R.layout.chip_expandable, closeClicked)
+}
+
+fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int, closeClicked: () -> Unit) : PopupWindow {
 
     var view = layoutInflater.inflate(layoutId, null)
     var allowTapOutsideToDismiss = true
@@ -33,6 +38,10 @@ fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int) : PopupWi
     view.setOnTouchListener { v, event ->
         popupWindow.dismiss()
         true
+    }
+    view.findViewById<View>(R.id.cancel).setOnClickListener {
+        closeClicked()
+        popupWindow.dismiss()
     }
 
     return popupWindow
