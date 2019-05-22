@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="This is a popup window"
+            android:textColor="@android:color/black"
             android:gravity="center"/>
 
     <androidx.appcompat.widget.AppCompatImageButton
