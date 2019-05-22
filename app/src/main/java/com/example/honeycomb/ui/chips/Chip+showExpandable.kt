@@ -22,10 +22,10 @@ fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int) : PopupWi
         popupWindow.overlapAnchor = true
     }
 
-    //android.view.WindowManager$BadTokenException: Unable to add window -- token null is not valid; is your activity running?
     try {
         popupWindow.showAsDropDown(this, 0, 0, Gravity.CENTER)
     }catch (e: WindowManager.BadTokenException){
+        //android.view.WindowManager$BadTokenException: Unable to add window -- token null is not valid; is your activity running?
         Log.e("Chip.showExpandable", "Ensure you call this method after your activity gets started and running, because there is no window", e)
     }
 
