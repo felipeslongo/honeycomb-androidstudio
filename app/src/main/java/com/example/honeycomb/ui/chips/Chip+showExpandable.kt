@@ -39,7 +39,7 @@ fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int, closeClic
         popupWindow.dismiss()
         true
     }
-    view.findViewById<View>(R.id.cancel).setOnClickListener {
+    view.findViewById<View>(R.id.chipExpandableClose).setOnClickListener {
         closeClicked()
         popupWindow.dismiss()
     }

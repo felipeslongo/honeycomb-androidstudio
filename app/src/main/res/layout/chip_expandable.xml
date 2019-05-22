@@ -10,19 +10,19 @@
         android:paddingVertical="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="8dp"
-        android:background="#F5F5F5">
+        android:background="@color/chipExpandableBackground">
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text"
+            android:id="@+id/chipExpandableText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="This is a popup window"
-            android:textColor="@android:color/black"
+            android:textColor="@color/chipExpandableText"
             android:gravity="center"/>
 
     <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/cancel"
+            android:id="@+id/chipExpandableClose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:backgroundTint="@android:color/transparent"
