@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
+import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -21,6 +22,12 @@ class MainActivity : AppCompatActivity() {
                 if (it.itemId == R.id.maind_navigation_item_chips_expandable) {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container, ExpandableChipShowcaseFragment.newInstance())
+                        .commitNow()
+                }
+
+                if (it.itemId == R.id.main_navigation_item_gmail_input_chips_showcase_fragment) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, GmailInputChipsShowcaseFragment.newInstance())
                         .commitNow()
                 }
 

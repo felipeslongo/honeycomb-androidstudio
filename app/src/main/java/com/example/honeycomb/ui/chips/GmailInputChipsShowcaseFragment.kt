@@ -6,34 +6,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 
 import com.example.honeycomb.R
-import com.google.android.material.chip.Chip
 
-class ExpandableChipShowcaseFragment : Fragment() {
+class GmailInputChipsShowcaseFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ExpandableChipShowcaseFragment()
+        fun newInstance() = GmailInputChipsShowcaseFragment()
     }
 
-    private lateinit var viewModel: ExpandableChipShowcaseViewModel
+    private lateinit var viewModel: GmailInputChipsShowcaseViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.expandable_chip_showcase_fragment, container, false)
+        return inflater.inflate(R.layout.gmail_input_chips_showcase_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ExpandableChipShowcaseViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(GmailInputChipsShowcaseViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
 }
