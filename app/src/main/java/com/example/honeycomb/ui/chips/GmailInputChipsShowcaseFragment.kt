@@ -21,7 +21,7 @@ class GmailInputChipsShowcaseFragment : Fragment() {
         fun newInstance() = GmailInputChipsShowcaseFragment()
     }
 
-    private lateinit var root: ChipGroup
+    private lateinit var chips: ChipGroup
     private lateinit var input : AppCompatAutoCompleteTextView
     private lateinit var viewModel: GmailInputChipsShowcaseViewModel
 
@@ -31,8 +31,8 @@ class GmailInputChipsShowcaseFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.gmail_input_chips_showcase_fragment, container, false)
 
-        root = view.findViewById(R.id.gmail_input_chips_showcase)
-        input = root.findViewById(R.id.gmail_input_chips_showcase_input)
+        chips = view.findViewById(R.id.gmail_input_chips_showcase_chips)
+        input = view.findViewById(R.id.gmail_input_chips_showcase_input)
 
         return view
     }
@@ -48,10 +48,10 @@ class GmailInputChipsShowcaseFragment : Fragment() {
     }
 
     private fun addChip(text: String) {
-        val chip = Chip(root.context)
+        val chip = Chip(chips.context)
         chip.text = text
         chip.isClickable = true
         chip.isCheckable = true
-        root.addViewBefore(chip, input)
+        chips.addView(chip)
     }
 }

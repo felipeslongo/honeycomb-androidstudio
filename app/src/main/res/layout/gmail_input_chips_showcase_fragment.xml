@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.chip.ChipGroup
+<androidx.appcompat.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/gmail_input_chips_showcase"
-        style="@style/Widget.MaterialComponents.ChipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:singleLine="false"
-        app:singleSelection="false"
-        app:chipSpacing="8dp">
-
+        android:orientation="vertical">
+    <com.google.android.material.chip.ChipGroup
+            android:id="@+id/gmail_input_chips_showcase_chips"
+            style="@style/Widget.MaterialComponents.ChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleLine="false"
+            app:singleSelection="false"
+            app:chipSpacing="8dp">
+    </com.google.android.material.chip.ChipGroup>
     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
             android:id="@+id/gmail_input_chips_showcase_input"
             style="@style/Widget.AppCompat.AutoCompleteTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:hint="Please Inform"/>
+            android:hint="Please Inform A Chip!"/>
 
-</com.google.android.material.chip.ChipGroup>
+</androidx.appcompat.widget.LinearLayoutCompat>
