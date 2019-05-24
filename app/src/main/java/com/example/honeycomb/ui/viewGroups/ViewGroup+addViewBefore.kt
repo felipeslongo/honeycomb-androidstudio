@@ -9,8 +9,10 @@ fun ViewGroup.addViewBefore(view: View, anchorView: View){
         throw Exception("View Not Found")
 
     val beforeIndex = this.indexOfChild(anchorView) - 1
-    if(beforeIndex < 0)
+    if(beforeIndex < 0) {
         this.addView(view)
+        return
+    }
 
     this.addView(view, beforeIndex)
 }
