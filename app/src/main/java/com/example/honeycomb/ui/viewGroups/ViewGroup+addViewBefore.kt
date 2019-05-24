@@ -10,7 +10,7 @@ fun ViewGroup.addViewBefore(view: View, anchorView: View){
 
     val beforeIndex = this.indexOfChild(anchorView) - 1
     if(beforeIndex < 0) {
-        this.addView(view)
+        this.addView(view, 0)
         return
     }
 
