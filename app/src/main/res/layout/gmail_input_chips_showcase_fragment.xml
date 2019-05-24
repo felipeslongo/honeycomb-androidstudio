@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<com.google.android.material.chip.ChipGroup
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/gmail_input_chips_showcase"
+        style="@style/Widget.MaterialComponents.ChipGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.chips.GmailInputChipsShowcaseFragment">
+        android:layout_height="wrap_content"
+        app:singleLine="false"
+        app:singleSelection="false"
+        app:chipSpacing="8dp">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello"/>
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/gmail_input_chips_showcase_input"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AppCompatAutoCompleteTextView"/>
 
-</FrameLayout>
+</com.google.android.material.chip.ChipGroup>
