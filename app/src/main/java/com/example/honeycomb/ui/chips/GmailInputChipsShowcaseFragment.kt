@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView
 
 import com.example.honeycomb.R
@@ -44,11 +45,13 @@ class GmailInputChipsShowcaseFragment : Fragment() {
         for (option in viewModel.options) {
             addChip(option)
         }
-
     }
 
     private fun addChip(text: String) {
-        val chip = chips.createExpandableChip(text)
+        val chip = chips.createExpandableChip(text, layoutInflater){
+            true
+        }
+
         chips.addView(chip)
     }
 }
