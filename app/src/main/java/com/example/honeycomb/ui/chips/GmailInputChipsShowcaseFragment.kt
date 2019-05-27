@@ -1,19 +1,14 @@
 package com.example.honeycomb.ui.chips
 
-import android.content.Context
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.util.AttributeSet
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView
 
 import com.example.honeycomb.R
-import com.example.honeycomb.ui.viewGroups.addViewBefore
-import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class GmailInputChipsShowcaseFragment : Fragment() {
