@@ -48,10 +48,7 @@ class GmailInputChipsShowcaseFragment : Fragment() {
     }
 
     private fun addChip(text: String) {
-        val chip = Chip(chips.context)
-        chip.text = text
-        chip.isClickable = true
-        chip.isCheckable = false
+        val chip = chips.createExpandableChip(text)
         chips.addView(chip)
     }
 }
