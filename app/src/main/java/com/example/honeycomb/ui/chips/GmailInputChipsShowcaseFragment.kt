@@ -52,6 +52,7 @@ class GmailInputChipsShowcaseFragment : Fragment() {
             true
         }
 
+        chip.setChipBackgroundColorResource(R.color.chipExpandableBackground)
         chips.addView(chip)
     }
 }
