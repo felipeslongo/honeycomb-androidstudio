@@ -5,7 +5,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
     <com.google.android.material.chip.ChipGroup
             android:id="@+id/gmail_input_chips_showcase_chips"
             style="@style/Widget.MaterialComponents.ChipGroup"
