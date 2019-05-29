@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.*
 import android.widget.PopupWindow
 import android.widget.TextView
+import androidx.core.widget.PopupWindowCompat
 import com.example.honeycomb.R
 import com.google.android.material.chip.*
 
@@ -32,11 +33,11 @@ fun Chip.showExpandable(layoutInflater: LayoutInflater, layoutId: Int, closeClic
         popupWindow.dismiss()
         true
     }
-    view.findViewById<View>(R.id.chipExpandableClose).setOnClickListener {
+    view.findViewById<View>(R.id.chip_expandable_close).setOnClickListener {
         closeClicked()
         popupWindow.dismiss()
     }
-    view.findViewById<TextView>(R.id.chipExpandableText).text = this.text
+    view.findViewById<TextView>(R.id.chip_expandable_text).text = this.text
 
     try {
         popupWindow.showAsDropDown(this, 0, 0, Gravity.CENTER)
