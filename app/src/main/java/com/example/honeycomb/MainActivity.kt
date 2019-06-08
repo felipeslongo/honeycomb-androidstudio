@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
 import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
+import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container, GmailInputChipsShowcaseFragment.newInstance())
                         .commitNow()
+                }
+
+                if (it.itemId == R.id.main_navigation_item_navigation_view_showcase) {
+                    NavigationViewShowcaseActivity.present(this)
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()

@@ -8,8 +8,8 @@
                 android:id="@+id/main_navigation_item_gmail_input_chips_showcase_fragment"
                 android:title="Gmail Input Chips" />
         <item
-                android:id="@+id/nav_item_3"
-                android:title="Nav Item 3" />
+                android:id="@+id/main_navigation_item_navigation_view_showcase"
+                android:title="Navigation View Showcase" />
         <item
                 android:id="@+id/nav_item_4"
                 android:title="Nav Item 4" />
