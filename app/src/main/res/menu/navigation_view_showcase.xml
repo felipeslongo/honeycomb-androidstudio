@@ -2,10 +2,13 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+            android:id="@+id/navigation_view_showcase_lonelywolf"
             android:icon="@drawable/ic_cancel_black_24dp"
             android:title="Lonely Wolf Item"/>
 
-    <group android:checkableBehavior="single"
+    <group
+            android:id="@+id/navigation_view_showcase_checkable_behavior_single"
+            android:checkableBehavior="single"
             android:visible="true"
             android:enabled="true">
         <item
@@ -27,23 +30,31 @@
                 android:title="Discussion" />
     </group>
 
-    <group android:checkableBehavior="all"
-           android:visible="true"
-           android:enabled="true">
+    <group
+            android:id="@+id/navigation_view_showcase_checkable_behavior_all"
+            android:checkableBehavior="all"
+            android:visible="true"
+            android:enabled="true">
         <item
+                android:id="@+id/navigation_view_showcase_checkable_behavior_all_evil"
                 android:icon="@drawable/ic_cancel_black_24dp"
                 android:title="Evil"/>
         <item
+                android:id="@+id/navigation_view_showcase_checkable_behavior_all_good"
                 android:icon="@drawable/ic_cancel_black_24dp"
                 android:title="Good"/>
     </group>
 
-    <item android:title="Sub items">
+    <item
+            android:id="@+id/navigation_view_showcase_subitems"
+            android:title="Sub items">
         <menu>
             <item
+                    android:id="@+id/navigation_view_showcase_subitems_subitem1"
                     android:icon="@drawable/ic_cancel_black_24dp"
                     android:title="Sub item 1" />
             <item
+                    android:id="@+id/navigation_view_showcase_subitems_subitem2"
                     android:icon="@drawable/ic_cancel_black_24dp"
                     android:title="Sub item 2" />
         </menu>
