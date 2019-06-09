@@ -4,7 +4,8 @@
     <item
             android:id="@+id/navigation_view_showcase_lonelywolf"
             android:icon="@drawable/ic_cancel_black_24dp"
-            android:title="Lonely Wolf Item"/>
+            android:title="Lonely Wolf Item"
+            android:checkable="true"/>
 
     <group
             android:id="@+id/navigation_view_showcase_checkable_behavior_single"
@@ -52,11 +53,13 @@
             <item
                     android:id="@+id/navigation_view_showcase_subitems_subitem1"
                     android:icon="@drawable/ic_cancel_black_24dp"
-                    android:title="Sub item 1" />
+                    android:title="Sub item 1"
+                    android:checkable="true"/>
             <item
                     android:id="@+id/navigation_view_showcase_subitems_subitem2"
                     android:icon="@drawable/ic_cancel_black_24dp"
-                    android:title="Sub item 2" />
+                    android:title="Sub item 2"
+                    android:checkable="true"/>
         </menu>
     </item>
 
