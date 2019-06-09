@@ -1,4 +1,4 @@
-<androidx.appcompat.widget.LinearLayoutCompat
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,14 +6,26 @@
         android:layout_height="192dp"
         android:background="?attr/colorPrimaryDark"
         android:padding="16dp"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
-        android:orientation="vertical"
-        android:gravity="bottom">
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
+            android:id="@+id/navigation_header_username"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+            app:layout_constraintBottom_toTopOf="@+id/navigation_header_email"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/navigation_header_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="username@gmail.com"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
