@@ -9,18 +9,18 @@
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/navigation_header_username"
+            android:id="@+id/navigation_header_profile_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-            app:layout_constraintBottom_toTopOf="@+id/navigation_header_email"
+            app:layout_constraintBottom_toTopOf="@+id/navigation_header_profile_email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
             app:layout_constraintHorizontal_bias="0.0"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/navigation_header_email"
+            android:id="@+id/navigation_header_profile_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="username@gmail.com"
@@ -31,7 +31,7 @@
             app:layout_constraintHorizontal_bias="0.0"/>
 
     <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/navigation_header_overflow"
+            android:id="@+id/navigation_header_profile_action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"

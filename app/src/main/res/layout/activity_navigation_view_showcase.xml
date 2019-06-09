@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            app:headerLayout="@layout/navigation_view_showcase_navigation_header"
+            app:headerLayout="@layout/navigation_header_profile"
             app:menu="@menu/navigation_view_showcase"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
