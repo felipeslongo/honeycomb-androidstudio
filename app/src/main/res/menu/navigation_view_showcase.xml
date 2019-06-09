@@ -46,6 +46,21 @@
                 android:title="Good"/>
     </group>
 
+    <group
+            android:id="@+id/navigation_view_showcase_checkable_behavior_none"
+            android:checkableBehavior="none"
+            android:visible="true"
+            android:enabled="true">
+        <item
+                android:id="@+id/navigation_view_showcase_checkable_behavior_none_action1"
+                android:icon="@drawable/ic_cancel_black_24dp"
+                android:title="Synchronize App"/>
+        <item
+                android:id="@+id/navigation_view_showcase_checkable_behavior_none_action2"
+                android:icon="@drawable/ic_cancel_black_24dp"
+                android:title="Dark/Light Mode"/>
+    </group>
+
     <item
             android:id="@+id/navigation_view_showcase_subitems"
             android:title="Sub items">
