@@ -4,7 +4,13 @@
     <item
             android:id="@+id/navigation_view_showcase_lonelywolf"
             android:icon="@drawable/ic_cancel_black_24dp"
-            android:title="Lonely Wolf Item"
+            android:title="Lonely Wolf"
+            android:checkable="true"/>
+
+    <item
+            android:id="@+id/navigation_view_showcase_lonelyfalcon"
+            android:icon="@drawable/ic_cancel_black_24dp"
+            android:title="Lonely Falcon"
             android:checkable="true"/>
 
     <group
