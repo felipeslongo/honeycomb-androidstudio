@@ -21,20 +21,24 @@
         <item
                 android:id="@+id/nav_home"
                 android:icon="@drawable/ic_cancel_black_24dp"
-                android:title="Home"/>
+                android:title="Home"
+                android:checkable="true"/>
         <item
                 android:id="@+id/nav_messages"
                 android:icon="@drawable/ic_cancel_black_24dp"
                 android:title="Messages"
-                android:checked="true"/>
+                android:checked="true"
+                android:checkable="true"/>
         <item
                 android:id="@+id/nav_friends"
                 android:icon="@drawable/ic_cancel_black_24dp"
-                android:title="Friends" />
+                android:title="Friends"
+                android:checkable="true"/>
         <item
                 android:id="@+id/nav_discussion"
                 android:icon="@drawable/ic_cancel_black_24dp"
-                android:title="Discussion" />
+                android:title="Discussion"
+                android:checkable="true"/>
     </group>
 
     <group
@@ -45,11 +49,13 @@
         <item
                 android:id="@+id/navigation_view_showcase_checkable_behavior_all_evil"
                 android:icon="@drawable/ic_cancel_black_24dp"
-                android:title="Evil"/>
+                android:title="Evil"
+                android:checkable="true"/>
         <item
                 android:id="@+id/navigation_view_showcase_checkable_behavior_all_good"
                 android:icon="@drawable/ic_cancel_black_24dp"
-                android:title="Good"/>
+                android:title="Good"
+                android:checkable="true"/>
     </group>
 
     <group
