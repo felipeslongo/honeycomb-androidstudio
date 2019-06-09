@@ -53,18 +53,24 @@
     </group>
 
     <group
-            android:id="@+id/navigation_view_showcase_checkable_behavior_none"
+            android:id="@+id/navigation_view_showcase_checkable_behavior_actions"
             android:checkableBehavior="none"
             android:visible="true"
             android:enabled="true">
         <item
-                android:id="@+id/navigation_view_showcase_checkable_behavior_none_action1"
+                android:id="@+id/navigation_view_showcase_checkable_behavior_actions_action1"
                 android:icon="@drawable/ic_cancel_black_24dp"
                 android:title="Synchronize App"/>
         <item
-                android:id="@+id/navigation_view_showcase_checkable_behavior_none_action2"
+                android:id="@+id/navigation_view_showcase_checkable_behavior_actions_action2"
                 android:icon="@drawable/ic_cancel_black_24dp"
                 android:title="Dark/Light Mode"/>
+        <item
+                android:id="@+id/navigation_view_showcase_checkable_behavior_actions_switch"
+                android:icon="@drawable/ic_cancel_black_24dp"
+                android:title="switch"
+                app:actionLayout="@layout/menu_swich"
+                app:showAsAction="always"/>
     </group>
 
     <item
