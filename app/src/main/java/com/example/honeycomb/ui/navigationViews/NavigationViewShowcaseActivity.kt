@@ -2,7 +2,6 @@ package com.example.honeycomb.ui.navigationViews
 
 import android.content.Intent
 import android.content.res.ColorStateList
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +13,9 @@ import com.google.android.material.navigation.NavigationView
 import android.widget.Toast
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.android.material.switchmaterial.SwitchMaterial
+import android.graphics.BitmapFactory
+
+
 
 
 class NavigationViewShowcaseActivity : AppCompatActivity() {
@@ -74,6 +76,11 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
 
     private fun addProfiles(menu: Menu) {
         val profile = menu.add("Felipe de Souza Longo")
-        profile.setIcon(R.drawable.image_skyward_sword)
+
+        val res = resources
+        val src = BitmapFactory.decodeResource(res, R.drawable.image_skyward_sword)
+        val dr = RoundedBitmapDrawableFactory.create(res, src)
+        dr.isCircular = true
+        profile.icon = dr
     }
 }
