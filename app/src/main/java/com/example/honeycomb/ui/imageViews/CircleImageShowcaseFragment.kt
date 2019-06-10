@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
 
 import com.example.honeycomb.R
+import com.example.honeycomb.ui.drawables.DrawableServices
 
 class CircleImageShowcaseFragment : Fragment() {
 
@@ -28,6 +30,9 @@ class CircleImageShowcaseFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(CircleImageShowcaseViewModel::class.java)
         // TODO: Use the ViewModel
+
+        var imageProgramatically = view!!.findViewById<AppCompatImageView>(R.id.circle_image_showcase_programatically)
+        imageProgramatically.setImageDrawable(DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword))
     }
 
 }

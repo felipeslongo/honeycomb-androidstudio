@@ -12,6 +12,7 @@ class DrawableServices {
             val bitmap = BitmapFactory.decodeResource(resources, drawableId)
             val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
             roundedDrawable.isCircular = true
+            roundedDrawable.setAntiAlias(true)
 
             return roundedDrawable
         }
