@@ -68,6 +68,7 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
     }
 
     private fun addProfiles(menu: Menu) {
+        //navigationView.itemIconTintList = null
         val profile = menu.add("Felipe de Souza Longo")
         profile.setIcon(R.drawable.image_skyward_sword)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
