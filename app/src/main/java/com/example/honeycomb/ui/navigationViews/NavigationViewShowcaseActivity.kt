@@ -14,8 +14,7 @@ import android.widget.Toast
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.android.material.switchmaterial.SwitchMaterial
 import android.graphics.BitmapFactory
-
-
+import com.example.honeycomb.ui.drawables.DrawableServices
 
 
 class NavigationViewShowcaseActivity : AppCompatActivity() {
@@ -76,11 +75,6 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
 
     private fun addProfiles(menu: Menu) {
         val profile = menu.add("Felipe de Souza Longo")
-
-        val res = resources
-        val src = BitmapFactory.decodeResource(res, R.drawable.image_skyward_sword)
-        val dr = RoundedBitmapDrawableFactory.create(res, src)
-        dr.isCircular = true
-        profile.icon = dr
+        profile.icon = DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword)
     }
 }
