@@ -6,7 +6,7 @@ import com.example.honeycomb.R
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.navigation_header_profile.view.*
 
-class NavigationHeaderProfile private constructor(navigationView: NavigationView) {
+class NavigationHeaderProfileView private constructor(navigationView: NavigationView) {
     private val profilesView: AppCompatImageButton
     private val emailView: AppCompatTextView
     private val usernameView: AppCompatTextView
@@ -14,8 +14,8 @@ class NavigationHeaderProfile private constructor(navigationView: NavigationView
     companion object{
         val LayoutId = R.layout.navigation_header_profile
 
-        fun Create(navigationView: NavigationView) : NavigationHeaderProfile{
-            return NavigationHeaderProfile(navigationView)
+        fun Create(navigationView: NavigationView) : NavigationHeaderProfileView{
+            return NavigationHeaderProfileView(navigationView)
         }
     }
         init {

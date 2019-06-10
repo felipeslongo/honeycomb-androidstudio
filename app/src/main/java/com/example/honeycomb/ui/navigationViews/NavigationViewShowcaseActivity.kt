@@ -31,7 +31,7 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
     private fun bindDrawerNavigationView() {
         val drawer = findViewById<DrawerLayout>(R.id.navigation_view_showcase_drawer)
         val navigationView = findViewById<NavigationView>(R.id.navigation_view_showcase_drawer_navigation)
-        NavigationHeaderProfile.Create(navigationView)
+        NavigationHeaderProfileView.Create(navigationView)
 
         navigationView.setNavigationItemSelectedListener {menuItem: MenuItem ->
             menuItem.isChecked = true
