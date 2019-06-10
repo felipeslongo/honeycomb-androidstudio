@@ -7,9 +7,12 @@ import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.navigation_header_profile.view.*
 
 class NavigationHeaderProfileView private constructor(navigationView: NavigationView) {
-    private val profilesView: AppCompatImageButton
+    private lateinit var profilesToggledListener: (isOpen: Boolean) -> Unit
+    private val profilesToggleView: AppCompatImageButton
     private val emailView: AppCompatTextView
     private val usernameView: AppCompatTextView
+
+    private var profilesIsOpen = false
 
     companion object{
         val LayoutId = R.layout.navigation_header_profile
@@ -18,10 +21,24 @@ class NavigationHeaderProfileView private constructor(navigationView: Navigation
             return NavigationHeaderProfileView(navigationView)
         }
     }
-        init {
-            val header = navigationView.getHeaderView(0)
-            usernameView = header.navigation_header_profile_username
-            emailView = header.navigation_header_profile_email
-            profilesView = header.navigation_header_profile_profiles
+
+    init {
+        val header = navigationView.getHeaderView(0)
+        usernameView = header.navigation_header_profile_username
+        emailView = header.navigation_header_profile_email
+        profilesToggleView = header.navigation_header_profile_profiles
+
+        bindListeners()
+    }
+
+    private fun bindListeners() {
+        profilesToggleView.setOnClickListener {
+            profilesIsOpen = !profilesIsOpen
+            profilesToggledListener(profilesIsOpen)
         }
+    }
+
+    fun setOnProfilesToggledListener(listener: (isOpen: Boolean) -> Unit){
+        profilesToggledListener = listener
+    }
 }

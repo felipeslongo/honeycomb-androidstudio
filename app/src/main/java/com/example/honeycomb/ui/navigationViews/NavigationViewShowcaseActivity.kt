@@ -31,7 +31,11 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
     private fun bindDrawerNavigationView() {
         val drawer = findViewById<DrawerLayout>(R.id.navigation_view_showcase_drawer)
         val navigationView = findViewById<NavigationView>(R.id.navigation_view_showcase_drawer_navigation)
-        NavigationHeaderProfileView.create(navigationView)
+
+        val headerView = NavigationHeaderProfileView.create(navigationView)
+        headerView.setOnProfilesToggledListener {isOpen ->
+            Toast.makeText(this, "setOnProfilesToggledListener$isOpen", Toast.LENGTH_SHORT).show()
+        }
 
         navigationView.setNavigationItemSelectedListener {menuItem: MenuItem ->
             menuItem.isChecked = true
