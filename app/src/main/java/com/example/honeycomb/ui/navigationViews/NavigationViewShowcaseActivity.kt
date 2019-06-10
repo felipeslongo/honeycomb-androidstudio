@@ -1,6 +1,7 @@
 package com.example.honeycomb.ui.navigationViews
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.honeycomb.R
 import com.google.android.material.navigation.NavigationView
 import android.widget.Toast
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 
@@ -67,6 +69,10 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
 
     private fun addProfiles(menu: Menu) {
         val profile = menu.add("Felipe de Souza Longo")
-        profile.setIcon(R.drawable.baseline_arrow_drop_up_white_48)
+        profile.setIcon(R.drawable.image_skyward_sword)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            profile.iconTintMode = null
+            profile.iconTintList = null
+        }
     }
 }
