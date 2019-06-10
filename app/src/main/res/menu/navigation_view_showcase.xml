@@ -2,6 +2,11 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+            android:id="@+id/navigation_view_showcase_avatar"
+            app:actionLayout="@layout/menu_avatar"
+            app:showAsAction="always"/>
+
+    <item
             android:id="@+id/navigation_view_showcase_lonelywolf"
             android:icon="@drawable/ic_cancel_black_24dp"
             android:title="Lonely Wolf"
@@ -69,6 +74,10 @@
                 android:id="@+id/navigation_view_showcase_checkable_behavior_actions_switch"
                 android:icon="@drawable/ic_cancel_black_24dp"
                 android:title="switch"
+                app:actionLayout="@layout/menu_swich"
+                app:showAsAction="always"/>
+        <item
+                android:id="@+id/navigation_view_showcase_checkable_behavior_actions_switch_alone"
                 app:actionLayout="@layout/menu_swich"
                 app:showAsAction="always"/>
     </group>
