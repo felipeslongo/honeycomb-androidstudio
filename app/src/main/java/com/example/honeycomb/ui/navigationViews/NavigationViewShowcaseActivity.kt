@@ -1,6 +1,7 @@
 package com.example.honeycomb.ui.navigationViews
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,7 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
 
     private val LogTag: String = NavigationViewShowcaseActivity::class.java.toString()
     private lateinit var navigationView: NavigationView
+    private lateinit var navigationViewItemIconTintList: ColorStateList
 
     companion object{
         fun present(caller: AppCompatActivity){
@@ -35,6 +37,7 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
     private fun bindDrawerNavigationView() {
         val drawer = findViewById<DrawerLayout>(R.id.navigation_view_showcase_drawer)
         navigationView = findViewById<NavigationView>(R.id.navigation_view_showcase_drawer_navigation)
+        navigationViewItemIconTintList = navigationView.itemIconTintList!!
 
         val headerView = NavigationHeaderProfileView.create(navigationView)
         headerView.setOnProfilesToggledListener {isOpen -> onProfilesToggled(isOpen) }
@@ -60,20 +63,17 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
 
         navigationView.menu.clear()
         if(isOpen){
+            navigationView.itemIconTintList = null
             addProfiles(navigationView.menu)
             return
         }
 
+        navigationView.itemIconTintList = navigationViewItemIconTintList
         navigationView.inflateMenu(R.menu.navigation_view_showcase)
     }
 
     private fun addProfiles(menu: Menu) {
-        //navigationView.itemIconTintList = null
         val profile = menu.add("Felipe de Souza Longo")
         profile.setIcon(R.drawable.image_skyward_sword)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            profile.iconTintMode = null
-            profile.iconTintList = null
-        }
     }
 }
