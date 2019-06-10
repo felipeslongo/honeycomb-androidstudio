@@ -14,7 +14,7 @@ class NavigationHeaderProfileView private constructor(navigationView: Navigation
     companion object{
         val LayoutId = R.layout.navigation_header_profile
 
-        fun Create(navigationView: NavigationView) : NavigationHeaderProfileView{
+        fun create(navigationView: NavigationView) : NavigationHeaderProfileView{
             return NavigationHeaderProfileView(navigationView)
         }
     }
