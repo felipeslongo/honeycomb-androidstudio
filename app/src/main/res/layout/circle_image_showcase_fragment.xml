@@ -38,6 +38,26 @@
             android:layout_height="120dp"
             app:elevation="12dp"
             app:cardCornerRadius="60dp"
+            android:layout_centerHorizontal="true"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9">
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_height="120dp"
+                android:layout_width="120dp"
+                app:srcCompat="@drawable/image_skyward_sword"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+        </androidx.appcompat.widget.AppCompatImageView>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:elevation="12dp"
+            app:cardCornerRadius="60dp"
             android:layout_centerHorizontal="true">
         <androidx.appcompat.widget.AppCompatImageView
                 android:layout_height="120dp"
