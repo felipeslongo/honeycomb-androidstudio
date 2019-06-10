@@ -11,7 +11,7 @@
                 android:id="@+id/main_navigation_item_navigation_view_showcase"
                 android:title="Navigation View Showcase" />
         <item
-                android:id="@+id/nav_item_4"
-                android:title="Nav Item 4" />
+                android:id="@+id/main_navigation_item_circle_image_showcase"
+                android:title="Circle Image Showcase" />
     </group>
 </menu>

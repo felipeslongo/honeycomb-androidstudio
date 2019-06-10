@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
 import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
+import com.example.honeycomb.ui.imageViews.CircleImageShowcase
 import com.example.honeycomb.ui.main.MainFragment
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 import com.google.android.material.navigation.NavigationView
@@ -29,6 +30,12 @@ class MainActivity : AppCompatActivity() {
                 if (it.itemId == R.id.main_navigation_item_gmail_input_chips_showcase_fragment) {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container, GmailInputChipsShowcaseFragment.newInstance())
+                        .commitNow()
+                }
+
+                if (it.itemId == R.id.main_navigation_item_circle_image_showcase) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, CircleImageShowcase.newInstance())
                         .commitNow()
                 }
 
