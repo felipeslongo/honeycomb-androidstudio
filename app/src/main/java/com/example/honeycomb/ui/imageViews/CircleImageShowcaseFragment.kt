@@ -9,10 +9,10 @@ import android.view.ViewGroup
 
 import com.example.honeycomb.R
 
-class CircleImageShowcase : Fragment() {
+class CircleImageShowcaseFragment : Fragment() {
 
     companion object {
-        fun newInstance() = CircleImageShowcase()
+        fun newInstance() = CircleImageShowcaseFragment()
     }
 
     private lateinit var viewModel: CircleImageShowcaseViewModel
