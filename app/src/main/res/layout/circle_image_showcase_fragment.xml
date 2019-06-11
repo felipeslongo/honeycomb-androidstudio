@@ -11,10 +11,17 @@
         tools:context=".ui.imageViews.CircleImageShowcaseFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/circle_image_showcase_programatically"
+            android:id="@+id/circle_image_showcase_original"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:srcCompat="@drawable/image_skyward_sword"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/circle_image_showcase_programatically"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/image_skyward_sword"
+            android:scaleType="centerCrop"/>
 
     <FrameLayout
             android:id="@+id/frame"
