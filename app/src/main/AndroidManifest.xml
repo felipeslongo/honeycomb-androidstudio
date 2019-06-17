@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Honeycomb">
+        <activity android:name=".ui.dataBindings.AndroidDataBindingCodelab">
+        </activity>
         <activity android:name=".ui.navigationViews.NavigationViewShowcaseActivity">
         </activity>
         <activity android:name=".MainActivity">
