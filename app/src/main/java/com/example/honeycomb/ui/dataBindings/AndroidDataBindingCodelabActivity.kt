@@ -4,13 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.honeycomb.R
-import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 
-class AndroidDataBindingCodelab : AppCompatActivity() {
+class AndroidDataBindingCodelabActivity : AppCompatActivity() {
 
     companion object{
         fun present(caller: AppCompatActivity){
-            caller.startActivity(Intent(caller, AndroidDataBindingCodelab::class.java))
+            caller.startActivity(Intent(caller, AndroidDataBindingCodelabActivity::class.java))
         }
     }
 

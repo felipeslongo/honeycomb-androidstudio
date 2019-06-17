@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
 import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
-import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelab
+import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabActivity
 import com.example.honeycomb.ui.imageViews.CircleImageShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (it.itemId == R.id.main_navigation_item_android_databinding_codelab) {
-                    AndroidDataBindingCodelab.present(this)
+                    AndroidDataBindingCodelabActivity.present(this)
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
