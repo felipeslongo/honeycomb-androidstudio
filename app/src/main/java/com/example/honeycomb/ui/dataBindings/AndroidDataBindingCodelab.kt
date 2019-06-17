@@ -2,6 +2,7 @@ package com.example.honeycomb.ui.dataBindings
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.honeycomb.R
 
 class AndroidDataBindingCodelab : AppCompatActivity() {
 
