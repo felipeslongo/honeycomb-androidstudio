@@ -13,5 +13,8 @@
         <item
                 android:id="@+id/main_navigation_item_circle_image_showcase"
                 android:title="Circle Image Showcase" />
+        <item
+                android:id="@+id/main_navigation_item_android_databinding_codelab"
+                android:title="Android DataBinding Codelab" />
     </group>
 </menu>
