@@ -57,6 +57,7 @@
 
         <TextView
                 android:id="@+id/likes"
+                android:text="@{Integer.toString(viewmodel.likes)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
