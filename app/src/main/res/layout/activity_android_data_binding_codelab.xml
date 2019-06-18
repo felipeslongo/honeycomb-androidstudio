@@ -4,7 +4,12 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+                name="name"
+                type="String"/>
+        <variable
+                name="lastName"
+                type="String"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,6 +19,7 @@
 
         <TextView
                 android:id="@+id/plain_name"
+                android:text="@{name}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -26,6 +32,7 @@
 
         <TextView
                 android:id="@+id/plain_lastname"
+                android:text="@{lastName}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
