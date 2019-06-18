@@ -53,20 +53,9 @@ class AndroidDataBindingCodelabActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_android_data_binding_codelab)
         val binding: ActivityAndroidDataBindingCodelabBinding = DataBindingUtil.setContentView(this, R.layout.activity_android_data_binding_codelab)
-
-        binding.name = "Felipe"
-        binding.lastName = "de Souza Longo"
+        binding.viewmodel = viewModel
 
         // TODO: Explicitly setting initial values is a bad pattern. We'll fix that.
-        updateLikes()
-    }
-
-    /**
-     * This method is triggered by the `android:onclick` attribute in the layout. It puts business
-     * logic in the activity, which is not ideal. We should do something about that.
-     */
-    fun onLike(view: View) {
-        viewModel.onLike()
         updateLikes()
     }
 
