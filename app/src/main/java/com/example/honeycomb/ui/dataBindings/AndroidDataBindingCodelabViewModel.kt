@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModel
  * A simple VM for [com.example.android.databinding.basicsample.ui.PlainOldActivity].
  */
 class AndroidDataBindingCodelabViewModel : ViewModel() {
-    private val _name = MutableLiveData<String>().apply { value = "Felipe" }
-    private val _lastName = MutableLiveData<String>().apply { value = "de Souza Longo" }
-    private val _likes = MutableLiveData<Int>().apply { value = 0 }
+    private val _name = MutableLiveData("Felipe")
+    private val _lastName = MutableLiveData("de Souza Longo")
+    private val _likes = MutableLiveData(0)
 
     val name: LiveData<String> = _name
     val lastName: LiveData<String> = _lastName
