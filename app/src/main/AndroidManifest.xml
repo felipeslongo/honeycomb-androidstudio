@@ -9,6 +9,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Honeycomb">
+        <activity android:name=".ui.dataBindings.AndroidDataBindingCodelabActivity"
+                android:label="Android DataBinding Codelab">
+        </activity>
         <activity android:name=".ui.navigationViews.NavigationViewShowcaseActivity">
         </activity>
         <activity android:name=".MainActivity">
