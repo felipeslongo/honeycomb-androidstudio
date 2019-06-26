@@ -42,7 +42,7 @@
       app:layout_constraintHorizontal_bias="0.050" />
 
   <TextView
-      android:id="@+id/textView3"
+      android:id="@+id/sincronizacao_item_model_status_sucesso"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       tools:text="@tools:sample/date/hhmm"

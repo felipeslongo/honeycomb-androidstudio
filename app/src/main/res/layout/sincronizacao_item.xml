@@ -41,16 +41,30 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.050" />
 
-    <ImageView
-            android:id="@+id/textView3"
+    <ViewFlipper
+            android:id="@+id/sincronizacao_item_model_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_check_circle_black_24"
-            android:tint="@android:color/holo_green_dark"
-            tools:text="@tools:sample/date/hhmm"
             app:layout_constraintTop_toTopOf="@+id/sincronizacao_item_model_icone"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+                android:id="@+id/sincronizacao_item_model_status_sucesso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_check_circle_black_24"
+                android:tint="@android:color/holo_green_dark"
+                />
+
+        <ImageView
+                android:id="@+id/sincronizacao_item_model_status_erro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel_white_24dp"
+                android:tint="@android:color/holo_red_dark"/>
+
+    </ViewFlipper>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
