@@ -4,7 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
 
     <ImageView
             android:id="@+id/sincronizacao_item_model_icone"
@@ -26,7 +27,6 @@
             app:layout_constraintTop_toTopOf="@+id/sincronizacao_item_model_icone"
             app:layout_constraintStart_toEndOf="@+id/sincronizacao_item_model_icone"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/sincronizacao_item_model_descricao" />
 
     <TextView

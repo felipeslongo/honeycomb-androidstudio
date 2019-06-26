@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.honeycomb.R
 import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabViewModel
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+
+
 
 class SincronizacaoActivity : AppCompatActivity() {
 
@@ -31,9 +34,10 @@ class SincronizacaoActivity : AppCompatActivity() {
 
     private fun inicializarRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.sincronizacao_recyclerview)
-        recyclerView.layoutManager = LinearLayoutManager(this)
 
-
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context, DividerItemDecoration.VERTICAL))
         recyclerView.adapter = SincronizacaoAdapter(viewModel.itens)
     }
 }
