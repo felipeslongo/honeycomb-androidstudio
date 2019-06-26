@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 
 import com.example.honeycomb.R
+import com.example.honeycomb.databinding.CircleImageShowcaseFragmentBinding
 import com.example.honeycomb.ui.drawables.DrawableServices
 
 class CircleImageShowcaseFragment : Fragment() {
@@ -17,25 +18,26 @@ class CircleImageShowcaseFragment : Fragment() {
         fun newInstance() = CircleImageShowcaseFragment()
     }
 
-    private lateinit var viewModel: CircleImageShowcaseViewModel
+    private val viewModel by lazy { ViewModelProviders.of(this).get(CircleImageShowcaseViewModel::class.java) }
+    private lateinit var binding: CircleImageShowcaseFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.circle_image_showcase_fragment, container, false)
+
+        binding = CircleImageShowcaseFragmentBinding.inflate(inflater, container, false)
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(CircleImageShowcaseViewModel::class.java)
-        // TODO: Use the ViewModel
 
-        var imageProgramaticallyCrop = view!!.findViewById<AppCompatImageView>(R.id.circle_image_showcase_programatically_crop)
-        imageProgramaticallyCrop.setImageDrawable(DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword))
-
-        var imageProgramaticallyAspectRatio = view!!.findViewById<AppCompatImageView>(R.id.circle_image_showcase_programatically_aspectratio)
-        imageProgramaticallyAspectRatio.setImageDrawable(DrawableServices.createAvatarWithAspectRatio(resources, R.drawable.image_skyward_sword))
+        binding.circleImageShowcaseProgramaticallyCrop.setImageDrawable(DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword))
+        binding.circleImageShowcaseProgramaticallyAspectratio.setImageDrawable(DrawableServices.createAvatarWithAspectRatio(resources, R.drawable.image_skyward_sword))
     }
 
 }
