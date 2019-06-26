@@ -16,5 +16,8 @@
         <item
                 android:id="@+id/main_navigation_item_android_databinding_codelab"
                 android:title="Android DataBinding Codelab" />
+        <item
+                android:id="@+id/main_navigation_item_googleplay_sincronizacao"
+                android:title="Goolge Play Sincronização" />
     </group>
 </menu>

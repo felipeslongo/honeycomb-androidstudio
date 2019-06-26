@@ -2,40 +2,55 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         xmlns:tools="http://schemas.android.com/tools"
-        android:padding="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            app:tint="@android:color/darker_gray"
-            app:srcCompat="@drawable/outline_pregnant_woman_black_48"
+    <ImageView
+            android:id="@+id/sincronizacao_item_model_icone"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            tools:src="@drawable/outline_pregnant_woman_black_36"
             app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/sincronizacao_item_model_icone"/>
+            android:layout_marginTop="8dp" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
+            android:id="@+id/sincronizacao_item_model_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Pedidos"
+            tools:text="@tools:sample/full_names"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="@+id/sincronizacao_item_model_icone"
             app:layout_constraintStart_toEndOf="@+id/sincronizacao_item_model_icone"
             android:layout_marginStart="8dp"
-            android:textColor="@android:color/black"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/sincronizacao_item_model_titulo"/>
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/sincronizacao_item_model_descricao" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <TextView
+            android:id="@+id/sincronizacao_item_model_descricao"
+            android:layout_width="285dp"
+            android:layout_height="20dp"
+            tools:text="@tools:sample/lorem[4:10]"
+            app:layout_constraintBottom_toBottomOf="@+id/sincronizacao_item_model_icone"
+            app:layout_constraintStart_toEndOf="@+id/sincronizacao_item_model_icone"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.050" />
+
+    <ImageView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sincronizacao_item_model_status"
+            android:src="@drawable/baseline_check_circle_black_24"
+            android:tint="@android:color/holo_green_dark"
+            tools:text="@tools:sample/date/hhmm"
+            app:layout_constraintTop_toTopOf="@+id/sincronizacao_item_model_icone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:srcCompat="@drawable/baseline_check_circle_black_24"
-            app:tint="@android:color/holo_green_dark"/>
-
+            />
 </androidx.constraintlayout.widget.ConstraintLayout>
