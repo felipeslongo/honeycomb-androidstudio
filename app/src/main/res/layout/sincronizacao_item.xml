@@ -55,8 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_check_circle_black_24"
-                android:tint="@android:color/holo_green_dark"
-                />
+                android:tint="@android:color/holo_green_dark"/>
 
         <ImageView
                 android:id="@+id/sincronizacao_item_model_status_erro"
@@ -64,6 +63,13 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_cancel_white_24dp"
                 android:tint="@android:color/holo_red_dark"/>
+
+        <ProgressBar
+                android:id="@+id/sincronizacao_item_model_status_executando"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@android:color/holo_blue_dark"/>
 
     </ViewFlipper>
 
