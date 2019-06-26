@@ -19,6 +19,14 @@ class DrawableServices {
             return roundedDrawable
         }
 
+        fun createAvatarWithAspectRatio(resources: Resources, drawableId: Int) : Drawable{
+            var bitmap = BitmapFactory.decodeResource(resources, drawableId)
+
+            val roundedDrawable = createCircle(resources, bitmap)
+
+            return roundedDrawable
+        }
+
         private fun createCircle(resources: Resources, bitmap: Bitmap?): RoundedBitmapDrawable {
             val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
             roundedDrawable.isCircular = true

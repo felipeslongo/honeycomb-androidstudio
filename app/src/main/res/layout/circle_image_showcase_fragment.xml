@@ -17,7 +17,14 @@
             app:srcCompat="@drawable/image_skyward_sword"/>
 
     <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/circle_image_showcase_programatically"
+            android:id="@+id/circle_image_showcase_programatically_crop"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/image_skyward_sword"
+            android:scaleType="centerCrop"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/circle_image_showcase_programatically_aspectratio"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:srcCompat="@drawable/image_skyward_sword"

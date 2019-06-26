@@ -31,8 +31,11 @@ class CircleImageShowcaseFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(CircleImageShowcaseViewModel::class.java)
         // TODO: Use the ViewModel
 
-        var imageProgramatically = view!!.findViewById<AppCompatImageView>(R.id.circle_image_showcase_programatically)
-        imageProgramatically.setImageDrawable(DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword))
+        var imageProgramaticallyCrop = view!!.findViewById<AppCompatImageView>(R.id.circle_image_showcase_programatically_crop)
+        imageProgramaticallyCrop.setImageDrawable(DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword))
+
+        var imageProgramaticallyAspectRatio = view!!.findViewById<AppCompatImageView>(R.id.circle_image_showcase_programatically_aspectratio)
+        imageProgramaticallyAspectRatio.setImageDrawable(DrawableServices.createAvatarWithAspectRatio(resources, R.drawable.image_skyward_sword))
     }
 
 }
