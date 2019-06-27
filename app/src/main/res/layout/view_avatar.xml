@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        tools:showIn="@layout/circle_image_showcase_fragment">
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/avatar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/image_skyward_sword"
-            android:scaleType="centerCrop"/>
+    <data>
 
-    <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/avatar_circle_crop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/circle_crop"
-            android:scaleType="centerInside"
-            app:tint="@color/colorPrimaryDark"/>
+    </data>
 
-</FrameLayout>
+    <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            tools:showIn="@layout/circle_image_showcase_fragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/image_skyward_sword"
+                android:scaleType="centerCrop"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar_filter_circular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/circle_crop"
+                android:scaleType="centerInside"
+                app:tint="@color/colorPrimaryDark"/>
+
+    </FrameLayout>
+</layout>
