@@ -1,30 +1,32 @@
 package com.example.honeycomb.ui.imageViews
 
 import android.graphics.drawable.Drawable
+import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.widget.AppCompatImageView
 import com.example.honeycomb.databinding.ViewAvatarBinding
 
-class AvatarView(private val avatarView: AppCompatImageView) {
+
+class AvatarView(private val binding: ViewAvatarBinding) {
 
     companion object{
-        fun create(binding: ViewAvatarBinding) : AvatarView{
-            return AvatarView(binding.avatar)
-        }
-
-        fun create(avatarView: AppCompatImageView) : AvatarView{
-            return AvatarView(avatarView)
-        }
-
-        fun createWithBinding(rootView: View) : AvatarView{
-            val binding = ViewAvatarBinding.bind(rootView)
+        fun create(inflater: LayoutInflater) : AvatarView{
+            val binding = ViewAvatarBinding.inflate(inflater)
             return create(binding)
+        }
+
+        fun create(binding: ViewAvatarBinding) : AvatarView{
+            return AvatarView(binding)
         }
     }
 
     var drawable: Drawable
-        get() = avatarView.drawable
+        get() = binding.avatar.drawable
         set(value) {
-            avatarView.setImageDrawable(value)
+            binding.avatar.setImageDrawable(value)
         }
+
+    fun asView(): View {
+        return binding.root
+    }
+
 }
