@@ -24,9 +24,4 @@ class AvatarView(private val binding: ViewAvatarBinding) {
         set(value) {
             binding.avatar.setImageDrawable(value)
         }
-
-    fun asView(): View {
-        return binding.root
-    }
-
 }
