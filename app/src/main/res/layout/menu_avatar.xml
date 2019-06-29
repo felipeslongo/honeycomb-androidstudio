@@ -16,22 +16,24 @@
             android:id="@+id/include"/>
 
     <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.Honeycomb.Subtitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Felipe de Souza Longo"
-            android:textColor="@android:color/black"
             app:layout_constraintTop_toTopOf="@+id/include"
             app:layout_constraintStart_toEndOf="@+id/include"
             android:layout_marginStart="16dp"
             />
 
     <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.Honeycomb.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="felipeslongo@gmail.com"
             app:layout_constraintBottom_toBottomOf="@+id/include"
             app:layout_constraintStart_toEndOf="@+id/include"
             android:layout_marginStart="16dp"
-            android:id="@+id/appCompatTextView2"/>
+            android:id="@+id/appCompatTextView2"
+            />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
