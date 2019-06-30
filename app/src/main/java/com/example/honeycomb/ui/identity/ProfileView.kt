@@ -1,8 +1,11 @@
 package com.example.honeycomb.ui.identity
 
 import android.graphics.drawable.Drawable
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
+import com.example.honeycomb.databinding.ProfileViewBinding
 import com.example.honeycomb.ui.imageViews.AvatarView
 
 class ProfileView {
@@ -22,4 +25,25 @@ class ProfileView {
     var email: String
         get() = emailView.text.toString()
         set(value) {emailView.text = value}
+
+    fun asView() : View{
+        return rootView
+    }
+
+    companion object{
+        fun inflate (inflater: LayoutInflater) : ProfileView {
+            return inflate(inflater, null)
+        }
+
+        fun inflate (inflater: LayoutInflater, parent: ViewGroup?) : ProfileView{
+            val binding = ProfileViewBinding.inflate(inflater, parent, false)
+            val view = ProfileView()
+            view.rootView = binding.root as ViewGroup
+            view.nameView = binding.name
+            view.emailView = binding.email
+            view.avatarView = AvatarView.create(inflater, view.rootView)
+
+            return view
+        }
+    }
 }
