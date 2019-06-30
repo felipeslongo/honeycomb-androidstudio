@@ -30,6 +30,10 @@ class ProfileView {
         return rootView
     }
 
+    private fun refreshAvatarViewBackground(){
+        avatarView.refreshBackground()
+    }
+
     companion object{
         fun inflate (inflater: LayoutInflater) : ProfileView {
             return inflate(inflater, null)
@@ -41,7 +45,8 @@ class ProfileView {
             view.rootView = binding.root as ViewGroup
             view.nameView = binding.name
             view.emailView = binding.email
-            view.avatarView = AvatarView.create(inflater, view.rootView)
+            view.avatarView = AvatarView.create(binding.avatar)
+            view.refreshAvatarViewBackground()
 
             return view
         }
