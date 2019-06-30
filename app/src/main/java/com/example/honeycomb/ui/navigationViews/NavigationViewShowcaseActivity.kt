@@ -15,6 +15,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.android.material.switchmaterial.SwitchMaterial
 import android.graphics.BitmapFactory
 import com.example.honeycomb.ui.drawables.DrawableServices
+import com.example.honeycomb.ui.identity.ProfileView
 
 
 class NavigationViewShowcaseActivity : AppCompatActivity() {
@@ -74,7 +75,11 @@ class NavigationViewShowcaseActivity : AppCompatActivity() {
     }
 
     private fun addProfiles(menu: Menu) {
-        val profile = menu.add("Felipe de Souza Longo")
-        profile.icon = DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword)
+//        val profile = menu.add("Felipe de Souza Longo")
+//        profile.icon = DrawableServices.createAvatar(resources, R.drawable.image_skyward_sword)
+
+        val profile = menu.add(null)
+        profile.icon = null
+        profile.actionView = ProfileView.inflate(layoutInflater).asView()
     }
 }
