@@ -35,8 +35,6 @@ class AvatarView(private val binding: ViewAvatarBinding) {
         }
 
     fun refreshBackground() {
-        val parent = binding.root.parent as View? ?: return
-        val colorDrawable = parent.background as ColorDrawable? ?: return
-        ImageViewCompat.setImageTintList(binding.avatarFilterCircular, ColorStateList.valueOf(colorDrawable.color))
+        binding.avatarFilterCircular.setImageTintColorWithAnotherViewBackgroundColor(binding.root.parent)
     }
 }
