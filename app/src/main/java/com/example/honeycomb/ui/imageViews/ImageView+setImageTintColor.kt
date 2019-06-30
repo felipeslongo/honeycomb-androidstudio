@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.view.ViewParent
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 
 fun ImageView.setImageTintColorWithAnotherViewBackgroundColor(anotherView: ViewParent){
@@ -17,7 +18,14 @@ fun ImageView.setImageTintColorWithAnotherViewBackgroundColor(anotherView: View)
     setImageTintColor(colorDrawable.color)
 }
 
-fun ImageView.setImageTintColor(colorId: Int){
-    val tint = ColorStateList.valueOf(colorId)
+
+fun ImageView.setImageTintColor(colorInt: Int){
+    //https://stackoverflow.com/questions/20121938/how-to-set-tint-for-an-image-view-programmatically-in-android
+    val tint = ColorStateList.valueOf(colorInt)
     ImageViewCompat.setImageTintList(this, tint)
+}
+
+fun ImageView.setImageTintColorWithResource(colorId: Int){
+    val colorInt = ContextCompat.getColor(context, colorId)
+    setImageTintColor(colorInt)
 }
