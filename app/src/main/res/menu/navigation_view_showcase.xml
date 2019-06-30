@@ -3,7 +3,7 @@
 
     <item
             android:id="@+id/navigation_view_showcase_avatar"
-            app:actionLayout="@layout/menu_avatar"
+            app:actionLayout="@layout/profile_view"
             app:showAsAction="always"/>
 
     <item
