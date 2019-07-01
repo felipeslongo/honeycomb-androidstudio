@@ -16,8 +16,8 @@
         <include
                 layout="@layout/view_avatar"
                 android:id="@+id/avatar"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
