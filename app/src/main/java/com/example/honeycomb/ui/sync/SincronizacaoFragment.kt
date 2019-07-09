@@ -38,6 +38,9 @@ class SincronizacaoFragment : DialogFragment() {
     }
 
     private fun redimensionar() {
+        if(resources.getBoolean(R.bool.isTablet))
+            return
+
         val window = dialog!!.window!!
         val layoutParams = window.attributes
         layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
