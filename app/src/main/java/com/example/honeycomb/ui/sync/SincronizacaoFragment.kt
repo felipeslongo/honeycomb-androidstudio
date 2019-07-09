@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import com.example.honeycomb.R
@@ -29,6 +30,18 @@ class SincronizacaoFragment : DialogFragment() {
         binding.status.text = "Baixando e configurando…"
         binding.tempo.text = "00:00:03"
         binding.progresso.progress = 10
+    }
+
+    override fun onResume() {
+        super.onResume()
+        redimensionar()
+    }
+
+    private fun redimensionar() {
+        val window = dialog!!.window!!
+        val layoutParams = window.attributes
+        layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+        window.attributes = layoutParams
     }
 
     private fun impedirCancelamentoDoUsuario() {
