@@ -1,222 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardForegroundColor="@android:color/transparent"
-        app:cardBackgroundColor="@android:color/white"
-        tools:layout_margin="32dp">
+        xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp">
-
-        <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_begin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintGuide_begin="16dp"
-                android:orientation="vertical"/>
-
-        <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintGuide_end="16dp"
-                android:orientation="vertical"/>
+            android:layout_height="wrap_content"
+            app:cardForegroundColor="@android:color/transparent"
+            app:cardBackgroundColor="@android:color/white"
+            tools:layout_margin="32dp">
 
 
-        <TextView
-                android:id="@+id/titulo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                tools:text="Sincronização de dados"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
-
-        <TextView
-                android:id="@+id/descricao"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                tools:text="Estamos preparando o aplicativo para sua utilização. Por favor, aguarde um instante."
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:textSize="20sp"
-                app:layout_constraintTop_toBottomOf="@+id/titulo"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
-
-        <TextView
-                android:id="@+id/status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Baixando e configurando…"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:textColor="@android:color/darker_gray"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"
-                app:layout_constraintTop_toBottomOf="@+id/descricao"
-                android:layout_marginTop="24dp"/>
-
-        <TextView
-                android:id="@+id/tempo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="00:00:03"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:textColor="@android:color/darker_gray"
-                app:layout_constraintStart_toEndOf="@+id/status"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintTop_toTopOf="@+id/status"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
-
-        <ProgressBar
-                android:id="@+id/progresso"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                tools:progress="10"
-                android:max="100"
-                android:progressTint="@android:color/holo_purple"
-                app:layout_constraintTop_toBottomOf="@+id/status"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"
-                android:layout_marginTop="4dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
-
-        <View
-                android:id="@+id/divisao_corpo"
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@android:color/darker_gray"
-                android:alpha="0.5"
-                app:layout_constraintTop_toBottomOf="@+id/progresso"
-                android:layout_marginTop="24dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp">
 
-        <TextView
-                android:id="@+id/pedidos"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pedidos"
-                android:textColor="@android:color/holo_purple"
-                android:textStyle="bold"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/divisao_corpo"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintGuide_begin="16dp"
+                    android:orientation="vertical"/>
 
-        <ProgressBar
-                android:id="@+id/pedidos_status"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:indeterminate="true"
-                android:indeterminateBehavior="repeat"
-                android:progressTint="@android:color/holo_purple"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                app:layout_constraintTop_toTopOf="@+id/pedidos"
-                app:layout_constraintBottom_toBottomOf="@+id/pedidos"/>
-
-        <TextView
-                android:id="@+id/clientes"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Clientes"
-                android:textColor="@android:color/holo_purple"
-                android:textStyle="bold"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintTop_toBottomOf="@+id/pedidos"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
-
-        <ProgressBar
-                android:id="@+id/clientes_status"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:indeterminate="true"
-                android:indeterminateBehavior="repeat"
-                android:progressTint="@android:color/holo_purple"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                app:layout_constraintTop_toTopOf="@+id/clientes"
-                app:layout_constraintBottom_toBottomOf="@+id/clientes"/>
-
-        <TextView
-                android:id="@+id/produtos"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Produtos"
-                android:textColor="@android:color/holo_purple"
-                android:textStyle="bold"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintTop_toBottomOf="@+id/clientes"
-                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
-
-        <ProgressBar
-                android:id="@+id/produtos_status"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:indeterminate="true"
-                android:indeterminateBehavior="repeat"
-                android:progressTint="@android:color/holo_purple"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                app:layout_constraintTop_toTopOf="@+id/produtos"
-                app:layout_constraintBottom_toBottomOf="@+id/produtos"/>
-
-        <View
-                android:id="@+id/divisor_acao"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@android:color/darker_gray"
-                android:alpha="0.5"
-                app:layout_constraintTop_toBottomOf="@+id/produtos"
-                android:layout_marginTop="24dp"/>
-
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/mostrar_detalhes"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mostrar Detalhes"
-                android:textColor="@android:color/holo_purple"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/divisor_acao"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
-
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/tentar_novamente"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tentar novamente"
-                android:textColor="@android:color/holo_purple"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/mostrar_detalhes"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
-
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/cancelar"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cancelar"
-                android:textColor="@android:color/holo_purple"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/tentar_novamente"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintGuide_end="16dp"
+                    android:orientation="vertical"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                    android:id="@+id/titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:text="Sincronização de dados"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
-</com.google.android.material.card.MaterialCardView>
+            <TextView
+                    android:id="@+id/descricao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:text="Estamos preparando o aplicativo para sua utilização. Por favor, aguarde um instante."
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toBottomOf="@+id/titulo"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+            <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Baixando e configurando…"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/descricao"
+                    android:layout_marginTop="24dp"/>
+
+            <TextView
+                    android:id="@+id/tempo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="00:00:03"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@android:color/darker_gray"
+                    app:layout_constraintStart_toEndOf="@+id/status"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintTop_toTopOf="@+id/status"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
+
+            <ProgressBar
+                    android:id="@+id/progresso"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:progress="10"
+                    android:max="100"
+                    android:progressTint="@android:color/holo_purple"
+                    app:layout_constraintTop_toBottomOf="@+id/status"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
+
+            <View
+                    android:id="@+id/divisao_corpo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@android:color/darker_gray"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toBottomOf="@+id/progresso"
+                    android:layout_marginTop="24dp"/>
+
+            <TextView
+                    android:id="@+id/pedidos"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pedidos"
+                    android:textColor="@android:color/holo_purple"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/divisao_corpo"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+            <ProgressBar
+                    android:id="@+id/pedidos_status"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:indeterminate="true"
+                    android:indeterminateBehavior="repeat"
+                    android:progressTint="@android:color/holo_purple"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/pedidos"
+                    app:layout_constraintBottom_toBottomOf="@+id/pedidos"/>
+
+            <TextView
+                    android:id="@+id/clientes"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clientes"
+                    android:textColor="@android:color/holo_purple"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toBottomOf="@+id/pedidos"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+            <ProgressBar
+                    android:id="@+id/clientes_status"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:indeterminate="true"
+                    android:indeterminateBehavior="repeat"
+                    android:progressTint="@android:color/holo_purple"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/clientes"
+                    app:layout_constraintBottom_toBottomOf="@+id/clientes"/>
+
+            <TextView
+                    android:id="@+id/produtos"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Produtos"
+                    android:textColor="@android:color/holo_purple"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toBottomOf="@+id/clientes"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+            <ProgressBar
+                    android:id="@+id/produtos_status"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:indeterminate="true"
+                    android:indeterminateBehavior="repeat"
+                    android:progressTint="@android:color/holo_purple"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/produtos"
+                    app:layout_constraintBottom_toBottomOf="@+id/produtos"/>
+
+            <View
+                    android:id="@+id/divisor_acao"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@android:color/darker_gray"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toBottomOf="@+id/produtos"
+                    android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mostrar_detalhes"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mostrar Detalhes"
+                    android:textColor="@android:color/holo_purple"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/divisor_acao"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tentar_novamente"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tentar novamente"
+                    android:textColor="@android:color/holo_purple"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/mostrar_detalhes"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancelar"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:textColor="@android:color/holo_purple"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tentar_novamente"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

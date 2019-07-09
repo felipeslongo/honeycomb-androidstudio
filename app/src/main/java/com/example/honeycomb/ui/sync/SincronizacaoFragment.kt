@@ -7,13 +7,27 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import com.example.honeycomb.R
-
+import com.example.honeycomb.databinding.SincronizacaoCompletaBinding
 
 
 class SincronizacaoFragment : DialogFragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.sincronizacao_completa, container, false)
+    private lateinit var binding: SincronizacaoCompletaBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = SincronizacaoCompletaBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.titulo.text = "Sincronizacao de dados"
+        binding.descricao.text = "Estamos preparando o aplicativo para sua utilização. Por favor, aguarde um instante."
+        binding.status.text = "Baixando e configurando…"
+        binding.tempo.text = "00:00:03"
+        binding.progresso.progress = 10
+    }
 
     companion object{
         private val dialogTag: String = "SincronizacaoFragment"
