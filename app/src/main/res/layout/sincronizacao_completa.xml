@@ -13,31 +13,46 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="16dp"
+                android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="16dp"
+                android:orientation="vertical"/>
+
 
         <TextView
                 android:id="@+id/titulo"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 tools:text="Sincronização de dados"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
         <TextView
                 android:id="@+id/descricao"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 tools:text="Estamos preparando o aplicativo para sua utilização. Por favor, aguarde um instante."
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:textSize="20sp"
                 app:layout_constraintTop_toBottomOf="@+id/titulo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
 
         <TextView
                 android:id="@+id/status"
@@ -46,7 +61,7 @@
                 tools:text="Baixando e configurando…"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textColor="@android:color/darker_gray"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"
                 app:layout_constraintTop_toBottomOf="@+id/descricao"
                 android:layout_marginTop="24dp"/>
 
@@ -58,22 +73,22 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textColor="@android:color/darker_gray"
                 app:layout_constraintStart_toEndOf="@+id/status"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintTop_toTopOf="@+id/status"/>
+                app:layout_constraintTop_toTopOf="@+id/status"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
         <ProgressBar
                 android:id="@+id/progresso"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 tools:progress="10"
                 android:max="100"
                 android:progressTint="@android:color/holo_purple"
                 app:layout_constraintTop_toBottomOf="@+id/status"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="4dp"/>
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
