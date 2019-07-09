@@ -16,8 +16,10 @@ class SincronizacaoFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = SincronizacaoCompletaBinding.inflate(inflater, container, false)
+        impedirCancelamentoDoUsuario()
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,6 +30,11 @@ class SincronizacaoFragment : DialogFragment() {
         binding.tempo.text = "00:00:03"
         binding.progresso.progress = 10
     }
+
+    private fun impedirCancelamentoDoUsuario() {
+        isCancelable = false
+    }
+
 
     companion object{
         private val dialogTag: String = "SincronizacaoFragment"
