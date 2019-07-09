@@ -9,6 +9,7 @@ import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabActivity
 import com.example.honeycomb.ui.imageViews.CircleImageShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
+import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +47,10 @@ class MainActivity : AppCompatActivity() {
 
                 if (it.itemId == R.id.main_navigation_item_android_databinding_codelab) {
                     AndroidDataBindingCodelabActivity.present(this)
+                }
+
+                if (it.itemId == R.id.sincronizacao) {
+                    SincronizacaoFragment.apresentar(this)
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()

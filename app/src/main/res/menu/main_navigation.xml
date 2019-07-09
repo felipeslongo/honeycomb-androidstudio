@@ -16,5 +16,9 @@
         <item
                 android:id="@+id/main_navigation_item_android_databinding_codelab"
                 android:title="Android DataBinding Codelab" />
+
+        <item
+                android:id="@+id/sincronizacao"
+                android:title="Sincronização" />
     </group>
 </menu>
