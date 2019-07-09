@@ -91,12 +91,96 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
         <View
-                android:id="@+id/divisor_acao"
+                android:id="@+id/divisao_corpo"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@android:color/darker_gray"
                 android:alpha="0.5"
                 app:layout_constraintTop_toBottomOf="@+id/progresso"
+                android:layout_marginTop="24dp"/>
+
+        <TextView
+                android:id="@+id/pedidos"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedidos"
+                android:textColor="@android:color/holo_purple"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/divisao_corpo"
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+        <ProgressBar
+                android:id="@+id/pedidos_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@android:color/holo_purple"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                app:layout_constraintTop_toTopOf="@+id/pedidos"
+                app:layout_constraintBottom_toBottomOf="@+id/pedidos"/>
+
+        <TextView
+                android:id="@+id/clientes"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clientes"
+                android:textColor="@android:color/holo_purple"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/pedidos"
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+        <ProgressBar
+                android:id="@+id/clientes_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@android:color/holo_purple"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                app:layout_constraintTop_toTopOf="@+id/clientes"
+                app:layout_constraintBottom_toBottomOf="@+id/clientes"/>
+
+        <TextView
+                android:id="@+id/produtos"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Produtos"
+                android:textColor="@android:color/holo_purple"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/clientes"
+                app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
+
+        <ProgressBar
+                android:id="@+id/produtos_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@android:color/holo_purple"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                app:layout_constraintTop_toTopOf="@+id/produtos"
+                app:layout_constraintBottom_toBottomOf="@+id/produtos"/>
+
+        <View
+                android:id="@+id/divisor_acao"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray"
+                android:alpha="0.5"
+                app:layout_constraintTop_toBottomOf="@+id/produtos"
                 android:layout_marginTop="24dp"/>
 
         <com.google.android.material.button.MaterialButton
