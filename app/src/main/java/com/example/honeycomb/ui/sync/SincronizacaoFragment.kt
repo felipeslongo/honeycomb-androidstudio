@@ -6,7 +6,11 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import com.example.honeycomb.R
+import com.example.honeycomb.databinding.ProgressoSucessoErroBinding
 import com.example.honeycomb.databinding.SincronizacaoCompletaBinding
+import com.example.honeycomb.ui.progressBars.ProgressoSucessoErroView
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 
 class SincronizacaoFragment : DialogFragment() {
@@ -35,10 +39,17 @@ class SincronizacaoFragment : DialogFragment() {
             atualizaMostrarDetalhes()
         }
 
+        binding.tentarNovamente.setOnClickListener {
+            iniciarSincronizacao()
+        }
+
         binding.cancelar.setOnClickListener {
             dismiss()
         }
+
+        iniciarSincronizacao()
     }
+
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
@@ -50,6 +61,7 @@ class SincronizacaoFragment : DialogFragment() {
         super.onResume()
         redimensionar()
     }
+
 
     private fun removerTitulo(dialog: Dialog) {
         dialog.window.requestFeature(Window.FEATURE_NO_TITLE)
@@ -76,6 +88,22 @@ class SincronizacaoFragment : DialogFragment() {
         } else {
             binding.grupoEntidades.visibility = View.GONE
             binding.mostrarDetalhes.text = "Mostrar detalhes"
+        }
+    }
+
+    private fun iniciarSincronizacao() {
+        ProgressoSucessoErroView.create(binding.pedidosStatus).notificarProgresso()
+        ProgressoSucessoErroView.create(binding.clientesStatus).notificarProgresso()
+        ProgressoSucessoErroView.create(binding.produtosStatus).notificarProgresso()
+
+        GlobalScope.launch(Dispatchers.Main) {
+            delay(3000)
+            ProgressoSucessoErroView.create(binding.pedidosStatus).notificarErro()
+            delay(3000)
+            ProgressoSucessoErroView.create(binding.clientesStatus).notificarSucesso()
+            delay(3000)
+            ProgressoSucessoErroView.create(binding.pedidosStatus).notificarSucesso()
+            ProgressoSucessoErroView.create(binding.produtosStatus).notificarSucesso()
         }
     }
 
