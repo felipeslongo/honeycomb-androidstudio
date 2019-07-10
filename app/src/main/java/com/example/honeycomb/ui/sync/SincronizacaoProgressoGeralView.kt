@@ -8,14 +8,18 @@ import android.widget.TextView
 import androidx.core.widget.TextViewCompat
 import com.example.honeycomb.databinding.SincronizacaoCompletaBinding
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.view.animation.LinearInterpolator
+import androidx.core.content.ContextCompat
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
+import com.example.honeycomb.R
 import kotlinx.coroutines.*
 
 
 class SincronizacaoProgressoGeralView(val status: TextView, val tempo: TextView, val progresso: ProgressBar) {
 
     private var timer: Job? = null
+    private val context: Context by lazy {progresso.context}
 
     fun iniciarTemporizador(){
         if(timer != null){
@@ -42,35 +46,29 @@ class SincronizacaoProgressoGeralView(val status: TextView, val tempo: TextView,
         progressAnimator.duration = 500
         progressAnimator.interpolator = LinearOutSlowInInterpolator()
         progressAnimator.start()
-        //progresso.progress = progress
     }
 
     fun notificarEmAndamento(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            progresso.progressTintList = ColorStateList.valueOf(Color.MAGENTA)
-        }
-
-        status.setTextColor(Color.MAGENTA)
-        tempo.setTextColor(Color.MAGENTA)
+        atribuirCor(R.color.mercos_roxo_900)
     }
 
 
     fun notificarSucesso(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            progresso.progressTintList = ColorStateList.valueOf(Color.GREEN)
-        }
-
-        status.setTextColor(Color.GREEN)
-        tempo.setTextColor(Color.GREEN)
+        atribuirCor(R.color.mercos_verde_800)
     }
 
     fun notificarErro(){
+        atribuirCor(R.color.mercos_vermelho)
+    }
+
+    private fun atribuirCor(resourceId: Int){
+        val color = ContextCompat.getColorStateList(context, resourceId)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            progresso.progressTintList = ColorStateList.valueOf(Color.RED)
+            progresso.progressTintList = color
         }
 
-        status.setTextColor(Color.RED)
-        tempo.setTextColor(Color.RED)
+        status.setTextColor(color)
+        tempo.setTextColor(color)
     }
 
     companion object{

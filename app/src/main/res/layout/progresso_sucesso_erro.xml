@@ -18,7 +18,7 @@
                 android:layout_height="match_parent"
                 android:indeterminate="true"
                 android:indeterminateBehavior="repeat"
-                android:progressTint="@android:color/holo_purple"/>
+                android:progressTint="@color/mercos_roxo_900"/>
 
         <ImageView
                 android:id="@+id/sucesso"
@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/baseline_done_black_24"
                 android:scaleType="fitCenter"
-                android:tint="#FF00CC62"/>
+                android:tint="@color/mercos_verde_400"/>
 
         <ImageView
                 android:id="@+id/erro"
@@ -34,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/baseline_close_black_24"
                 android:scaleType="fitCenter"
-                android:tint="#FFEF5350"/>
+                android:tint="@color/mercos_vermelho"/>
 
     </ViewFlipper>
 </layout>
