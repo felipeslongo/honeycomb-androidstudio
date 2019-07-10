@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/progresso_sucesso_erro"
+        android:layout_width="48dp"
+        android:layout_height="48dp">
+
+    <ProgressBar
+            android:id="@+id/progresso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:indeterminateBehavior="repeat"
+            android:progressTint="@android:color/holo_purple"/>
+
+</ViewFlipper>

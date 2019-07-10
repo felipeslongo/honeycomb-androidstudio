@@ -123,17 +123,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/divisao_corpo"
                     app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
 
-            <ProgressBar
-                    android:id="@+id/pedidos_status"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:indeterminate="true"
-                    android:indeterminateBehavior="repeat"
-                    android:progressTint="@android:color/holo_purple"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                    app:layout_constraintTop_toTopOf="@+id/pedidos"
-                    app:layout_constraintBottom_toBottomOf="@+id/pedidos"/>
+            <include layout="@layout/progresso_sucesso_erro"
+                     android:id="@+id/pedidos_status"
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:layout_marginEnd="16dp"
+                     app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                     app:layout_constraintTop_toTopOf="@+id/pedidos"
+                     app:layout_constraintBottom_toBottomOf="@+id/pedidos"/>
+
 
             <TextView
                     android:id="@+id/clientes"
@@ -148,17 +146,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/pedidos"
                     app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
 
-            <ProgressBar
-                    android:id="@+id/clientes_status"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:indeterminate="true"
-                    android:indeterminateBehavior="repeat"
-                    android:progressTint="@android:color/holo_purple"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                    app:layout_constraintTop_toTopOf="@+id/clientes"
-                    app:layout_constraintBottom_toBottomOf="@+id/clientes"/>
+            <include layout="@layout/progresso_sucesso_erro"
+                     android:id="@+id/clientes_status"
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:layout_marginEnd="16dp"
+                     app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                     app:layout_constraintTop_toTopOf="@+id/clientes"
+                     app:layout_constraintBottom_toBottomOf="@+id/clientes"/>
 
             <TextView
                     android:id="@+id/produtos"
@@ -173,17 +168,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/clientes"
                     app:layout_constraintStart_toStartOf="@+id/guideline_begin"/>
 
-            <ProgressBar
-                    android:id="@+id/produtos_status"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:indeterminate="true"
-                    android:indeterminateBehavior="repeat"
-                    android:progressTint="@android:color/holo_purple"
-                    android:layout_marginEnd="16dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                    app:layout_constraintTop_toTopOf="@+id/produtos"
-                    app:layout_constraintBottom_toBottomOf="@+id/produtos"/>
+            <include layout="@layout/progresso_sucesso_erro"
+                     android:id="@+id/produtos_status"
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:layout_marginEnd="16dp"
+                     app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                     app:layout_constraintTop_toTopOf="@+id/produtos"
+                     app:layout_constraintBottom_toBottomOf="@+id/produtos"/>
 
             <View
                     android:id="@+id/divisor_acao"
