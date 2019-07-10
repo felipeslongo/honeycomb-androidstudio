@@ -10,7 +10,9 @@
     <ViewFlipper
             android:id="@+id/progresso_sucesso_erro"
             android:layout_width="48dp"
-            android:layout_height="48dp">
+            android:layout_height="48dp"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out">
 
         <ProgressBar
                 android:id="@+id/progresso"
