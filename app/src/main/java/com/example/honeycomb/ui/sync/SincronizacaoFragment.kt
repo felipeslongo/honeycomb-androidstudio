@@ -12,6 +12,7 @@ import com.example.honeycomb.databinding.SincronizacaoCompletaBinding
 class SincronizacaoFragment : DialogFragment() {
 
     private lateinit var binding: SincronizacaoCompletaBinding
+    private var mostrarDetalhes: Boolean = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = SincronizacaoCompletaBinding.inflate(inflater, container, false)
@@ -28,6 +29,11 @@ class SincronizacaoFragment : DialogFragment() {
         binding.status.text = "Baixando e configurando…"
         binding.tempo.text = "00:00:03"
         binding.progresso.progress = 10
+
+        binding.mostrarDetalhes.setOnClickListener {
+            mostrarDetalhes = !mostrarDetalhes
+            atualizaMostrarDetalhes()
+        }
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -35,7 +41,6 @@ class SincronizacaoFragment : DialogFragment() {
         removerTitulo(dialog)
         return dialog
     }
-
 
     override fun onResume() {
         super.onResume()
@@ -58,6 +63,16 @@ class SincronizacaoFragment : DialogFragment() {
 
     private fun impedirCancelamentoDoUsuario() {
         isCancelable = false
+    }
+
+    private fun atualizaMostrarDetalhes() {
+        if (mostrarDetalhes) {
+            binding.grupoEntidades.visibility = View.VISIBLE
+            binding.mostrarDetalhes.text = "Ocultar detalhes"
+        } else {
+            binding.grupoEntidades.visibility = View.GONE
+            binding.mostrarDetalhes.text = "Mostrar detalhes"
+        }
     }
 
 
