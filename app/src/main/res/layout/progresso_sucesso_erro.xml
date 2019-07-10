@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ViewFlipper
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/progresso_sucesso_erro"
-        android:layout_width="48dp"
-        android:layout_height="48dp">
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <ProgressBar
-            android:id="@+id/progresso"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:indeterminate="true"
-            android:indeterminateBehavior="repeat"
-            android:progressTint="@android:color/holo_purple"/>
+    <data>
 
-</ViewFlipper>
+    </data>
+
+    <ViewFlipper
+            android:id="@+id/progresso_sucesso_erro"
+            android:layout_width="48dp"
+            android:layout_height="48dp">
+
+        <ProgressBar
+                android:id="@+id/progresso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@android:color/holo_purple"/>
+
+        <ImageView
+                android:id="@+id/sucesso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_done_black_24"
+                android:scaleType="fitCenter"
+                android:tint="#FF00CC62"/>
+
+        <ImageView
+                android:id="@+id/erro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_close_black_24"
+                android:scaleType="fitCenter"
+                android:tint="#FFEF5350"/>
+
+    </ViewFlipper>
+</layout>
