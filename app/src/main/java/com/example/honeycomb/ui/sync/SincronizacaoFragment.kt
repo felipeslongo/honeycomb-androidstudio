@@ -1,10 +1,8 @@
 package com.example.honeycomb.ui.sync
 
+import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import com.example.honeycomb.R
@@ -32,9 +30,20 @@ class SincronizacaoFragment : DialogFragment() {
         binding.progresso.progress = 10
     }
 
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState)
+        removerTitulo(dialog)
+        return dialog
+    }
+
+
     override fun onResume() {
         super.onResume()
         redimensionar()
+    }
+
+    private fun removerTitulo(dialog: Dialog) {
+        dialog.window.requestFeature(Window.FEATURE_NO_TITLE)
     }
 
     private fun redimensionar() {
