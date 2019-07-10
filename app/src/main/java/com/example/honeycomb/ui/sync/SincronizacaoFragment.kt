@@ -34,6 +34,10 @@ class SincronizacaoFragment : DialogFragment() {
             mostrarDetalhes = !mostrarDetalhes
             atualizaMostrarDetalhes()
         }
+
+        binding.cancelar.setOnClickListener {
+            dismiss()
+        }
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
