@@ -16,6 +16,7 @@ import kotlin.coroutines.CoroutineContext
 class SincronizacaoFragment : DialogFragment() {
 
     private lateinit var binding: SincronizacaoCompletaBinding
+    private lateinit var progressoGeral: SincronizacaoProgressoGeralView
     private var mostrarDetalhes: Boolean = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -47,6 +48,7 @@ class SincronizacaoFragment : DialogFragment() {
             dismiss()
         }
 
+        progressoGeral = SincronizacaoProgressoGeralView.create(binding)
         iniciarSincronizacao()
     }
 
@@ -95,22 +97,23 @@ class SincronizacaoFragment : DialogFragment() {
         ProgressoSucessoErroView.create(binding.pedidosStatus).notificarProgresso()
         ProgressoSucessoErroView.create(binding.clientesStatus).notificarProgresso()
         ProgressoSucessoErroView.create(binding.produtosStatus).notificarProgresso()
-        SincronizacaoProgressoGeralView.create(binding).notificarEmAndamento()
-        SincronizacaoProgressoGeralView.create(binding).notificarProgresso(10)
+        progressoGeral.notificarEmAndamento()
+        progressoGeral.iniciarTemporizador()
+        progressoGeral.notificarProgresso(10)
 
         GlobalScope.launch(Dispatchers.Main) {
             delay(3000)
             ProgressoSucessoErroView.create(binding.pedidosStatus).notificarErro()
-            SincronizacaoProgressoGeralView.create(binding).notificarErro()
-            SincronizacaoProgressoGeralView.create(binding).notificarProgresso(40)
+            progressoGeral.notificarErro()
+            progressoGeral.notificarProgresso(40)
             delay(3000)
             ProgressoSucessoErroView.create(binding.clientesStatus).notificarSucesso()
-            SincronizacaoProgressoGeralView.create(binding).notificarProgresso(70)
+            progressoGeral.notificarProgresso(70)
             delay(3000)
             ProgressoSucessoErroView.create(binding.pedidosStatus).notificarSucesso()
             ProgressoSucessoErroView.create(binding.produtosStatus).notificarSucesso()
-            SincronizacaoProgressoGeralView.create(binding).notificarSucesso()
-            SincronizacaoProgressoGeralView.create(binding).notificarProgresso(100)
+            progressoGeral.notificarSucesso()
+            progressoGeral.notificarProgresso(100)
         }
     }
 
