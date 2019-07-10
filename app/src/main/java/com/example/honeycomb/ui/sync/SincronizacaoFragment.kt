@@ -95,15 +95,22 @@ class SincronizacaoFragment : DialogFragment() {
         ProgressoSucessoErroView.create(binding.pedidosStatus).notificarProgresso()
         ProgressoSucessoErroView.create(binding.clientesStatus).notificarProgresso()
         ProgressoSucessoErroView.create(binding.produtosStatus).notificarProgresso()
+        SincronizacaoProgressoGeralView.create(binding).notificarEmAndamento()
+        SincronizacaoProgressoGeralView.create(binding).notificarProgresso(10)
 
         GlobalScope.launch(Dispatchers.Main) {
             delay(3000)
             ProgressoSucessoErroView.create(binding.pedidosStatus).notificarErro()
+            SincronizacaoProgressoGeralView.create(binding).notificarErro()
+            SincronizacaoProgressoGeralView.create(binding).notificarProgresso(40)
             delay(3000)
             ProgressoSucessoErroView.create(binding.clientesStatus).notificarSucesso()
+            SincronizacaoProgressoGeralView.create(binding).notificarProgresso(70)
             delay(3000)
             ProgressoSucessoErroView.create(binding.pedidosStatus).notificarSucesso()
             ProgressoSucessoErroView.create(binding.produtosStatus).notificarSucesso()
+            SincronizacaoProgressoGeralView.create(binding).notificarSucesso()
+            SincronizacaoProgressoGeralView.create(binding).notificarProgresso(100)
         }
     }
 
