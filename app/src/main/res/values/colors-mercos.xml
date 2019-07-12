@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="roxo_mercos">#663991</color>
+    <color name="preto_mercos">#212121</color>
+    <color name="cinza_mercos">#F5F5F5</color>
+
+    <!-- NOVO STYLEGUIDE CORES MERCOS -->
+    <color name="mercos_vermelho">#EF5350</color>
+
+    <color name="mercos_azul_50">#E3F2FD</color>
+    <color name="mercos_azul_100">#BBDEFB</color>
+    <color name="mercos_azul_200">#90CAF9</color>
+    <color name="mercos_azul_300">#64B5F6</color>
+    <color name="mercos_azul_400">#42A5F5</color>
+    <color name="mercos_azul_500">#2196F3</color>
+    <color name="mercos_azul_600">#1E88E5</color>
+    <color name="mercos_azul_700">#1976D2</color>
+    <color name="mercos_azul_800">#1565C0</color>
+    <color name="mercos_azul_900">#0D47A1</color>
+
+    <color name="mercos_verde_50">#E4F8E9</color>
+    <color name="mercos_verde_100">#BDEDC9</color>
+    <color name="mercos_verde_200">#90E1A6</color>
+    <color name="mercos_verde_300">#57D680</color>
+    <color name="mercos_verde_400">#00CC62</color>
+    <color name="mercos_verde_500">#00C244</color>
+    <color name="mercos_verde_600">#00B23A</color>
+    <color name="mercos_verde_700">#009F2D</color>
+    <color name="mercos_verde_800">#008E1F</color>
+    <color name="mercos_verde_900">#006E08</color>
+
+    <color name="mercos_laranja_50">#FFF8E1</color>
+    <color name="mercos_laranja_100">#FFECB3</color>
+    <color name="mercos_laranja_200">#FFE082</color>
+    <color name="mercos_laranja_300">#FFD54F</color>
+    <color name="mercos_laranja_400">#FFCA28</color>
+    <color name="mercos_laranja_500">#FFC107</color>
+    <color name="mercos_laranja_600">#FFB300</color>
+    <color name="mercos_laranja_700">#FFA000</color>
+    <color name="mercos_laranja_800">#FF8F00</color>
+    <color name="mercos_laranja_900">#FF6F00</color>
+
+    <color name="mercos_cinza_50">#FAFAFA</color>
+    <color name="mercos_cinza_100">#F5F5F5</color>
+    <color name="mercos_cinza_200">#EEEEEE</color>
+    <color name="mercos_cinza_300">#E0E0E0</color>
+    <color name="mercos_cinza_400">#BDBDBD</color>
+    <color name="mercos_cinza_500">#9E9E9E</color>
+    <color name="mercos_cinza_600">#757575</color>
+    <color name="mercos_cinza_700">#616161</color>
+    <color name="mercos_cinza_800">#424242</color>
+    <color name="mercos_cinza_900">#212121</color>
+
+
+    <color name="mercos_roxo_50">#F2E8F5</color>
+    <color name="mercos_roxo_100">#DEC4E7</color>
+    <color name="mercos_roxo_200">#C99FD7</color>
+    <color name="mercos_roxo_300">#B47AC6</color>
+    <color name="mercos_roxo_400">#A460B9</color>
+    <color name="mercos_roxo_500">#944AAC</color>
+    <color name="mercos_roxo_600">#8745A5</color>
+    <color name="mercos_roxo_700">#763E9B</color>
+    <color name="mercos_roxo_800">#663991</color>
+    <color name="mercos_roxo_900">#4B2F7E</color>
+    <color name="mercos_roxo_1000">#3E2F68</color>
+</resources>

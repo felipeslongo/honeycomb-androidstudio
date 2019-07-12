@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ViewFlipper
+            android:id="@+id/progresso_sucesso_erro"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out">
+
+        <ProgressBar
+                android:id="@+id/progresso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@color/mercos_roxo_900"/>
+
+        <ImageView
+                android:id="@+id/sucesso"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_done_black_24"
+                android:scaleType="fitCenter"
+                android:tint="@color/mercos_verde_400"/>
+
+        <ImageView
+                android:id="@+id/erro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_close_black_24"
+                android:scaleType="fitCenter"
+                android:tint="@color/mercos_vermelho"/>
+
+    </ViewFlipper>
+</layout>
