@@ -5,18 +5,18 @@ import kotlinx.coroutines.runBlocking
 
 class RunBlockingUsecases {
     fun executeUsecase1(){
-        println("Hello,")
+        CoroutineLogger.println("Hello")
 
         runBlocking {
             suspendableTasks().voidTask()
         }
 
-        println("World!")
+        CoroutineLogger.println("World!")
     }
 
     fun executeUsecase2() = runBlocking {
-        println("Hello,")
+        CoroutineLogger.println("Hello")
         suspendableTasks().voidTask()
-        println("World!")
+        CoroutineLogger.println("World!")
     }
 }

@@ -16,10 +16,10 @@ class RunBlockingUsecasesTests {
             usecases.executeUsecase1()
 
             val expectedOutputs = arrayListOf(
-                "Hello,",
-                "start voidTask",
-                "end voidTask",
-                "World!")
+                "-Hello---: main",
+                "-voidTask--- start: main @coroutine#1",
+                "-voidTask--- ended: main @coroutine#1",
+                "-World!---: main")
             Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
         }
     }
@@ -34,10 +34,10 @@ class RunBlockingUsecasesTests {
             usecases.executeUsecase2()
 
             val expectedOutputs = arrayListOf(
-                "Hello,",
-                "start voidTask",
-                "end voidTask",
-                "World!")
+                "-Hello---: main @coroutine#1",
+                "-voidTask--- start: main @coroutine#1",
+                "-voidTask--- ended: main @coroutine#1",
+                "-World!---: main @coroutine#1")
             Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
         }
     }
