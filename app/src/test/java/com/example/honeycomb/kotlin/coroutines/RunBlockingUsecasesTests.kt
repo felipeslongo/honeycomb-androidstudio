@@ -37,4 +37,36 @@ class RunBlockingUsecasesTests {
             "-World!---: main @coroutine#1")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun executeNestedWithCommonPoolContextRunBlockingTest(){
+        val outputs = ArrayList<String>()
+        SystemOutListener.instance.subscribe { outputs.add(it) }
+        val usecases = RunBlockingUsecases()
+
+        usecases.executeNestedWithCommonPoolContextRunBlocking()
+
+        val expectedOutputs = arrayListOf(
+            "-voidTask--- start: DefaultDispatcher-worker-1 @coroutine#1",
+            "-voidTask--- ended: DefaultDispatcher-worker-1 @coroutine#1",
+            "-Hello---: main",
+            "-World!---: main")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
+
+    @Test
+    fun executeInlineWithCommonPoolContextRunBlockingTest(){
+        val outputs = ArrayList<String>()
+        SystemOutListener.instance.subscribe { outputs.add(it) }
+        val usecases = RunBlockingUsecases()
+
+        usecases.executeInlineWithCommonPoolContextRunBlocking()
+
+        val expectedOutputs = arrayListOf(
+            "-voidTask--- start: DefaultDispatcher-worker-1 @coroutine#1",
+            "-voidTask--- ended: DefaultDispatcher-worker-1 @coroutine#1",
+            "-Hello---: DefaultDispatcher-worker-1 @coroutine#1",
+            "-World!---: DefaultDispatcher-worker-1 @coroutine#1")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }
