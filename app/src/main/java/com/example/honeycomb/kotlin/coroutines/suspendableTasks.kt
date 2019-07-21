@@ -13,7 +13,7 @@ class suspendableTasks {
         return
     }
 
-    suspend fun voidTaskUsingSleep(timeMillis: Long = 100){
+    fun voidTaskUsingSleep(timeMillis: Long = 100){
         CoroutineLogger.printlnStart("voidTaskUsingSleep")
         Thread.sleep(timeMillis)
         CoroutineLogger.printlnEnd("voidTaskUsingSleep")
