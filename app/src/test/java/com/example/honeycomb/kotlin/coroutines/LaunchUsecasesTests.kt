@@ -20,4 +20,20 @@ class LaunchUsecasesTests{
             "-voidTask--- ended: DefaultDispatcher-worker-1 @coroutine#1")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun executeNestedWithoutContextLaunchTest(){
+        val outputs = ArrayList<String>()
+        SystemOutListener.instance.subscribe { outputs.add(it) }
+        val usecases = LaunchUsecases()
+
+        usecases.executeNestedWithoutContextLaunch()
+
+        val expectedOutputs = arrayListOf(
+            "-Hello---: main @coroutine#1",
+            "-voidTask--- start: main @coroutine#2",
+            "-World!---: main @coroutine#1",
+            "-voidTask--- ended: main @coroutine#2")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }
