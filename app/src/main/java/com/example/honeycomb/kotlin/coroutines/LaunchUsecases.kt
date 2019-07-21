@@ -28,4 +28,25 @@ class LaunchUsecases {
         delay(100)
         CoroutineLogger.println("World!")
     }
+
+    /**
+     * The use of coroutineContext is to enable launch to run on the main thread.
+     * However coroutineContext is only available in the runBlocking scope,
+     * hence I wrap everything under runBlocking.
+     *
+     * The result shows something that is very different from Thread as well.
+     * It is not running synchronously in a sequential manner. Instead,
+     * the launch's code get run last, after the normal code completed.
+     *
+     * This is an expected behavior, where by default the code in launch will only triggered after
+     * the main calling function completed it’s code.
+     */
+    fun executeNestedWithContextLaunch() = runBlocking{
+        val task = launch(coroutineContext) {
+            SuspendableTasks().voidTask()
+        }
+
+        CoroutineLogger.println("Hello")
+        CoroutineLogger.println("World!")
+    }
 }
