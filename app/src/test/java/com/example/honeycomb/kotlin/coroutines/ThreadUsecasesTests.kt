@@ -16,8 +16,8 @@ class ThreadUsecasesTests {
         val expectedOutputs = arrayListOf(
             "-voidTaskUsingSleep--- start: main",
             "-voidTaskUsingSleep--- ended: main",
-            "-ThreadUsecases--- start: main",
-            "-ThreadUsecases--- ended: main")
+            "-Hello---: main",
+            "-World!---: main")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
@@ -28,7 +28,6 @@ class ThreadUsecasesTests {
         val usecases = ThreadUsecases()
 
         usecases.executeUsecase2()
-        Thread.sleep(100)
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main",

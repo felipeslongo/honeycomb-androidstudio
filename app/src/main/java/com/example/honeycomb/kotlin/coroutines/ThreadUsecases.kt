@@ -8,19 +8,21 @@ class ThreadUsecases {
             suspendableTasks().voidTaskUsingSleep()
         }.run()
 
-        CoroutineLogger.printlnStart("ThreadUsecases")
+        CoroutineLogger.println("Hello")
         Thread.sleep(100)
-        CoroutineLogger.printlnEnd("ThreadUsecases")
+        CoroutineLogger.println("World!")
     }
 
     fun executeUsecase2() {
-        Thread{
+        val thread = Thread{
             Thread.sleep(100)
             suspendableTasks().voidTaskUsingSleep()
-        }.start()
+        }
+        thread.start()
 
         CoroutineLogger.println("Hello")
         Thread.sleep(100)
         CoroutineLogger.println("World!")
+        thread.join()
     }
 }
