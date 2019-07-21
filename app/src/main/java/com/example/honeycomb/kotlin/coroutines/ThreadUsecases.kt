@@ -1,7 +1,5 @@
 package com.example.honeycomb.kotlin.coroutines
 
-import kotlinx.coroutines.runBlocking
-
 class ThreadUsecases {
     /**
      * Calling Thread.run() for a Thread isn’t do anything other than like a normal run on the same
@@ -10,7 +8,7 @@ class ThreadUsecases {
      */
     fun executeWithRun() {
         Thread {
-            suspendableTasks().voidTaskUsingSleep()
+            SuspendableTasks().voidTaskUsingSleep()
         }.run()
 
         CoroutineLogger.println("Hello")
@@ -25,7 +23,7 @@ class ThreadUsecases {
     fun executeWithStart() {
         val thread = Thread {
             Thread.sleep(100)
-            suspendableTasks().voidTaskUsingSleep()
+            SuspendableTasks().voidTaskUsingSleep()
         }
         thread.start()
 

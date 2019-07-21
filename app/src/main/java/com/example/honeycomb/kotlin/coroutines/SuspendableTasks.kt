@@ -5,7 +5,7 @@ import kotlinx.coroutines.delay
 /**
  * Collection with suspendable functions to be used in tests and usecases
  */
-class suspendableTasks {
+class SuspendableTasks {
     suspend fun voidTask(timeMillis: Long = 100){
         CoroutineLogger.printlnStart("voidTask")
         delay(timeMillis)
