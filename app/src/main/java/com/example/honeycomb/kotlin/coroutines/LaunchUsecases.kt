@@ -63,4 +63,14 @@ class LaunchUsecases {
         CoroutineLogger.println("Hello")
         CoroutineLogger.println("World!")
     }
+
+    fun executeNestedWithContextAndJoinLaterLaunch() = runBlocking{
+        val job = launch(coroutineContext) {
+            SuspendableTasks().voidTask()
+        }
+
+        CoroutineLogger.println("Hello")
+        job.join()
+        CoroutineLogger.println("World!")
+    }
 }
