@@ -4,19 +4,18 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
 class RunBlockingUsecases {
-    fun executeNestedRunBlocking(){
-        CoroutineLogger.println("Hello")
-
+    fun executeNestedWithoutContextRunBlocking(){
         runBlocking {
             suspendableTasks().voidTask()
         }
 
+        CoroutineLogger.println("Hello")
         CoroutineLogger.println("World!")
     }
 
-    fun executeInlineRunBlocking() = runBlocking {
-        CoroutineLogger.println("Hello")
+    fun executeInlineWithoutContextRunBlocking() = runBlocking {
         suspendableTasks().voidTask()
+        CoroutineLogger.println("Hello")
         CoroutineLogger.println("World!")
     }
 }
