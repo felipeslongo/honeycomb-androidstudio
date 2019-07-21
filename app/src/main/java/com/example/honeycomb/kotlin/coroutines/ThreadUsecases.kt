@@ -8,9 +8,9 @@ class ThreadUsecases {
             suspendableTasks().voidTaskUsingSleep()
         }.run()
 
-        CoroutineLogger.println("Hello")
+        CoroutineLogger.printlnStart("ThreadUsecases")
         Thread.sleep(100)
-        CoroutineLogger.println("World!")
+        CoroutineLogger.printlnEnd("ThreadUsecases")
     }
 
     fun executeUsecase2() {
