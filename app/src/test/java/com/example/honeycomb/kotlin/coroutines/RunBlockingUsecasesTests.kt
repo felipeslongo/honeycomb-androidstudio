@@ -6,39 +6,35 @@ import org.junit.Test
 import kotlin.collections.ArrayList
 
 class RunBlockingUsecasesTests {
-    class executeUsecase1Tests{
-        @Test
-        fun shouldExecuteSynchronously(){
-            val outputs = ArrayList<String>()
-            SystemOutListener.instance.subscribe { outputs.add(it) }
-            val usecases = RunBlockingUsecases()
+    @Test
+    fun executeNestedRunBlockingTest(){
+        val outputs = ArrayList<String>()
+        SystemOutListener.instance.subscribe { outputs.add(it) }
+        val usecases = RunBlockingUsecases()
 
-            usecases.executeUsecase1()
+        usecases.executeNestedRunBlocking()
 
-            val expectedOutputs = arrayListOf(
-                "-Hello---: main",
-                "-voidTask--- start: main @coroutine#1",
-                "-voidTask--- ended: main @coroutine#1",
-                "-World!---: main")
-            Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
-        }
+        val expectedOutputs = arrayListOf(
+            "-Hello---: main",
+            "-voidTask--- start: main @coroutine#1",
+            "-voidTask--- ended: main @coroutine#1",
+            "-World!---: main")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
-    class executeUsecase2Tests{
-        @Test
-        fun shouldExecuteSynchronously(){
-            val outputs = ArrayList<String>()
-            SystemOutListener.instance.subscribe { outputs.add(it) }
-            val usecases = RunBlockingUsecases()
+    @Test
+    fun executeInlineRunBlocking(){
+        val outputs = ArrayList<String>()
+        SystemOutListener.instance.subscribe { outputs.add(it) }
+        val usecases = RunBlockingUsecases()
 
-            usecases.executeUsecase2()
+        usecases.executeInlineRunBlocking()
 
-            val expectedOutputs = arrayListOf(
-                "-Hello---: main @coroutine#1",
-                "-voidTask--- start: main @coroutine#1",
-                "-voidTask--- ended: main @coroutine#1",
-                "-World!---: main @coroutine#1")
-            Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
-        }
+        val expectedOutputs = arrayListOf(
+            "-Hello---: main @coroutine#1",
+            "-voidTask--- start: main @coroutine#1",
+            "-voidTask--- ended: main @coroutine#1",
+            "-World!---: main @coroutine#1")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 }

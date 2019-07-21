@@ -4,7 +4,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
 class RunBlockingUsecases {
-    fun executeUsecase1(){
+    fun executeNestedRunBlocking(){
         CoroutineLogger.println("Hello")
 
         runBlocking {
@@ -14,7 +14,7 @@ class RunBlockingUsecases {
         CoroutineLogger.println("World!")
     }
 
-    fun executeUsecase2() = runBlocking {
+    fun executeInlineRunBlocking() = runBlocking {
         CoroutineLogger.println("Hello")
         suspendableTasks().voidTask()
         CoroutineLogger.println("World!")
