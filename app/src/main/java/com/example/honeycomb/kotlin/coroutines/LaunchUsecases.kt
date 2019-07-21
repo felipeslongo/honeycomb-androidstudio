@@ -42,9 +42,23 @@ class LaunchUsecases {
      * the main calling function completed it’s code.
      */
     fun executeNestedWithContextLaunch() = runBlocking{
-        val task = launch(coroutineContext) {
+        launch(coroutineContext) {
             SuspendableTasks().voidTask()
         }
+
+        CoroutineLogger.println("Hello")
+        CoroutineLogger.println("World!")
+    }
+
+    /**
+     * With join(), now this result looks like the Thread running on main thread result.
+     * We could now guess that join() perhaps kick start the launch,
+     * get it done before the normal code kicks off.
+     */
+    fun executeNestedWithContextAndJoinLaunch() = runBlocking{
+        launch(coroutineContext) {
+            SuspendableTasks().voidTask()
+        }.join()
 
         CoroutineLogger.println("Hello")
         CoroutineLogger.println("World!")
