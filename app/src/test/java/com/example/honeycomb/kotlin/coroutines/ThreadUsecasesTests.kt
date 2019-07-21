@@ -6,12 +6,12 @@ import org.junit.Test
 
 class ThreadUsecasesTests {
     @Test
-    fun executeUsecase1Test(){
+    fun executeWithRunTest(){
         val outputs = ArrayList<String>()
         SystemOutListener.instance.subscribe { outputs.add(it) }
         val usecases = ThreadUsecases()
 
-        usecases.executeUsecase1()
+        usecases.executeWithRun()
 
         val expectedOutputs = arrayListOf(
             "-voidTaskUsingSleep--- start: main",
@@ -22,12 +22,12 @@ class ThreadUsecasesTests {
     }
 
     @Test
-    fun executeUsecase2Test(){
+    fun executeWithStartTest(){
         val outputs = ArrayList<String>()
         SystemOutListener.instance.subscribe { outputs.add(it) }
         val usecases = ThreadUsecases()
 
-        usecases.executeUsecase2()
+        usecases.executeWithStart()
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main",
