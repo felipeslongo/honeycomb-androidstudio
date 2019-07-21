@@ -13,10 +13,17 @@ class suspendableTasks {
         return
     }
 
+    suspend fun voidTaskUsingSleep(timeMillis: Long = 100){
+        CoroutineLogger.printlnStart("voidTaskUsingSleep")
+        Thread.sleep(timeMillis)
+        CoroutineLogger.printlnEnd("voidTaskUsingSleep")
+        return
+    }
+
     suspend fun valueReturningTask(timeMillis: Long = 100, switchState: Boolean = false): Boolean {
-        println("start valueReturningTask")
+        CoroutineLogger.printlnStart("valueReturningTask")
         delay(timeMillis)
-        println("end valueReturningTask")
+        CoroutineLogger.printlnEnd("valueReturningTask")
         return !switchState
     }
 }
