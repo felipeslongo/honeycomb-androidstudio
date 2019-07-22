@@ -126,4 +126,15 @@ class LaunchUsecases {
         delay(200)
         CoroutineLogger.println("World!")
     }
+
+    fun executeNestedWithContextAndDelayAndJobAndCancelLaunch() = runBlocking{
+        val job = launch(coroutineContext) {
+            SuspendableTasks().voidTask(1000)
+        }
+
+        CoroutineLogger.println("Hello")
+        delay(200)
+        job.cancel()
+        CoroutineLogger.println("World!")
+    }
 }
