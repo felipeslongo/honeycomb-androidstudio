@@ -23,9 +23,9 @@ class LaunchUsecasesTests{
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main",
-            "-voidTask--- start: DefaultDispatcher-worker- @coroutine#",
+            "-voidTaskUsingSleep--- start: DefaultDispatcher-worker- @coroutine#",
             "-World!---: main",
-            "-voidTask--- ended: DefaultDispatcher-worker- @coroutine#")
+            "-voidTaskUsingSleep--- ended: DefaultDispatcher-worker- @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
@@ -34,10 +34,10 @@ class LaunchUsecasesTests{
         usecases.executeNestedWithoutContextLaunch()
 
         val expectedOutputs = arrayListOf(
+            "-voidTaskUsingSleep--- start: DefaultDispatcher-worker- @coroutine#",
             "-Hello---: main @coroutine#",
-            "-voidTask--- start: main @coroutine#",
             "-World!---: main @coroutine#",
-            "-voidTask--- ended: main @coroutine#")
+            "-voidTaskUsingSleep--- ended: DefaultDispatcher-worker- @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
@@ -48,8 +48,8 @@ class LaunchUsecasesTests{
         val expectedOutputs = arrayListOf(
             "-Hello---: main @coroutine#",
             "-World!---: main @coroutine#",
-            "-voidTask--- start: main @coroutine#",
-            "-voidTask--- ended: main @coroutine#")
+            "-voidTaskUsingSleep--- start: main @coroutine#",
+            "-voidTaskUsingSleep--- ended: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
@@ -58,8 +58,8 @@ class LaunchUsecasesTests{
         usecases.executeNestedWithContextAndJoinLaunch()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: main @coroutine#",
-            "-voidTask--- ended: main @coroutine#",
+            "-voidTaskUsingSleep--- start: main @coroutine#",
+            "-voidTaskUsingSleep--- ended: main @coroutine#",
             "-Hello---: main @coroutine#",
             "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
@@ -71,8 +71,8 @@ class LaunchUsecasesTests{
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main @coroutine#",
-            "-voidTask--- start: main @coroutine#",
-            "-voidTask--- ended: main @coroutine#",
+            "-voidTaskUsingSleep--- start: main @coroutine#",
+            "-voidTaskUsingSleep--- ended: main @coroutine#",
             "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }

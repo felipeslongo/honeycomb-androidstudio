@@ -4,14 +4,18 @@ import kotlinx.coroutines.*
 
 class LaunchUsecases {
     fun executeNestedWithCommonPoolContextLaunch(){
-        CoroutineScope(Dispatchers.Default).launch {
-            SuspendableTasks().voidTask()
+        val job = CoroutineScope(Dispatchers.Default).launch {
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }
 
         CoroutineLogger.println("Hello")
-        Thread.sleep(100)
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
         Thread.sleep(200)//Ensure finished execution
+
+        runBlocking {
+            job.join()
+        }
     }
 
     /**
@@ -20,12 +24,13 @@ class LaunchUsecases {
      * asynchronous in a parallel order.
      */
     fun executeNestedWithoutContextLaunch() = runBlocking{
-        val task = launch {
-            SuspendableTasks().voidTask()
+        launch(Dispatchers.Default) {
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }
 
+        Thread.sleep(100)
         CoroutineLogger.println("Hello")
-        delay(100)
+        Thread.sleep(100)
         CoroutineLogger.println("World!")
     }
 
@@ -43,10 +48,11 @@ class LaunchUsecases {
      */
     fun executeNestedWithContextLaunch() = runBlocking{
         launch(coroutineContext) {
-            SuspendableTasks().voidTask()
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }
 
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
     }
 
@@ -57,19 +63,21 @@ class LaunchUsecases {
      */
     fun executeNestedWithContextAndJoinLaunch() = runBlocking{
         launch(coroutineContext) {
-            SuspendableTasks().voidTask()
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }.join()
 
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
     }
 
     fun executeNestedWithContextAndJoinLaterLaunch() = runBlocking{
         val job = launch(coroutineContext) {
-            SuspendableTasks().voidTask()
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }
 
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         job.join()
         CoroutineLogger.println("World!")
     }
