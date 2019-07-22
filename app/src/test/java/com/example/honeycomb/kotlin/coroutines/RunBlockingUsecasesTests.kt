@@ -65,4 +65,23 @@ class RunBlockingUsecasesTests {
             "-World!---: DefaultDispatcher-worker- @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun shouldCatchExceptionFromSuspendFunctionTest(){
+        val actual = usecases.shouldCatchExceptionFromSuspendFunction()
+
+        Assert.assertTrue(actual)
+    }
+
+    @Test
+    fun shouldIgnoreExceptionFromJobFunctionTest(){
+        val actual = usecases.shouldIgnoreExceptionFromJobFunction()
+        Assert.assertTrue(actual)
+    }
+
+    @Test
+    fun shouldCatchExceptionFromAsyncFunctionTest(){
+        val actual = usecases.shouldCatchExceptionFromAsyncFunction()
+        Assert.assertTrue(actual)
+    }
 }

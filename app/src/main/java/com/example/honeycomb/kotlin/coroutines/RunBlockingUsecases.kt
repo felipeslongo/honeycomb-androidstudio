@@ -1,6 +1,7 @@
 package com.example.honeycomb.kotlin.coroutines
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
 class RunBlockingUsecases {
@@ -47,5 +48,33 @@ class RunBlockingUsecases {
         CoroutineLogger.println("Hello")
         Thread.sleep(200)
         CoroutineLogger.println("World!")
+    }
+
+    fun shouldCatchExceptionFromSuspendFunction() = runBlocking {
+        try {
+            SuspendableTasks().voidTaskWithException()
+        }
+        catch (e: CoroutineException){
+            return@runBlocking true
+        }
+
+        return@runBlocking false
+    }
+
+    fun shouldIgnoreExceptionFromJobFunction() = runBlocking {
+        SuspendableTasks().voidJobWithException().join()
+        delay(200)
+        return@runBlocking true
+    }
+
+    fun shouldCatchExceptionFromAsyncFunction() = runBlocking {
+        try {
+            SuspendableTasks().asyncWithException<Boolean>().await()
+        }
+        catch (e: CoroutineException){
+            return@runBlocking true
+        }
+
+        return@runBlocking false
     }
 }

@@ -1,6 +1,7 @@
 package com.example.honeycomb.kotlin.coroutines
 
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
+import java.lang.Exception
 
 /**
  * Collection with suspendable functions to be used in tests and usecases
@@ -13,6 +14,19 @@ class SuspendableTasks {
         return
     }
 
+    suspend fun voidTaskWithException(timeMillis: Long = 100){
+        CoroutineLogger.printlnStart("voidTaskWithException")
+        delay(timeMillis)
+        throw CoroutineException()
+        return
+    }
+
+    suspend fun voidJobWithException(timeMillis: Long = 100) = CoroutineScope(Dispatchers.Default).launch{
+        CoroutineLogger.printlnStart("voidJobWithException")
+        delay(timeMillis)
+        throw CoroutineException()
+    }
+
     fun voidTaskUsingSleep(timeMillis: Long = 100){
         CoroutineLogger.printlnStart("voidTaskUsingSleep")
         Thread.sleep(timeMillis)
@@ -20,10 +34,11 @@ class SuspendableTasks {
         return
     }
 
-    suspend fun valueReturningTask(timeMillis: Long = 100, switchState: Boolean = false): Boolean {
-        CoroutineLogger.printlnStart("valueReturningTask")
+    suspend fun<T> asyncWithException(timeMillis: Long = 100) = CoroutineScope(Dispatchers.Default).async<T>{
+        CoroutineLogger.printlnStart("defferredWithException")
         delay(timeMillis)
-        CoroutineLogger.printlnEnd("valueReturningTask")
-        return !switchState
+        throw CoroutineException()
     }
+
+
 }
