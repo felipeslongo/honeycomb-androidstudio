@@ -23,8 +23,8 @@ class RunBlockingUsecasesTests {
         usecases.executeNestedWithoutContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: main @coroutine#",
-            "-voidTask--- ended: main @coroutine#",
+            "-voidTaskUsingSleep--- start: main @coroutine#",
+            "-voidTaskUsingSleep--- ended: main @coroutine#",
             "-Hello---: main",
             "-World!---: main")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
@@ -35,8 +35,8 @@ class RunBlockingUsecasesTests {
         usecases.executeInlineWithoutContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: main @coroutine#",
-            "-voidTask--- ended: main @coroutine#",
+            "-voidTaskUsingSleep--- start: main @coroutine#",
+            "-voidTaskUsingSleep--- ended: main @coroutine#",
             "-Hello---: main @coroutine#",
             "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
@@ -47,8 +47,8 @@ class RunBlockingUsecasesTests {
         usecases.executeNestedWithCommonPoolContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: DefaultDispatcher-worker- @coroutine#",
-            "-voidTask--- ended: DefaultDispatcher-worker- @coroutine#",
+            "-voidTaskUsingSleep--- start: DefaultDispatcher-worker- @coroutine#",
+            "-voidTaskUsingSleep--- ended: DefaultDispatcher-worker- @coroutine#",
             "-Hello---: main",
             "-World!---: main")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
@@ -59,8 +59,8 @@ class RunBlockingUsecasesTests {
         usecases.executeInlineWithCommonPoolContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: DefaultDispatcher-worker- @coroutine#",
-            "-voidTask--- ended: DefaultDispatcher-worker- @coroutine#",
+            "-voidTaskUsingSleep--- start: DefaultDispatcher-worker- @coroutine#",
+            "-voidTaskUsingSleep--- ended: DefaultDispatcher-worker- @coroutine#",
             "-Hello---: DefaultDispatcher-worker- @coroutine#",
             "-World!---: DefaultDispatcher-worker- @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())

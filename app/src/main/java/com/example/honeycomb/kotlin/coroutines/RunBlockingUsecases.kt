@@ -12,16 +12,18 @@ class RunBlockingUsecases {
      */
     fun executeNestedWithoutContextRunBlocking(){
         runBlocking {
-            SuspendableTasks().voidTask()
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }
 
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
     }
 
     fun executeInlineWithoutContextRunBlocking() = runBlocking {
-        SuspendableTasks().voidTask()
+        SuspendableTasks().voidTaskUsingSleep(1000)
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
     }
 
@@ -32,16 +34,18 @@ class RunBlockingUsecases {
      */
     fun executeNestedWithCommonPoolContextRunBlocking(){
         runBlocking(Dispatchers.Default) {
-            SuspendableTasks().voidTask()
+            SuspendableTasks().voidTaskUsingSleep(1000)
         }
 
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
     }
 
     fun executeInlineWithCommonPoolContextRunBlocking() = runBlocking (Dispatchers.Default) {
-        SuspendableTasks().voidTask()
+        SuspendableTasks().voidTaskUsingSleep(1000)
         CoroutineLogger.println("Hello")
+        Thread.sleep(200)
         CoroutineLogger.println("World!")
     }
 }
