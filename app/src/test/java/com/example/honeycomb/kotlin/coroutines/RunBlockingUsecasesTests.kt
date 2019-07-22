@@ -1,22 +1,30 @@
 package com.example.honeycomb.kotlin.coroutines
 
 import com.example.honeycomb.infrastructure.SystemOutListener
+import com.example.honeycomb.infrastructure.replaceDigits
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 import kotlin.collections.ArrayList
 
 class RunBlockingUsecasesTests {
+    private val outputs = ArrayList<String>()
+    private val usecases = RunBlockingUsecases()
+
+    @Before
+    fun setup(){
+        outputs.clear()
+        SystemOutListener.instance.subscribe {
+            outputs.add(it.replaceDigits("")) }
+    }
+
     @Test
     fun executeNestedWithoutContextRunBlockingTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = RunBlockingUsecases()
-
         usecases.executeNestedWithoutContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: main @coroutine#1",
-            "-voidTask--- ended: main @coroutine#1",
+            "-voidTask--- start: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#",
             "-Hello---: main",
             "-World!---: main")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
@@ -24,31 +32,23 @@ class RunBlockingUsecasesTests {
 
     @Test
     fun executeInlineWithoutContextRunBlockingTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = RunBlockingUsecases()
-
         usecases.executeInlineWithoutContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: main @coroutine#1",
-            "-voidTask--- ended: main @coroutine#1",
-            "-Hello---: main @coroutine#1",
-            "-World!---: main @coroutine#1")
+            "-voidTask--- start: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#",
+            "-Hello---: main @coroutine#",
+            "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
     @Test
     fun executeNestedWithCommonPoolContextRunBlockingTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = RunBlockingUsecases()
-
         usecases.executeNestedWithCommonPoolContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: DefaultDispatcher-worker-1 @coroutine#1",
-            "-voidTask--- ended: DefaultDispatcher-worker-1 @coroutine#1",
+            "-voidTask--- start: DefaultDispatcher-worker- @coroutine#",
+            "-voidTask--- ended: DefaultDispatcher-worker- @coroutine#",
             "-Hello---: main",
             "-World!---: main")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
@@ -56,17 +56,13 @@ class RunBlockingUsecasesTests {
 
     @Test
     fun executeInlineWithCommonPoolContextRunBlockingTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = RunBlockingUsecases()
-
         usecases.executeInlineWithCommonPoolContextRunBlocking()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: DefaultDispatcher-worker-1 @coroutine#1",
-            "-voidTask--- ended: DefaultDispatcher-worker-1 @coroutine#1",
-            "-Hello---: DefaultDispatcher-worker-1 @coroutine#1",
-            "-World!---: DefaultDispatcher-worker-1 @coroutine#1")
+            "-voidTask--- start: DefaultDispatcher-worker- @coroutine#",
+            "-voidTask--- ended: DefaultDispatcher-worker- @coroutine#",
+            "-Hello---: DefaultDispatcher-worker- @coroutine#",
+            "-World!---: DefaultDispatcher-worker- @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 }

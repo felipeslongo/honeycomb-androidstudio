@@ -14,7 +14,7 @@ class ThreadUsecasesTests {
     fun setup(){
         outputs.clear()
         SystemOutListener.instance.subscribe {
-            outputs.add(it.replaceDigits("#")) }
+            outputs.add(it.replaceDigits("")) }
     }
 
     @Test
@@ -35,9 +35,9 @@ class ThreadUsecasesTests {
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main",
-            "-voidTaskUsingSleep--- start: Thread-#",
+            "-voidTaskUsingSleep--- start: Thread-",
             "-World!---: main",
-            "-voidTaskUsingSleep--- ended: Thread-#")
+            "-voidTaskUsingSleep--- ended: Thread-")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 }

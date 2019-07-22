@@ -1,87 +1,79 @@
 package com.example.honeycomb.kotlin.coroutines
 
 import com.example.honeycomb.infrastructure.SystemOutListener
+import com.example.honeycomb.infrastructure.replaceDigits
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 
 class LaunchUsecasesTests{
+    private val outputs = ArrayList<String>()
+    private val usecases = LaunchUsecases()
+
+    @Before
+    fun setup(){
+        outputs.clear()
+        SystemOutListener.instance.subscribe {
+            outputs.add(it.replaceDigits("")) }
+    }
+
     @Test
     fun executeNestedWithCommonPoolContextLaunchTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = LaunchUsecases()
-
         usecases.executeNestedWithCommonPoolContextLaunch()
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main",
-            "-voidTask--- start: DefaultDispatcher-worker-1 @coroutine#1",
+            "-voidTask--- start: DefaultDispatcher-worker- @coroutine#",
             "-World!---: main",
-            "-voidTask--- ended: DefaultDispatcher-worker-1 @coroutine#1")
+            "-voidTask--- ended: DefaultDispatcher-worker- @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
     @Test
     fun executeNestedWithoutContextLaunchTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = LaunchUsecases()
-
         usecases.executeNestedWithoutContextLaunch()
 
         val expectedOutputs = arrayListOf(
-            "-Hello---: main @coroutine#1",
-            "-voidTask--- start: main @coroutine#2",
-            "-World!---: main @coroutine#1",
-            "-voidTask--- ended: main @coroutine#2")
+            "-Hello---: main @coroutine#",
+            "-voidTask--- start: main @coroutine#",
+            "-World!---: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
     @Test
     fun executeNestedWithContextLaunchTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = LaunchUsecases()
-
         usecases.executeNestedWithContextLaunch()
 
         val expectedOutputs = arrayListOf(
-            "-Hello---: main @coroutine#1",
-            "-World!---: main @coroutine#1",
-            "-voidTask--- start: main @coroutine#2",
-            "-voidTask--- ended: main @coroutine#2")
+            "-Hello---: main @coroutine#",
+            "-World!---: main @coroutine#",
+            "-voidTask--- start: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
     @Test
     fun executeNestedWithContextAndJoinLaunchTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = LaunchUsecases()
-
         usecases.executeNestedWithContextAndJoinLaunch()
 
         val expectedOutputs = arrayListOf(
-            "-voidTask--- start: main @coroutine#2",
-            "-voidTask--- ended: main @coroutine#2",
-            "-Hello---: main @coroutine#1",
-            "-World!---: main @coroutine#1")
+            "-voidTask--- start: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#",
+            "-Hello---: main @coroutine#",
+            "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 
     @Test
     fun executeNestedWithContextAndJoinLaterLaunchTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = LaunchUsecases()
-
         usecases.executeNestedWithContextAndJoinLaterLaunch()
 
         val expectedOutputs = arrayListOf(
-            "-Hello---: main @coroutine#1",
-            "-voidTask--- start: main @coroutine#2",
-            "-voidTask--- ended: main @coroutine#2",
-            "-World!---: main @coroutine#1")
+            "-Hello---: main @coroutine#",
+            "-voidTask--- start: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#",
+            "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 }
