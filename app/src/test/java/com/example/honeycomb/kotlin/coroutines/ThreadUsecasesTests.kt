@@ -1,6 +1,7 @@
 package com.example.honeycomb.kotlin.coroutines
 
 import com.example.honeycomb.infrastructure.SystemOutListener
+import com.example.honeycomb.infrastructure.replaceDigits
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -12,10 +13,8 @@ class ThreadUsecasesTests {
     @Before
     fun setup(){
         outputs.clear()
-        val regex = Regex("[0-9]")
         SystemOutListener.instance.subscribe {
-            val replaced = regex.replace(it, "#") // works
-            outputs.add(replaced) }
+            outputs.add(it.replaceDigits("#")) }
     }
 
     @Test
