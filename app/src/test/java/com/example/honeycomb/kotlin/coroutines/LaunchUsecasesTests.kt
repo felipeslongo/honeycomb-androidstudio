@@ -76,4 +76,16 @@ class LaunchUsecasesTests{
             "-World!---: main @coroutine#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun executeNestedWithContextAndDelayLaunchTest(){
+        usecases.executeNestedWithContextAndDelayLaunch()
+
+        val expectedOutputs = arrayListOf(
+            "-Hello---: main @coroutine#",
+            "-voidTask--- start: main @coroutine#",
+            "-World!---: main @coroutine#",
+            "-voidTask--- ended: main @coroutine#")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }

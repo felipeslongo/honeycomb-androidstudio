@@ -90,4 +90,24 @@ class LaunchUsecases {
         job.join()
         CoroutineLogger.println("World!")
     }
+
+    /**
+     * Now replace the Thread.sleep(..) to delay(..). Delay is a non-blocking suspending function.
+     *
+     * The very unique part of this code is, it is all run in the main thread, yet the result looks
+     * like run asynchronously parallel. It is actually run synchronously parallel, where the
+     * delay(…) doesn’t block the main normal code from continuing.
+     *
+     * Hope this gives a very clear distinct different of coroutine with Thread.
+     * It could get code running on the same thread, but in a seemingly parallel mode.
+     */
+    fun executeNestedWithContextAndDelayLaunch() = runBlocking{
+        launch(coroutineContext) {
+            SuspendableTasks().voidTask(1000)
+        }
+
+        CoroutineLogger.println("Hello")
+        delay(200)
+        CoroutineLogger.println("World!")
+    }
 }
