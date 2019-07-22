@@ -110,4 +110,20 @@ class LaunchUsecases {
         delay(200)
         CoroutineLogger.println("World!")
     }
+
+    /**
+     * Just out of curiosity if we put join(), how does it looks like.
+     * This actually trigger the launch code, and prevent the subsequent codes from moving on,
+     * until the join() call is completed. Not very helpful in this case if we want to make the
+     * launch code run in parallel with the main code.
+     */
+    fun executeNestedWithContextAndJoinAndDelayLaunch() = runBlocking{
+        launch(coroutineContext) {
+            SuspendableTasks().voidTask(1000)
+        }.join()
+
+        CoroutineLogger.println("Hello")
+        delay(200)
+        CoroutineLogger.println("World!")
+    }
 }
