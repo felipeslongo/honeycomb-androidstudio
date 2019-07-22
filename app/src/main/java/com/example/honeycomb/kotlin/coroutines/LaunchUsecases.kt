@@ -71,6 +71,15 @@ class LaunchUsecases {
         CoroutineLogger.println("World!")
     }
 
+    /**
+     * In this example, we store the launch result as job. Then later while running the normal code,
+     * we get it kick off by calling join().
+     *
+     * The result looks blocking though as the launch code need to complete before the the normal
+     * code continues. Looks like runBlocking.
+     *
+     * In actual fact, launch are not support to be blocking
+     */
     fun executeNestedWithContextAndJoinLaterLaunch() = runBlocking{
         val job = launch(coroutineContext) {
             SuspendableTasks().voidTaskUsingSleep(1000)
