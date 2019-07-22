@@ -22,13 +22,12 @@ class ThreadUsecases {
      */
     fun executeWithStart() {
         val thread = Thread {
-            Thread.sleep(100)
             SuspendableTasks().voidTaskUsingSleep()
         }
         thread.start()
 
         CoroutineLogger.println("Hello")
-        Thread.sleep(100)
+        Thread.sleep(10)
         CoroutineLogger.println("World!")
         thread.join()
     }

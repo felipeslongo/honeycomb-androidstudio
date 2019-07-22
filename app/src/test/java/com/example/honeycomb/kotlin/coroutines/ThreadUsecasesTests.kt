@@ -2,15 +2,24 @@ package com.example.honeycomb.kotlin.coroutines
 
 import com.example.honeycomb.infrastructure.SystemOutListener
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 
 class ThreadUsecasesTests {
+    private val outputs: ArrayList<String> = ArrayList()
+    private val usecases: ThreadUsecases = ThreadUsecases()
+
+    @Before
+    fun setup(){
+        outputs.clear()
+        val regex = Regex("[0-9]")
+        SystemOutListener.instance.subscribe {
+            val replaced = regex.replace(it, "#") // works
+            outputs.add(replaced) }
+    }
+
     @Test
     fun executeWithRunTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = ThreadUsecases()
-
         usecases.executeWithRun()
 
         val expectedOutputs = arrayListOf(
@@ -23,17 +32,13 @@ class ThreadUsecasesTests {
 
     @Test
     fun executeWithStartTest(){
-        val outputs = ArrayList<String>()
-        SystemOutListener.instance.subscribe { outputs.add(it) }
-        val usecases = ThreadUsecases()
-
         usecases.executeWithStart()
 
         val expectedOutputs = arrayListOf(
             "-Hello---: main",
-            "-voidTaskUsingSleep--- start: Thread-0",
+            "-voidTaskUsingSleep--- start: Thread-#",
             "-World!---: main",
-            "-voidTaskUsingSleep--- ended: Thread-0")
+            "-voidTaskUsingSleep--- ended: Thread-#")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 }
