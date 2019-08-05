@@ -53,4 +53,16 @@ class CancellationAndTimeoutsTests {
             "main: Now I can quit.")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun usecase04MakingComputationCodeCancellableTest(){
+        usecases.usecase04MakingComputationCodeCancellable()
+        val expectedOutputs = arrayListOf(
+            "job: I'm sleeping 0 ...",
+            "job: I'm sleeping 1 ...",
+            "job: I'm sleeping 2 ...",
+            "main: I'm tired of waiting!",
+            "main: Now I can quit.")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }
