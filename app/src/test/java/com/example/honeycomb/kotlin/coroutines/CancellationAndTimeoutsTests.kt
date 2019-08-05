@@ -92,4 +92,16 @@ class CancellationAndTimeoutsTests {
             "main: Now I can quit.")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun usecase07WithTimeoutTest(){
+        usecases.usecase07WithTimeout()
+        val expectedOutputs = arrayListOf(
+            "I'm sleeping 0 ...",
+            "I'm sleeping 1 ...",
+            "I'm sleeping 2 ...",
+            "kotlinx.coroutines.TimeoutCancellationException",
+            "Timed out waiting for 1300 ms")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }

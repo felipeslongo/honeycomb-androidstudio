@@ -123,4 +123,22 @@ class CancellationAndTimeouts {
         job.cancelAndJoin() // cancels the job and waits for its completion
         println("main: Now I can quit.")
     }
+
+    /*
+    * https://kotlinlang.org/docs/reference/coroutines/cancellation-and-timeouts.html#timeout
+    */
+    fun usecase07WithTimeout() = runBlocking {
+        try {
+            withTimeout(1300L) {
+                repeat(1000) { i ->
+                    println("I'm sleeping $i ...")
+                    delay(500L)
+                }
+            }
+        }
+        catch (e: TimeoutCancellationException){
+            println(e.javaClass.name)
+            println(e.message)
+        }
+    }
 }
