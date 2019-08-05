@@ -78,4 +78,18 @@ class CancellationAndTimeoutsTests {
             "main: Now I can quit.")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun usecase06RunNoncancellableBlockTest(){
+        usecases.usecase06RunNoncancellableBlock()
+        val expectedOutputs = arrayListOf(
+            "job: I'm sleeping 0 ...",
+            "job: I'm sleeping 1 ...",
+            "job: I'm sleeping 2 ...",
+            "main: I'm tired of waiting!",
+            "job: I'm running finally",
+            "job: And I've just delayed for 1 sec because I'm non-cancellable",
+            "main: Now I can quit.")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }
