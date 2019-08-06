@@ -1,11 +1,13 @@
 package com.example.honeycomb.kotlin.coroutines
 
 import com.example.honeycomb.infrastructure.SystemOutListener
+import org.junit.Assert
 import org.junit.Before
+import org.junit.Test
 
 class ChannelsTests {
     private val outputs = ArrayList<String>()
-    private val usecases = CancellationAndTimeouts()
+    private val usecases = Channels()
 
     @Before
     fun setup(){
@@ -14,5 +16,16 @@ class ChannelsTests {
             outputs.add(it) }
     }
 
-
+    @Test
+    fun usecase01BasicsTest(){
+        usecases.usecase01Basics()
+        val expectedOutputs = arrayListOf(
+            "1",
+            "4",
+            "9",
+            "16",
+            "25",
+            "Done!")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }

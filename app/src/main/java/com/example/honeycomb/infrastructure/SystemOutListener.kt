@@ -42,6 +42,11 @@ class SystemOutListener {
             systemOutListener.notifyObservers(x)
         }
 
+        override fun println(x: Int) {
+            super.println(x)
+            systemOutListener.notifyObservers(x.toString())
+        }
+
         override fun print(s: String?) {
             super.print(s)
             systemOutListener.notifyObservers(s)
