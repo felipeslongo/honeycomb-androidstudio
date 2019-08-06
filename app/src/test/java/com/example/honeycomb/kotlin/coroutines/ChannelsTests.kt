@@ -32,4 +32,13 @@ class ChannelsTests {
         )
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun usecase03BuildingChannelProducersTest() {
+        usecases.usecase03BuildingChannelProducers()
+        val expectedOutputs = arrayListOf(
+            "1", "4", "9", "16", "25", "Done!"
+        )
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }

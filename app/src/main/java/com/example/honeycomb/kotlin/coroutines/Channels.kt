@@ -1,7 +1,7 @@
 package com.example.honeycomb.kotlin.coroutines
 
 import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.*
 
 class Channels {
 
@@ -30,6 +30,20 @@ class Channels {
         }
         // here we print received values using `for` loop (until the channel is closed)
         for (y in channel) println(y)
+        println("Done!")
+    }
+
+    /*
+    * https://kotlinlang.org/docs/reference/coroutines/channels.html#building-channel-producers
+    */
+    fun usecase03BuildingChannelProducers() = runBlocking {
+        val squares = produce<Int> {
+            for (x in 1..5) channel.send(x * x)
+            channel.close()
+        }
+        squares.consumeEach {
+            println(it)
+        }
         println("Done!")
     }
 }
