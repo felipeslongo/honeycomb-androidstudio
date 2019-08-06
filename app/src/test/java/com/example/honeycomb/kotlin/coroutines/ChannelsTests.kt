@@ -41,4 +41,13 @@ class ChannelsTests {
         )
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun usecase04PipelinesTest() {
+        usecases.usecase04Pipelines()
+        val expectedOutputs = arrayListOf(
+            "1", "4", "9", "16", "25", "Done!"
+        )
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }

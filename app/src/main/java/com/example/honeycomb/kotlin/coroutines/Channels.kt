@@ -46,4 +46,24 @@ class Channels {
         }
         println("Done!")
     }
+
+    /*
+    * https://kotlinlang.org/docs/reference/coroutines/channels.html#pipelines
+    */
+    fun usecase04Pipelines() = runBlocking {
+        fun CoroutineScope.produceNumbers() = produce<Int> {
+            var x = 1
+            while (true) send(x++)// infinite stream of integers starting from 1
+        }
+
+        fun CoroutineScope.square(numbers: ReceiveChannel<Int>): ReceiveChannel<Int> = produce {
+            for (x in numbers) send(x * x)
+        }
+
+        val numbers = produceNumbers() // produces integers from 1 and on
+        val squares = square(numbers) // squares integers
+        for (i in 1..5) println(squares.receive()) // print first five
+        println("Done!") // we are done
+        coroutineContext.cancelChildren() // cancel children coroutines
+    }
 }
