@@ -20,12 +20,16 @@ class ChannelsTests {
     fun usecase01BasicsTest(){
         usecases.usecase01Basics()
         val expectedOutputs = arrayListOf(
-            "1",
-            "4",
-            "9",
-            "16",
-            "25",
-            "Done!")
+            "1", "4", "9", "16", "25", "Done!")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
+
+    @Test
+    fun usecase02ClosingAndIterationOverChannelsTest() {
+        usecases.usecase02ClosingAndIterationOverChannels()
+        val expectedOutputs = arrayListOf(
+            "1", "4", "9", "16", "25", "Done!"
+        )
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
 }
