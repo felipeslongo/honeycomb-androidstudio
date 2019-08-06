@@ -104,4 +104,15 @@ class CancellationAndTimeoutsTests {
             "Timed out waiting for 1300 ms")
         Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
     }
+
+    @Test
+    fun usecase07WithTimeoutOrNullTest(){
+        usecases.usecase07WithTimeoutOrNull()
+        val expectedOutputs = arrayListOf(
+            "I'm sleeping 0 ...",
+            "I'm sleeping 1 ...",
+            "I'm sleeping 2 ...",
+            "Result is null")
+        Assert.assertArrayEquals(expectedOutputs.toArray(), outputs.toArray())
+    }
 }
