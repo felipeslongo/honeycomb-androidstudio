@@ -10,7 +10,6 @@
     <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardForegroundColor="@android:color/transparent"
             app:cardBackgroundColor="@android:color/white"
             tools:layout_margin="32dp">
 
