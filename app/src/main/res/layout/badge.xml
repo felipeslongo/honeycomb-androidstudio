@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<com.google.android.material.chip.Chip
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/badge"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Notificações"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.chip.Chip
-            android:id="@+id/badge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:chipBackgroundColor="@android:color/holo_red_light"
-            app:layout_constraintBottom_toBottomOf="@+id/materialButton"
-            app:layout_constraintStart_toEndOf="@+id/materialButton"
-            tools:text="99+" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"
+        app:chipBackgroundColor="@android:color/holo_red_light"
+        tools:text="99+" />
 
