@@ -9,6 +9,7 @@
     </style>
 
     <style name="Widget.MaterialComponents.Chip.Action.Badge" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipMinHeight">20dp</item>
     </style>
 
     <style name="TextAppearance.MaterialComponents.Chip.Badge" parent="TextAppearance.MaterialComponents.Chip">

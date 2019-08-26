@@ -4,10 +4,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/badge"
+        style="@style/Widget.MaterialComponents.Chip.Action.Badge"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Chip.Badge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:chipBackgroundColor="@android:color/holo_red_light"
         tools:text="9"
         android:textColor="@android:color/white"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        app:chipStartPadding="0dp"
+        app:chipEndPadding="0dp"
+        app:textStartPadding="8dp"
+        app:textEndPadding="8dp"/>
 
