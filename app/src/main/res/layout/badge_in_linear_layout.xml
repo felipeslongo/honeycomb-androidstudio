@@ -14,7 +14,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
             android:backgroundTint="@color/colorPrimary"
             android:text="Notificações"
             android:textColor="@android:color/white"
@@ -22,7 +21,8 @@
 
     <include layout="@layout/badge"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="start" />
 
 
 </LinearLayout>
