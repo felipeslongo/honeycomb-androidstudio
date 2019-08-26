@@ -20,8 +20,6 @@
             android:id="@+id/badge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:textAlignment="center"
             android:layout_marginBottom="20dp"
             app:chipBackgroundColor="@android:color/holo_red_light"
             app:layout_constraintBottom_toBottomOf="@+id/materialButton"
