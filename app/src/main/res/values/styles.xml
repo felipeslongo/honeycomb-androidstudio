@@ -20,8 +20,18 @@
         <item name="textEndPadding">8dp</item>
     </style>
 
+    <style name="Widget.MaterialComponents.Chip.Action.Badge.Small" parent="Widget.MaterialComponents.Chip.Action.Badge">
+        <item name="chipMinHeight">20dp</item>
+        <item name="textStartPadding">5dp</item>
+        <item name="textEndPadding">5dp</item>
+    </style>
+
     <style name="TextAppearance.MaterialComponents.Chip.Badge" parent="TextAppearance.MaterialComponents.Chip">
         <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Chip.Badge.Small" parent="TextAppearance.MaterialComponents.Chip.Badge">
+        <item name="android:textSize">10sp</item>
     </style>
 
 </resources>
