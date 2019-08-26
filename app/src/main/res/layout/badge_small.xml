@@ -7,6 +7,6 @@
         style="@style/Widget.MaterialComponents.Chip.Action.Badge.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="28"
+        android:text="9"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Chip.Badge.Small" />
 

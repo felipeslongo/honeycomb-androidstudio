@@ -21,7 +21,7 @@
     </style>
 
     <style name="Widget.MaterialComponents.Chip.Action.Badge.Small" parent="Widget.MaterialComponents.Chip.Action.Badge">
-        <item name="chipMinHeight">20dp</item>
+        <item name="chipMinHeight">15dp</item>
         <item name="textStartPadding">5dp</item>
         <item name="textEndPadding">5dp</item>
     </style>
