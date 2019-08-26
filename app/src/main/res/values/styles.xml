@@ -10,14 +10,14 @@
 
     <style name="Widget.MaterialComponents.Chip.Action.Badge" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipBackgroundColor">@android:color/holo_red_light</item>
-        <item name="chipMinHeight">20dp</item>
+        <item name="chipMinHeight">18dp</item>
         <item name="chipStartPadding">0dp</item>
         <item name="chipEndPadding">0dp</item>
         <item name="ensureMinTouchTargetSize">false</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="textStartPadding">8dp</item>
-        <item name="textEndPadding">8dp</item>
+        <item name="textStartPadding">6dp</item>
+        <item name="textEndPadding">6dp</item>
     </style>
 
     <style name="Widget.MaterialComponents.Chip.Action.Badge.Small" parent="Widget.MaterialComponents.Chip.Action.Badge">
