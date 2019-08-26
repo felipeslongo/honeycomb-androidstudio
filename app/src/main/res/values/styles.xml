@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Widget.MaterialComponents.Chip.Action.Badge" parent="Widget.MaterialComponents.Chip.Action">
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Chip.Badge" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>
