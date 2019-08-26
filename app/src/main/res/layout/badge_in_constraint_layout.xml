@@ -16,15 +16,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.chip.Chip
-            android:id="@+id/badge"
+    <include layout="@layout/badge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            app:chipBackgroundColor="@android:color/holo_red_light"
             app:layout_constraintBottom_toBottomOf="@+id/materialButton"
-            app:layout_constraintStart_toEndOf="@+id/materialButton"
-            tools:text="99+" />
+            app:layout_constraintStart_toEndOf="@+id/materialButton"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
