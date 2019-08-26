@@ -10,6 +10,10 @@
 
     <style name="Widget.MaterialComponents.Chip.Action.Badge" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipMinHeight">20dp</item>
+        <item name="chipStartPadding">0dp</item>
+        <item name="chipEndPadding">0dp</item>
+        <item name="textStartPadding">8dp</item>
+        <item name="textEndPadding">8dp</item>
     </style>
 
     <style name="TextAppearance.MaterialComponents.Chip.Badge" parent="TextAppearance.MaterialComponents.Chip">

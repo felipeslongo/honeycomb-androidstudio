@@ -11,9 +11,5 @@
         app:chipBackgroundColor="@android:color/holo_red_light"
         tools:text="9"
         android:textColor="@android:color/white"
-        android:textAlignment="center"
-        app:chipStartPadding="0dp"
-        app:chipEndPadding="0dp"
-        app:textStartPadding="8dp"
-        app:textEndPadding="8dp"/>
+        android:textAlignment="center" />
 
