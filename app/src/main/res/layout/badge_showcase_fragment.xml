@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.badges.BadgeShowcase">
+        tools:context=".ui.badges.BadgeShowcaseFragment">
 
     <include layout="@layout/badge_in_linear_layout"/>
 

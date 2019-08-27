@@ -9,10 +9,10 @@ import android.view.ViewGroup
 
 import com.example.honeycomb.R
 
-class BadgeShowcase : Fragment() {
+class BadgeShowcaseFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BadgeShowcase()
+        fun newInstance() = BadgeShowcaseFragment()
     }
 
     private lateinit var viewModel: BadgeShowcaseViewModel
