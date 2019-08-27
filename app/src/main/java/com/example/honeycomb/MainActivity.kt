@@ -3,6 +3,7 @@ package com.example.honeycomb
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.honeycomb.ui.badges.BadgeShowcase
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
 import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
 import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabActivity
@@ -51,6 +52,12 @@ class MainActivity : AppCompatActivity() {
 
                 if (it.itemId == R.id.sincronizacao) {
                     SincronizacaoFragment.apresentar(this)
+                }
+
+                if (it.itemId == R.id.badge) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, BadgeShowcase.newInstance())
+                        .commitNow()
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
