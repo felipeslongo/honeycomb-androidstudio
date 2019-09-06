@@ -20,5 +20,9 @@
         <item
                 android:id="@+id/sincronizacao"
                 android:title="Sincronização" />
+
+        <item
+                android:id="@+id/beamerView"
+                android:title="Beamer" />
     </group>
 </menu>
