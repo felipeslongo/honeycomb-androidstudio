@@ -44,5 +44,4 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0-alpha07'
 
     kapt "com.android.databinding:compiler:$android_plugin_version"
-    implementation project(path: ':workmanager')
 }
