@@ -2,7 +2,6 @@
 # https://stackoverflow.com/questions/16736856/what-should-be-in-my-gitignore-for-an-android-studio-project
 
 # original stuff added when the project was created
-*.iml
 .gradle
 /local.properties
 /.idea/caches
@@ -14,7 +13,6 @@
 .DS_Store
 /build
 /captures
-.externalNativeBuild
 .cxx
 
 # Built application files
