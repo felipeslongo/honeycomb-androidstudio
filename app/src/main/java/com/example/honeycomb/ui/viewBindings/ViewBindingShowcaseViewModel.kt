@@ -4,4 +4,5 @@ import androidx.lifecycle.ViewModel
 
 class ViewBindingShowcaseViewModel : ViewModel() {
     public val bindedView = "Binded View by Code"
+    public val ignoredView = "Ignored View by Code"
 }

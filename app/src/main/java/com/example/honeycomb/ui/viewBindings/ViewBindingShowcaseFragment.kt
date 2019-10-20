@@ -31,6 +31,7 @@ class ViewBindingShowcaseFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ViewBindingShowcaseViewModel::class.java)
         binding.bindedView.text = viewModel.bindedView
+        binding.ignoredView.text = viewModel.ignoredView
     }
 
 }
