@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Honeycomb</string>
+    <string name="notify">notify</string>
+    <string name="confirm">confirm</string>
 </resources>
