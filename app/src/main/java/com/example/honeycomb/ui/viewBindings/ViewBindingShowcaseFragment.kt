@@ -30,8 +30,9 @@ class ViewBindingShowcaseFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ViewBindingShowcaseViewModel::class.java)
-        binding.bindedView.text = viewModel.bindedView
-        binding.ignoredView.text = viewModel.ignoredView
+        binding.bindedView.text = viewModel.bindedView //Normal binding
+        binding.ignoredView.text = viewModel.ignoredView //An compilation error should have happened
+        binding.landscapeNullableView?.text = viewModel.landscapeNullableView //Only executes when it is not null. Its a View that exists conditionally
     }
 
 }
