@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.honeycomb.R
+import com.example.honeycomb.databinding.ViewBindingShowcaseFragmentBinding
 
 class ViewBindingShowcaseFragment : Fragment() {
 
@@ -16,18 +17,20 @@ class ViewBindingShowcaseFragment : Fragment() {
     }
 
     private lateinit var viewModel: ViewBindingShowcaseViewModel
+    private lateinit var binding: ViewBindingShowcaseFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.view_binding_showcase_fragment, container, false)
+        binding = ViewBindingShowcaseFragmentBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ViewBindingShowcaseViewModel::class.java)
-        // TODO: Use the ViewModel
+        binding.bindedView.text = viewModel.bindedView
     }
 
 }
