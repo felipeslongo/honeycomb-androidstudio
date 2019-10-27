@@ -49,4 +49,5 @@ dependencies {
     kapt "com.android.databinding:compiler:$android_plugin_version"
     implementation project(path: ':honeycomb:kotlin')
     implementation project(path: ':honeycomb:android')
+    implementation project(path: ':honeycomb:codelabs:workmanager')
 }
