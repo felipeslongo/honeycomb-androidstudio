@@ -11,6 +11,7 @@ import com.example.honeycomb.ui.main.MainFragment
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.example.honeycomb.ui.viewBindings.ViewBindingShowcaseFragment
+import com.example.honeycomb.ui.workmanager.CodelabsWorkManagerFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -55,8 +56,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (it.itemId == R.id.view_binding) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ViewBindingShowcaseFragment.newInstance())
+                    .commitNow()
+                }
+
+                if (it.itemId == R.id.workmanager) {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, ViewBindingShowcaseFragment.newInstance())
+                        .replace(R.id.container, CodelabsWorkManagerFragment.newInstance())
                         .commitNow()
                 }
 
