@@ -14,6 +14,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/honeycomb" />
             <option value="$PROJECT_DIR$/honeycomb/android" />
+            <option value="$PROJECT_DIR$/honeycomb/codelabs" />
+            <option value="$PROJECT_DIR$/honeycomb/codelabs/workmanager" />
             <option value="$PROJECT_DIR$/honeycomb/kotlin" />
           </set>
         </option>
