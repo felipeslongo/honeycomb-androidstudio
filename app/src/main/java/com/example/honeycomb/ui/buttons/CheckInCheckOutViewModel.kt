@@ -25,5 +25,18 @@ class CheckInCheckOutViewModel : ViewModel() {
 
     fun toogleCheckInCheckOut(){
         _isCheckedIn.value = !_isCheckedIn.value!!
+        if(_isCheckedIn.value!!){
+            checkOut()
+            return
+        }
+        checkIn()
+    }
+
+    private fun checkIn() {
+        _textStringId.value = R.string.check_out
+    }
+
+    private fun checkOut() {
+        _textStringId.value = R.string.check_in
     }
 }
