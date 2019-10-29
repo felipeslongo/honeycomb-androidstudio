@@ -7,25 +7,25 @@ import com.example.honeycomb.R
 import com.example.honeycomb.databinding.ButtonCheckinCheckoutBinding
 import com.google.android.material.button.MaterialButton
 
-class CheckInCheckOutView {
-    val button: MaterialButton
+class CheckInCheckOutView(val binding: ButtonCheckinCheckoutBinding) {
 
-    constructor(button: MaterialButton) {
-        this.button = button
-
-        val viewModel = CheckInCheckOutViewModel()
-        val binding = DataBindingUtil.bind<ButtonCheckinCheckoutBinding>(this.button)
-        binding!!.viewModel = viewModel
+    init {
+        binding.viewModel = CheckInCheckOutViewModel()
     }
-
 
     companion object{
         fun createFromParent(parent: View){
-            CheckInCheckOutView(parent.findViewById(R.id.check_in_check_out_button))
+            val binding = createBinding(parent.findViewById(R.id.check_in_check_out_button))
+            CheckInCheckOutView(binding)
         }
 
         fun createFromActivity(activity: Activity){
-            CheckInCheckOutView(activity.findViewById(R.id.check_in_check_out_button))
+            val binding = createBinding(activity.findViewById(R.id.check_in_check_out_button))
+            CheckInCheckOutView(binding)
+        }
+
+        private fun createBinding(view: MaterialButton): ButtonCheckinCheckoutBinding {
+            return DataBindingUtil.bind(view)!!
         }
     }
 }
