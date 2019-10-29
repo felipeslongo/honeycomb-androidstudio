@@ -17,7 +17,7 @@ class CheckInCheckOutViewModel : ViewModel() {
     val iconDrawableId : LiveData<Int>
         get() = _iconDrawableId
 
-    val iconTint : LiveData<Int>
+    val iconTintColorId : LiveData<Int>
         get() = _iconTint
 
     val isCheckedIn : LiveData<Boolean>

@@ -18,5 +18,5 @@
             android:text="@{viewModel.textStringId}"
             app:drawableTopBinding="@{viewModel.iconDrawableId}"
             app:isPressedBinding="@{viewModel.isCheckedIn}"
-            app:drawableTintBinding="@{viewModel.iconTint}"/>
+            app:drawableTintBinding="@{viewModel.iconTintColorId}"/>
 </layout>
