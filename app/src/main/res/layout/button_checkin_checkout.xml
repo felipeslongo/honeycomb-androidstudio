@@ -16,5 +16,6 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:padding="16dp"
             android:text="@string/check_in"
-            app:drawableTopBinding="@{viewModel.iconDrawableId}"/>
+            app:drawableTopBinding="@{viewModel.iconDrawableId}"
+            app:isPressedBinding="@{viewModel.isCheckedIn}"/>
 </layout>
