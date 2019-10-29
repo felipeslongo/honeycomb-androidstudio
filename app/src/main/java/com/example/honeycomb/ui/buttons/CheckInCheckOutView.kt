@@ -2,7 +2,9 @@ package com.example.honeycomb.ui.buttons
 
 import android.app.Activity
 import android.view.View
+import androidx.databinding.DataBindingUtil
 import com.example.honeycomb.R
+import com.example.honeycomb.databinding.ButtonCheckinCheckoutBinding
 import com.google.android.material.button.MaterialButton
 
 class CheckInCheckOutView {
@@ -10,8 +12,12 @@ class CheckInCheckOutView {
 
     constructor(button: MaterialButton) {
         this.button = button
-        this.button.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.ic_where_to_vote_24dp,0,0)
+
+        val viewModel = CheckInCheckOutViewModel()
+        val binding = DataBindingUtil.bind<ButtonCheckinCheckoutBinding>(this.button)
+        binding!!.viewModel = viewModel
     }
+
 
     companion object{
         fun createFromParent(parent: View){
