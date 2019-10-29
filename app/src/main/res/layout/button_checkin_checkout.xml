@@ -17,5 +17,6 @@
             android:padding="16dp"
             android:text="@string/check_in"
             app:drawableTopBinding="@{viewModel.iconDrawableId}"
-            app:isPressedBinding="@{viewModel.isCheckedIn}"/>
+            app:isPressedBinding="@{viewModel.isCheckedIn}"
+            app:drawableTintBinding="@{viewModel.iconTint}"/>
 </layout>
