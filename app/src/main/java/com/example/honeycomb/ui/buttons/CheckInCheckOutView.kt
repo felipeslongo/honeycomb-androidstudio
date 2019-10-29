@@ -2,6 +2,7 @@ package com.example.honeycomb.ui.buttons
 
 import android.app.Activity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.honeycomb.R
 import com.example.honeycomb.databinding.ButtonCheckinCheckoutBinding
@@ -24,9 +25,10 @@ class CheckInCheckOutView(val binding: ButtonCheckinCheckoutBinding) {
             CheckInCheckOutView(binding)
         }
 
-        fun createFromActivity(activity: Activity){
+        fun createFromActivity(activity: AppCompatActivity){
             val binding = createBinding(activity.findViewById(R.id.check_in_check_out_button))
             CheckInCheckOutView(binding)
+            binding.lifecycleOwner = activity
         }
 
         private fun createBinding(view: MaterialButton): ButtonCheckinCheckoutBinding {
