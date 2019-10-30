@@ -21,20 +21,14 @@ class CheckInCheckOutViewModel : ViewModel() {
     }
 
     val textColorResourceId : LiveData<Int> = Transformations.map(isCheckedIn){
-        when{
-            it -> android.R.color.holo_red_dark
-            else -> android.R.color.black
-        }
+        getColorResourceIdForTextAndIcon(it)
     }
 
     val iconDrawableId : LiveData<Int>
         get() = _iconDrawableId
 
     val iconTintColorResourceId : LiveData<Int> = Transformations.map(isCheckedIn){
-        when{
-            it -> android.R.color.holo_red_dark
-            else -> android.R.color.black
-        }
+        getColorResourceIdForTextAndIcon(it)
     }
 
     fun toogleCheckInCheckOut(){
@@ -50,5 +44,12 @@ class CheckInCheckOutViewModel : ViewModel() {
     }
 
     private fun checkOut() {
+    }
+
+    private fun getColorResourceIdForTextAndIcon(isCheckedIn: Boolean): Int {
+        return when {
+            isCheckedIn -> android.R.color.holo_red_light
+            else -> android.R.color.black
+        }
     }
 }
