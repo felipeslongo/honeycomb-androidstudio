@@ -18,6 +18,6 @@
             android:text="@{viewModel.textStringId}"
             android:checkable="true"
             app:drawableTopBinding="@{viewModel.iconDrawableId}"
-            app:isPressedBinding="@{viewModel.isCheckedIn}"
+            app:isCheckedBinding="@{viewModel.isCheckedIn}"
             app:drawableTintBinding="@{viewModel.iconTintColorId}" />
 </layout>
