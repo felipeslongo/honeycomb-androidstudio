@@ -5,6 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.honeycomb.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
@@ -31,14 +35,16 @@ class CheckInCheckOutViewModel : ViewModel() {
         getColorResourceIdForTextAndIcon(it)
     }
 
-    fun toogleCheckInCheckOut(){
+    fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
+        delay(1000)
         _isCheckedIn.value = !_isCheckedIn.value!!
-        if(_isCheckedIn.value!!){
+        if (_isCheckedIn.value!!) {
             checkOut()
-            return
+        } else{
+            checkIn()
         }
-        checkIn()
     }
+
 
     private fun checkIn() {
     }
