@@ -14,6 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:minWidth="120dp"
+            android:minHeight="96dp"
             android:padding="16dp"
             android:text="@{viewModel.textStringId}"
             app:textColorResourceBinding="@{viewModel.textColorResourceId}"
