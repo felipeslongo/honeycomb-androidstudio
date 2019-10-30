@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             app:backgroundTint="@color/white_default_checked_gray"
-            app:rippleColor="@android:color/darker_gray"
+            app:rippleColor="@color/white_default_checked_gray_ripple"
             android:minWidth="120dp"
             android:minHeight="96dp"
             android:padding="16dp"
