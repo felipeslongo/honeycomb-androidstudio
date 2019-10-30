@@ -20,10 +20,17 @@ class CheckInCheckOutViewModel : ViewModel() {
         }
     }
 
+    val textColorResourceId : LiveData<Int> = Transformations.map(isCheckedIn){
+        when{
+            it -> android.R.color.holo_red_dark
+            else -> android.R.color.black
+        }
+    }
+
     val iconDrawableId : LiveData<Int>
         get() = _iconDrawableId
 
-    val iconTintColorId : LiveData<Int> = Transformations.map(isCheckedIn){
+    val iconTintColorResourceId : LiveData<Int> = Transformations.map(isCheckedIn){
         when{
             it -> android.R.color.holo_red_dark
             else -> android.R.color.black
