@@ -8,7 +8,7 @@ import com.example.honeycomb.R
 
 class CheckInCheckOutViewModel : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
-    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(R.drawable.ic_where_to_vote_24dp)
+    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(R.drawable.ic_where_to_vote_32dp)
 
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
