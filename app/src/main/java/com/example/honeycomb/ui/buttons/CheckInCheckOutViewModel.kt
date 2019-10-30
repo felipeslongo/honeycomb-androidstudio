@@ -2,26 +2,33 @@ package com.example.honeycomb.ui.buttons
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.honeycomb.R
 
 class CheckInCheckOutViewModel : ViewModel() {
-    private val _textStringId: MutableLiveData<Int> = MutableLiveData(R.string.check_in)
-    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(R.drawable.ic_where_to_vote_24dp)
-    private val _iconTint: MutableLiveData<Int> = MutableLiveData(android.R.color.black)
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(R.drawable.ic_where_to_vote_24dp)
 
-    val textStringId : LiveData<Int>
-        get() = _textStringId
+    val isCheckedIn : LiveData<Boolean>
+        get() = _isCheckedIn
+
+    val textStringId : LiveData<Int> = Transformations.map(isCheckedIn){
+        when{
+            it -> R.string.check_out
+            else -> R.string.check_in
+        }
+    }
 
     val iconDrawableId : LiveData<Int>
         get() = _iconDrawableId
 
-    val iconTintColorId : LiveData<Int>
-        get() = _iconTint
-
-    val isCheckedIn : LiveData<Boolean>
-        get() = _isCheckedIn
+    val iconTintColorId : LiveData<Int> = Transformations.map(isCheckedIn){
+        when{
+            it -> android.R.color.holo_red_dark
+            else -> android.R.color.black
+        }
+    }
 
     fun toogleCheckInCheckOut(){
         _isCheckedIn.value = !_isCheckedIn.value!!
@@ -33,10 +40,8 @@ class CheckInCheckOutViewModel : ViewModel() {
     }
 
     private fun checkIn() {
-        _textStringId.value = R.string.check_out
     }
 
     private fun checkOut() {
-        _textStringId.value = R.string.check_in
     }
 }
