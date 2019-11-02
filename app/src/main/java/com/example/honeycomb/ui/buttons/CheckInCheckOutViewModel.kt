@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
-    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(ICON)
+    private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
 
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
@@ -24,14 +24,14 @@ class CheckInCheckOutViewModel : ViewModel() {
         }
     }
 
-    val textColorResourceId : LiveData<Int> = Transformations.map(isCheckedIn){
+    val textColor: LiveData<Int> = Transformations.map(isCheckedIn){
         getColorResourceIdForTextAndIcon(it)
     }
 
-    val iconDrawableId : LiveData<Int>
-        get() = _iconDrawableId
+    val icon : LiveData<Int>
+        get() = _icon
 
-    val iconTintColorResourceId : LiveData<Int> = Transformations.map(isCheckedIn){
+    val iconTint : LiveData<Int> = Transformations.map(isCheckedIn){
         getColorResourceIdForTextAndIcon(it)
     }
 

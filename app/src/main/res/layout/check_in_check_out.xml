@@ -25,6 +25,6 @@
             app:textColorResourceBinding="@{viewModel.textColorResourceId}"
             android:checkable="true"
             app:isCheckedBinding="@{viewModel.isCheckedIn}"
-            app:drawableTopBinding="@{viewModel.iconDrawableId}"
-            app:drawableTintBinding="@{viewModel.iconTintColorResourceId}" />
+            app:drawableTopBinding="@{viewModel.icon}"
+            app:drawableTintBinding="@{viewModel.iconTint}" />
 </layout>
