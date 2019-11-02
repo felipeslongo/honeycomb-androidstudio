@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.example.honeycomb.ui.buttons.CheckInCheckOutViewModel"/>
         <variable
                 name="viewModel"
                 type="com.example.honeycomb.ui.buttons.CheckInCheckOutViewModel" />
@@ -19,10 +20,11 @@
             android:minWidth="120dp"
             android:minHeight="96dp"
             android:padding="16dp"
-            android:text="@{viewModel.textStringId}"
+            android:text="@{viewModel.textStringId, default=@string/check_in}"
+            android:textColor="?android:textColorPrimary"
             app:textColorResourceBinding="@{viewModel.textColorResourceId}"
             android:checkable="true"
-            app:drawableTopBinding="@{viewModel.iconDrawableId}"
             app:isCheckedBinding="@{viewModel.isCheckedIn}"
+            app:drawableTopBinding="@{viewModel.iconDrawableId}"
             app:drawableTintBinding="@{viewModel.iconTintColorResourceId}" />
 </layout>

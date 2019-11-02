@@ -12,15 +12,15 @@ import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
-    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(R.drawable.ic_where_to_vote_32dp)
+    private val _iconDrawableId: MutableLiveData<Int> = MutableLiveData(ICON)
 
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
 
     val textStringId : LiveData<Int> = Transformations.map(isCheckedIn){
         when{
-            it -> R.string.check_out
-            else -> R.string.check_in
+            it -> CHECK_OUT
+            else -> CHECK_IN
         }
     }
 
@@ -57,5 +57,11 @@ class CheckInCheckOutViewModel : ViewModel() {
             isCheckedIn -> android.R.color.holo_red_light
             else -> android.R.color.black
         }
+    }
+
+    companion object{
+        const val ICON = R.drawable.ic_where_to_vote_32dp
+        const val CHECK_IN =  R.string.check_in
+        const val CHECK_OUT =  R.string.check_out
     }
 }
