@@ -45,7 +45,6 @@ class CheckInCheckOutViewModel : ViewModel() {
         }
     }
 
-
     private fun checkIn() {
     }
 
