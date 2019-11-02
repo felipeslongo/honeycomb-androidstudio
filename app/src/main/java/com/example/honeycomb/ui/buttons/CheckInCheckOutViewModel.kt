@@ -35,6 +35,7 @@ class CheckInCheckOutViewModel : ViewModel() {
         getColorResourceIdForTextAndIcon(it)
     }
 
+    //TODO Change GlobalScope to ViewModelScope
     fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
         delay(1000)
         _isCheckedIn.value = !_isCheckedIn.value!!
