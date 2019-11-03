@@ -12,10 +12,14 @@ import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val _isProcessing: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
 
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
+
+    val isProcessing: LiveData<Boolean>
+        get() = _isProcessing
 
     val textStringId : LiveData<Int> = Transformations.map(isCheckedIn){
         when{
@@ -40,6 +44,8 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
 
     //TODO Change GlobalScope to ViewModelScope
     fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
+        delay(100)
+        _isProcessing.value = true
         delay(1000)
         _isCheckedIn.value = !_isCheckedIn.value!!
         if (_isCheckedIn.value!!) {
@@ -47,6 +53,7 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
         } else{
             checkIn()
         }
+        _isProcessing.value = false
     }
 
     private fun checkIn() {

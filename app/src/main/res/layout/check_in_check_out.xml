@@ -15,7 +15,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.HoneyComb.Button.UnelevatedButton.White"
-            app:rippleColor="@color/white_default_gray_checked_ripple"
             android:minWidth="120dp"
             android:minHeight="96dp"
             android:padding="16dp"
