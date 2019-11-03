@@ -1,4 +1,6 @@
 package com.example.honeycomb.ui.buttons
 
-class CheckInIntent {
+import com.example.honeycomb.ui.mvi.Intent
+
+class CheckInIntent : Intent {
 }
