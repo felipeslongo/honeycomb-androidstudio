@@ -10,7 +10,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class CheckInCheckOutViewModel : ViewModel() {
+class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
 
@@ -63,5 +63,9 @@ class CheckInCheckOutViewModel : ViewModel() {
         const val ICON = R.drawable.ic_where_to_vote_32dp
         const val CHECK_IN =  R.string.check_in
         const val CHECK_OUT =  R.string.check_out
+
+        fun Create () : CheckInCheckOutViewModel {
+            return CheckInCheckOutViewModel(CheckInCheckOutController.Create())
+        }
     }
 }

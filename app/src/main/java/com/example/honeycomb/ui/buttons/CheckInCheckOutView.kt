@@ -11,7 +11,7 @@ import com.google.android.material.button.MaterialButton
 class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
 
     init {
-        val viewModel = CheckInCheckOutViewModel()
+        val viewModel = CheckInCheckOutViewModel.Create()
         binding.viewModel = viewModel
 
         binding.checkInCheckOutButton.setOnClickListener {
