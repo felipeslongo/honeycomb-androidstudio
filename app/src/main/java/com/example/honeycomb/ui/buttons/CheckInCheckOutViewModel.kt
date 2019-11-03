@@ -35,6 +35,9 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
         getColorResourceIdForTextAndIcon(it)
     }
 
+    val checkInCommand = lazy { CheckInCommand(MutableLiveData(true)) { controller.checkIn() } }
+    val checkOutCommand = lazy { CheckOutCommand { controller.checkOut() } }
+
     //TODO Change GlobalScope to ViewModelScope
     fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
         delay(1000)
