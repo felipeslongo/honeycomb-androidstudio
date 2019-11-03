@@ -1,6 +1,6 @@
 package com.example.honeycomb.ui.buttons
 
-class CheckInCheckOutService {
+class CheckInCheckOutController {
     companion object {
     }
 }
