@@ -36,7 +36,7 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
     }
 
     val checkInCommand = lazy { CheckInCommand(MutableLiveData(true)) { controller.checkIn() } }
-    val checkOutCommand = lazy { CheckOutCommand { controller.checkOut() } }
+    val checkOutCommand = lazy { CheckOutCommand(MutableLiveData(true)) { controller.checkOut() } }
 
     //TODO Change GlobalScope to ViewModelScope
     fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
