@@ -23,7 +23,7 @@
             app:textColorResourceBinding="@{viewModel.textColor}"
             android:checkable="true"
             app:isCheckedBinding="@{viewModel.isCheckedIn}"
-            app:isActivated="@{viewModel.isProcessing()}"
+
             app:drawableTopBinding="@{viewModel.icon}"
             app:drawableTintBinding="@{viewModel.iconTint}" />
 </layout>
