@@ -44,7 +44,6 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
 
     //TODO Change GlobalScope to ViewModelScope
     fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
-        delay(500)
         _isProcessing.value = true
         delay(1000)
         _isCheckedIn.value = !_isCheckedIn.value!!
