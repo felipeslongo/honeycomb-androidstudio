@@ -16,6 +16,7 @@ class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
 
         binding.checkInCheckOutButton.setOnClickListener {
             viewModel.toogleCheckInCheckOut()
+            binding.checkInCheckOutButton.isChecked = !binding.checkInCheckOutButton.isChecked
         }
     }
 
