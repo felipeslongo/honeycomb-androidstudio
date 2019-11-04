@@ -11,6 +11,11 @@ class CheckInCheckOutController {
         delay(1000)
     }
 
+    suspend fun getCheckedInStateSuspendable(): Boolean {
+        delay(1000)
+        return false
+    }
+
     companion object {
         fun Create () : CheckInCheckOutController {
             return CheckInCheckOutController()

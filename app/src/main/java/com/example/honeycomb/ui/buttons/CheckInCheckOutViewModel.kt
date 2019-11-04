@@ -12,8 +12,18 @@ import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutController) : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
-    private val _isProcessing: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val _isProcessing: MutableLiveData<Boolean> = MutableLiveData(true)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
+
+    init {
+        GlobalScope.launch(Dispatchers.Main) {
+            try {
+                _isCheckedIn.value = _controller.getCheckedInStateSuspendable()
+            } finally {
+                _isProcessing.value = false
+            }
+        }
+    }
 
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
