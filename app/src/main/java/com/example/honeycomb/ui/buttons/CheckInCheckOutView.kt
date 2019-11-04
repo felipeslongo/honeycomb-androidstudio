@@ -16,7 +16,7 @@ class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
 
         binding.checkInCheckOutButton.setOnClickListener {
             binding.checkInCheckOutButton.nullifyBehaviourOfAutoCheckOnClick()
-            viewModel.toogleCheckInCheckOut()
+            viewModel.interpretIntent(ToggleCheckInCheckOutIntent())
         }
     }
 
