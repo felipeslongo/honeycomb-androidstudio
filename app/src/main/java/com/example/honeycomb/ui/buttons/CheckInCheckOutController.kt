@@ -3,14 +3,12 @@ package com.example.honeycomb.ui.buttons
 import kotlinx.coroutines.delay
 
 class CheckInCheckOutController {
-    suspend fun checkInSuspendable() : Boolean {
+    suspend fun checkInSuspendable() {
         delay(1000)
-        return true
     }
 
-    suspend fun checkOutSuspendable() : Boolean {
+    suspend fun checkOutSuspendable() {
         delay(1000)
-        return false
     }
 
     companion object {

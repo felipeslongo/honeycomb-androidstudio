@@ -57,11 +57,13 @@ class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutControlle
     }
 
     private suspend fun checkInSuspendable() {
-        _isCheckedIn.value = _controller.checkInSuspendable()
+        _controller.checkInSuspendable()
+        _isCheckedIn.value = true
     }
 
     private suspend fun checkOutSuspendable() {
-        _isCheckedIn.value = _controller.checkOutSuspendable()
+        _controller.checkOutSuspendable()
+        _isCheckedIn.value = false
     }
 
     companion object{
