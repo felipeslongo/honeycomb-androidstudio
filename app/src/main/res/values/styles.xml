@@ -12,7 +12,7 @@
     </style>
     <style name="Widget.HoneyComb.Button.UnelevatedButton.White" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="backgroundTint">@color/white_default_gray_checked</item>
-        <item name="rippleColor">@color/white_default_gray_checked_ripple</item>
+        <item name="rippleColor">@color/rippleOnWhite</item>
     </style>
 
 </resources>
