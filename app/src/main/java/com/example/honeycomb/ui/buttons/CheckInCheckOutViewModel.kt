@@ -81,7 +81,7 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
         const val CHECK_IN =  R.string.check_in
         const val CHECK_OUT =  R.string.check_out
 
-        fun Create () : CheckInCheckOutViewModel {
+        fun create () : CheckInCheckOutViewModel {
             return CheckInCheckOutViewModel(CheckInCheckOutController.Create())
         }
     }

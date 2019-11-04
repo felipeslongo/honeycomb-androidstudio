@@ -1,6 +1,5 @@
 package com.example.honeycomb.ui.buttons
 
-import android.app.Activity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -11,7 +10,7 @@ import com.google.android.material.button.MaterialButton
 class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
 
     init {
-        val viewModel = CheckInCheckOutViewModel.Create()
+        val viewModel = CheckInCheckOutViewModel.create()
         binding.viewModel = viewModel
 
         binding.checkInCheckOutButton.setOnClickListener {
