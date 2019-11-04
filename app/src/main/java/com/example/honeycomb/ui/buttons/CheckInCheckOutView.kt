@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.honeycomb.R
 import com.example.honeycomb.databinding.CheckInCheckOutBinding
+import com.example.honeycomb.ui.views.nullifyBehaviourOfAutoCheckOnClick
 import com.google.android.material.button.MaterialButton
 
 class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
@@ -14,8 +15,8 @@ class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
         binding.viewModel = viewModel
 
         binding.checkInCheckOutButton.setOnClickListener {
+            binding.checkInCheckOutButton.nullifyBehaviourOfAutoCheckOnClick()
             viewModel.toogleCheckInCheckOut()
-            binding.checkInCheckOutButton.isChecked = !binding.checkInCheckOutButton.isChecked
         }
     }
 
