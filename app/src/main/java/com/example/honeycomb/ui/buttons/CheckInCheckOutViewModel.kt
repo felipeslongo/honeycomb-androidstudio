@@ -11,7 +11,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : ViewModel() {
-    private val _viewState = MutableLiveData<CheckInCheckOutViewState>(CheckInCheckOutViewState.CHECKED_OUT)
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _isProcessing: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
