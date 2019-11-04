@@ -45,20 +45,25 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
     //TODO Change GlobalScope to ViewModelScope
     fun toogleCheckInCheckOut() = GlobalScope.launch(Dispatchers.Main) {
         _isProcessing.value = true
-        delay(1000)
-        _isCheckedIn.value = !_isCheckedIn.value!!
-        if (_isCheckedIn.value!!) {
-            checkOut()
-        } else{
+        try {
+            if(isCheckedIn.value!!) {
+                checkOut()
+                return@launch
+            }
             checkIn()
+        } finally {
+            _isProcessing.value = false
         }
-        _isProcessing.value = false
     }
 
-    private fun checkIn() {
+    private suspend fun checkIn() {
+        delay(1000)
+        _isCheckedIn.value = true
     }
 
-    private fun checkOut() {
+    private suspend fun checkOut() {
+        delay(1000)
+        _isCheckedIn.value = false
     }
 
     private fun getColorResourceIdForTextAndIcon(isCheckedIn: Boolean): Int {
