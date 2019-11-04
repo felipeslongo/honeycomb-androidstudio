@@ -69,13 +69,6 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
         _isCheckedIn.value = false
     }
 
-    private fun getColorResourceIdForTextAndIcon(isCheckedIn: Boolean): Int {
-        return when {
-            isCheckedIn -> android.R.color.holo_red_light
-            else -> android.R.color.black
-        }
-    }
-
     companion object{
         const val ICON = R.drawable.ic_where_to_vote_32dp
         const val CHECK_IN =  R.string.check_in
@@ -83,6 +76,13 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
 
         fun create () : CheckInCheckOutViewModel {
             return CheckInCheckOutViewModel(CheckInCheckOutController.Create())
+        }
+
+        private fun getColorResourceIdForTextAndIcon(isCheckedIn: Boolean): Int {
+            return when {
+                isCheckedIn -> android.R.color.holo_red_light
+                else -> android.R.color.black
+            }
         }
     }
 }
