@@ -10,7 +10,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : ViewModel() {
+class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutController) : ViewModel() {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _isProcessing: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
@@ -39,9 +39,6 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
         getColorResourceIdForTextAndIcon(it)
     }
 
-    val checkInCommand = lazy { CheckInCommand(MutableLiveData(true)) { controller.checkIn() } }
-    val checkOutCommand = lazy { CheckOutCommand(MutableLiveData(true)) { controller.checkOut() } }
-
     //TODO Change GlobalScope to ViewModelScope
     fun interpretIntent(intent: ToggleCheckInCheckOutIntent) = GlobalScope.launch(Dispatchers.Main) {
         if(isProcessing.value!!)
@@ -50,23 +47,21 @@ class CheckInCheckOutViewModel(val controller: CheckInCheckOutController) : View
         _isProcessing.value = true
         try {
             if(isCheckedIn.value!!) {
-                checkOut()
+                checkOutSuspendable()
                 return@launch
             }
-            checkIn()
+            checkInSuspendable()
         } finally {
             _isProcessing.value = false
         }
     }
 
-    private suspend fun checkIn() {
-        delay(1000)
-        _isCheckedIn.value = true
+    private suspend fun checkInSuspendable() {
+        _isCheckedIn.value = _controller.checkInSuspendable()
     }
 
-    private suspend fun checkOut() {
-        delay(1000)
-        _isCheckedIn.value = false
+    private suspend fun checkOutSuspendable() {
+        _isCheckedIn.value = _controller.checkOutSuspendable()
     }
 
     companion object{
