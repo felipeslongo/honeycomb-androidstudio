@@ -11,10 +11,10 @@
     </data>
 
     <com.google.android.material.button.MaterialButton
-            android:id="@+id/check_in_check_out_button"
+            android:id="@+id/button_checkincheckout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.textStringId, default=@string/check_in}"
+            android:text="@{viewModel.textStringId, default=@string/checkincheckout_checkin}"
             app:textColorResourceBinding="@{viewModel.textColor}"
             app:isCheckedBinding="@{viewModel.isCheckedIn}"
             android:clickable="@{!viewModel.isProcessing}"

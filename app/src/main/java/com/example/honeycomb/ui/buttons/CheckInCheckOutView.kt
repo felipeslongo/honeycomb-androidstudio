@@ -14,20 +14,20 @@ class CheckInCheckOutView(val binding: ButtonCheckincheckoutBinding) {
         val viewModel = CheckInCheckOutViewModel.create()
         binding.viewModel = viewModel
 
-        binding.checkInCheckOutButton.setOnClickListener {
-            binding.checkInCheckOutButton.nullifyBehaviourOfAutoCheckOnClick()
+        binding.buttonCheckincheckout.setOnClickListener {
+            binding.buttonCheckincheckout.nullifyBehaviourOfAutoCheckOnClick()
             viewModel.interpretIntent(ToggleCheckInCheckOutIntent())
         }
     }
 
     companion object{
         fun createFromParent(parent: View){
-            val binding = createBinding(parent.findViewById(R.id.check_in_check_out_button))
+            val binding = createBinding(parent.findViewById(R.id.button_checkincheckout))
             CheckInCheckOutView(binding)
         }
 
         fun createFromActivity(activity: AppCompatActivity){
-            val binding = createBinding(activity.findViewById(R.id.check_in_check_out_button))
+            val binding = createBinding(activity.findViewById(R.id.button_checkincheckout))
             CheckInCheckOutView(binding)
             binding.lifecycleOwner = activity
         }
