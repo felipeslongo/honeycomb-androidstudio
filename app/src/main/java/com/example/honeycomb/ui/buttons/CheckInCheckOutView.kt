@@ -4,11 +4,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.honeycomb.R
-import com.example.honeycomb.databinding.CheckInCheckOutBinding
+import com.example.honeycomb.databinding.ViewCheckInCheckOutBinding
 import com.example.honeycomb.ui.views.nullifyBehaviourOfAutoCheckOnClick
 import com.google.android.material.button.MaterialButton
 
-class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
+class CheckInCheckOutView(val binding: ViewCheckInCheckOutBinding) {
 
     init {
         val viewModel = CheckInCheckOutViewModel.create()
@@ -32,7 +32,7 @@ class CheckInCheckOutView(val binding: CheckInCheckOutBinding) {
             binding.lifecycleOwner = activity
         }
 
-        private fun createBinding(view: MaterialButton): CheckInCheckOutBinding {
+        private fun createBinding(view: MaterialButton): ViewCheckInCheckOutBinding {
             return DataBindingUtil.bind(view)!!
         }
     }
