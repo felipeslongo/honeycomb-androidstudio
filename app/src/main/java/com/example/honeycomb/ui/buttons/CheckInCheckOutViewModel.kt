@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.example.honeycomb.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutController) : ViewModel() {
@@ -78,8 +77,8 @@ class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutControlle
 
     companion object{
         const val ICON = R.drawable.ic_where_to_vote_32dp
-        const val CHECK_IN =  R.string.check_in
-        const val CHECK_OUT =  R.string.check_out
+        const val CHECK_IN =  R.string.checkincheckout_checkin
+        const val CHECK_OUT =  R.string.checkincheckout_checkout
 
         fun create () : CheckInCheckOutViewModel {
             return CheckInCheckOutViewModel(CheckInCheckOutController.Create())
