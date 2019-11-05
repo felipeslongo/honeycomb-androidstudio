@@ -14,17 +14,12 @@
             android:id="@+id/check_in_check_out_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.Honeycomb.Button.CheckInCheckOut"
-            android:minWidth="120dp"
-            android:minHeight="96dp"
-            android:padding="16dp"
             android:text="@{viewModel.textStringId, default=@string/check_in}"
-            android:textColor="?android:textColorPrimary"
             app:textColorResourceBinding="@{viewModel.textColor}"
-            android:checkable="true"
             app:isCheckedBinding="@{viewModel.isCheckedIn}"
             android:clickable="@{!viewModel.isProcessing}"
             app:isActivatedBinding="@{viewModel.isProcessing}"
             app:drawableTopBinding="@{viewModel.icon}"
-            app:drawableTintBinding="@{viewModel.iconTint}" />
+            app:drawableTintBinding="@{viewModel.iconTint}"
+            style="@style/Widget.Honeycomb.Button.CheckInCheckOut"/>
 </layout>
