@@ -7,5 +7,4 @@
     <color name="chipExpandableText">@android:color/black</color>
     <color name="popular">#ff76a5</color>
     <color name="star">#ff0057</color>
-    <color name="rippleOnWhite">@android:color/darker_gray</color>
 </resources>
