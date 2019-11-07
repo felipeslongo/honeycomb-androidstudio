@@ -5,11 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.honeycomb.R
+import com.example.honeycomb.ui.mvvm.Busyable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutController) : ViewModel() {
+class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutController) : ViewModel(),
+    Busyable {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _isBusy: MutableLiveData<Boolean> = MutableLiveData(true)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
@@ -27,7 +29,7 @@ class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutControlle
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
 
-    val isBusy: LiveData<Boolean>
+    override val isBusy: LiveData<Boolean>
         get() = _isBusy
 
     val textStringId : LiveData<Int> = Transformations.map(isCheckedIn){
