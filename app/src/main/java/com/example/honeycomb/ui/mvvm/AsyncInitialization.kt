@@ -12,5 +12,5 @@ interface AsyncInitialization {
     /**
      * The result of the asynchronous initialization of this instance.
      */
-    val Initialization : Job
+    val initialization : Job
 }
