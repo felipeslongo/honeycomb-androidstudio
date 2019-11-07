@@ -17,7 +17,7 @@
             android:clickable="@{!viewModel.isProcessing}"
             app:drawableTintBinding="@{viewModel.iconTint}"
             app:drawableTopBinding="@{viewModel.icon}"
-            app:isActivatedBinding="@{viewModel.isProcessing}"
+            app:isActivatedBinding="@{viewModel.isBusy}"
             app:isCheckedBinding="@{viewModel.isCheckedIn}"
             android:text="@{viewModel.textStringId, default=@string/checkincheckout_checkin}"
             app:textColorResourceBinding="@{viewModel.textColor}"
