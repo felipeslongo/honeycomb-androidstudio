@@ -5,26 +5,20 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.honeycomb.R
+import com.example.honeycomb.ui.mvvm.AsyncInitialization
 import com.example.honeycomb.ui.mvvm.Busyable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutController) : ViewModel(),
-    Busyable {
+    Busyable, AsyncInitialization {
     private val _isCheckedIn: MutableLiveData<Boolean> = MutableLiveData(false)
     private val _isBusy: MutableLiveData<Boolean> = MutableLiveData(true)
     private val _icon: MutableLiveData<Int> = MutableLiveData(ICON)
 
-    init {
-        GlobalScope.launch(Dispatchers.Main) {
-            try {
-                _isCheckedIn.value = _controller.getCheckedInStateSuspendable()
-            } finally {
-                _isBusy.value = false
-            }
-        }
-    }
+    override val initialization: Job = initializeAsync()
 
     val isCheckedIn : LiveData<Boolean>
         get() = _isCheckedIn
@@ -75,6 +69,14 @@ class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutControlle
     private suspend fun checkOutSuspendable() {
         _controller.checkOutSuspendable()
         _isCheckedIn.value = false
+    }
+
+    private fun initializeAsync() = GlobalScope.launch(Dispatchers.Main) {
+        try {
+            _isCheckedIn.value = _controller.getCheckedInStateSuspendable()
+        } finally {
+            _isBusy.value = false
+        }
     }
 
     companion object{
