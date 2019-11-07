@@ -14,7 +14,7 @@
             android:id="@+id/button_checkincheckout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="@{!viewModel.isProcessing}"
+            android:clickable="@{!viewModel.isBusy}"
             app:drawableTintBinding="@{viewModel.iconTint}"
             app:drawableTopBinding="@{viewModel.icon}"
             app:isActivatedBinding="@{viewModel.isBusy}"
