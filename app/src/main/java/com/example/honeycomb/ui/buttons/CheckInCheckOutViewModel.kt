@@ -84,6 +84,12 @@ class CheckInCheckOutViewModel(private val _controller: CheckInCheckOutControlle
         const val CHECK_IN =  R.string.checkincheckout_checkin
         const val CHECK_OUT =  R.string.checkincheckout_checkout
 
+        suspend fun createSuspendable () : CheckInCheckOutViewModel {
+            val viewModel = create()
+            viewModel.initialization.join()
+            return viewModel
+        }
+
         fun create () : CheckInCheckOutViewModel {
             return CheckInCheckOutViewModel(CheckInCheckOutController.Create())
         }
