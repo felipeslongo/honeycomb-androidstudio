@@ -7,7 +7,5 @@ import androidx.databinding.BindingAdapter
 import com.example.honeycomb.ui.colors.ColorServices
 
 @BindingAdapter("app:textColorResourceBinding")
-fun textColorResourceBinding(view: TextView, colorResourceId: Int){
-    val color = ColorServices.getColorStateList(view.context,colorResourceId)
-    view.setTextColor(color)
-}
+fun textColorResourceBinding(view: TextView, colorResourceId: Int) =
+    view.setTextColorStateList(colorResourceId)
