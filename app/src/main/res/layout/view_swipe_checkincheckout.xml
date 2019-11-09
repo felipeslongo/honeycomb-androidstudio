@@ -25,7 +25,7 @@
                 android:progress="300"
                 android:progressDrawable="@android:color/transparent"
                 android:thumbTint="@color/selector_rainbow"
-                android:background="@android:color/black"
+                android:background="@drawable/animation_rainbow"
                 />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
