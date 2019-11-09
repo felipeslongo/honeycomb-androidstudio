@@ -21,9 +21,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:max="100"
-                android:progress="30"
+                android:max="1000"
+                android:progress="300"
+                android:progressDrawable="@android:color/transparent"
                 android:thumbTint="@color/selector_rainbow"
+                android:background="@android:color/black"
                 />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
