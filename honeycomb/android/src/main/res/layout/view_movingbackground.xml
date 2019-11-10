@@ -19,6 +19,7 @@
                 android:id="@+id/view_movingbackground_background_one"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 android:src="@{viewModel.background}"
                 tools:src="@drawable/mercos_full"/>
 
@@ -26,6 +27,7 @@
                 android:id="@+id/view_movingbackground_background_two"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 android:src="@{viewModel.background}"
                 tools:src="@drawable/mercos_full"/>
 
