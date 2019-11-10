@@ -5,6 +5,7 @@ import android.view.animation.LinearInterpolator
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import honeycomb.android.R
 import honeycomb.android.databinding.ViewMovingbackgroundBinding
 
@@ -18,6 +19,9 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
         val animator = createValueAnimator()
         animator.repeatCount = ValueAnimator.INFINITE
         animator.interpolator = LinearInterpolator()
+        binding.viewModel!!.duration.observe(binding.lifecycleOwner!!, Observer {duration ->
+            animator.duration = duration
+        })
         animator.duration = 10000L
         animator.addUpdateListener {animation: ValueAnimator? ->
             val progress = animation!!.animatedValue as Float
@@ -29,6 +33,7 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
             else
                 binding.viewMovingbackgroundBackgroundTwo.translationX = translationX - width
         }
+
         animator.start()
     }
 
