@@ -15,7 +15,7 @@ import honeycomb.android.databinding.ViewMovingbackgroundBinding
 class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
 
     fun start(){
-        val animator = ValueAnimator.ofFloat(0.0f, 1.0f)
+        val animator = createValueAnimator()
         animator.repeatCount = ValueAnimator.INFINITE
         animator.interpolator = LinearInterpolator()
         animator.duration = 10000L
@@ -24,9 +24,17 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
             val width = binding.viewMovingbackgroundBackgroundOne.width
             val translationX = width * progress
             binding.viewMovingbackgroundBackgroundOne.translationX = translationX
-            binding.viewMovingbackgroundBackgroundTwo.translationX = translationX - width
+            if(binding.viewModel!!.isReversed.value!!)
+                binding.viewMovingbackgroundBackgroundTwo.translationX = translationX + width
+            else
+                binding.viewMovingbackgroundBackgroundTwo.translationX = translationX - width
         }
         animator.start()
+    }
+
+    private fun createValueAnimator() = when(binding.viewModel!!.isReversed.value) {
+        true ->  ValueAnimator.ofFloat(0.0f, -1.0f)
+        else -> ValueAnimator.ofFloat(0.0f, 1.0f)
     }
 
     companion object{
