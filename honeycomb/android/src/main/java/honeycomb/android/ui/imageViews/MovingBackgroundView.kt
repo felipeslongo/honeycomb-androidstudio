@@ -15,31 +15,38 @@ import honeycomb.android.databinding.ViewMovingbackgroundBinding
  */
 class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
 
+    private val viewModel = binding.viewModel!!
+
     fun start(){
         val animator = createValueAnimator()
         animator.repeatCount = ValueAnimator.INFINITE
         animator.interpolator = LinearInterpolator()
-        binding.viewModel!!.duration.observe(binding.lifecycleOwner!!, Observer {duration ->
-            animator.duration = duration
-        })
-        animator.duration = 10000L
-        animator.addUpdateListener {animation: ValueAnimator? ->
-            val progress = animation!!.animatedValue as Float
-            val width = binding.viewMovingbackgroundBackgroundOne.width
-            val translationX = width * progress
-            binding.viewMovingbackgroundBackgroundOne.translationX = translationX
-            if(binding.viewModel!!.isReversed.value!!)
-                binding.viewMovingbackgroundBackgroundTwo.translationX = translationX + width
-            else
-                binding.viewMovingbackgroundBackgroundTwo.translationX = translationX - width
-        }
-
+        bindAnimatorDuration(animator)
+        animator.addUpdateListener(updateBackgroundMovement())
         animator.start()
     }
 
     private fun createValueAnimator() = when(binding.viewModel!!.isReversed.value) {
         true ->  ValueAnimator.ofFloat(0.0f, -1.0f)
         else -> ValueAnimator.ofFloat(0.0f, 1.0f)
+    }
+
+    private fun bindAnimatorDuration(animator: ValueAnimator) =
+        viewModel.duration.observe(binding.lifecycleOwner!!, Observer { duration ->
+        animator.duration = duration
+    })
+
+    private fun updateBackgroundMovement(): (ValueAnimator?) -> Unit {
+        return { animation: ValueAnimator? ->
+            val progress = animation!!.animatedValue as Float
+            val width = binding.viewMovingbackgroundBackgroundOne.width
+            val translationX = width * progress
+            binding.viewMovingbackgroundBackgroundOne.translationX = translationX
+            binding.viewMovingbackgroundBackgroundTwo.translationX = when(viewModel.isReversed.value!!){
+                true -> translationX + width
+                else -> translationX - width
+            }
+        }
     }
 
     companion object{
