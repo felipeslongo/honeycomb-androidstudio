@@ -33,6 +33,7 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
         fun createFromActivity(activity: AppCompatActivity) : MovingBackgroundView{
             val binding = createBinding(activity.findViewById(R.id.view_movingbackground))
             binding.lifecycleOwner = activity
+            binding.viewModel = MovingBackgroundViewModel.create()
             return MovingBackgroundView(binding)
         }
 
