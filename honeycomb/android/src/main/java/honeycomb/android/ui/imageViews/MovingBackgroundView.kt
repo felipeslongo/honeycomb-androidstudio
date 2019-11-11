@@ -13,7 +13,7 @@ import honeycomb.android.R
 import honeycomb.android.databinding.ViewMovingbackgroundBinding
 
 /**
- * Moving Background View
+ * View that provides an moving background animation horizontally.
  * @see https://stackoverflow.com/questions/36894384/android-move-background-continuously-with-animation
  */
 class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
