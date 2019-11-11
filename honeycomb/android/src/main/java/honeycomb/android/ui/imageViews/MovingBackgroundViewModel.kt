@@ -9,10 +9,12 @@ class MovingBackgroundViewModel : ViewModel() {
     private val _background = MutableLiveData(R.drawable.mercos_full)
     private val _duration = MutableLiveData(DURATION_NORMAL)
     private val _isReversed = MutableLiveData(false)
+    private val _isStarted = MutableLiveData(false)
 
     val background : LiveData<Int> = _background
     val duration: LiveData<Long> = _duration
     val isReversed : LiveData<Boolean> = _isReversed
+    val isStarted : LiveData<Boolean> = _isStarted
 
     fun setSpeed(speed: Speed){
         _duration.value = when(speed) {
@@ -32,6 +34,14 @@ class MovingBackgroundViewModel : ViewModel() {
 
     fun speedUp() {
         _duration.value = _duration.value!! / 2
+    }
+
+    fun start(){
+        _isStarted.value = true
+    }
+
+    fun stop(){
+        _isStarted.value = false
     }
 
     companion object {

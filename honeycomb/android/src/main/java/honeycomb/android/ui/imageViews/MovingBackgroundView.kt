@@ -1,6 +1,7 @@
 package honeycomb.android.ui.imageViews
 
 import android.animation.ValueAnimator
+import android.os.Build
 import android.view.animation.LinearInterpolator
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,26 @@ import honeycomb.android.databinding.ViewMovingbackgroundBinding
  */
 class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
 
-    private val viewModel = binding.viewModel!!
+    private val _animator = lazy {
+        val animator = createValueAnimator()
+        animator.repeatCount = ValueAnimator.INFINITE
+        animator.interpolator = LinearInterpolator()
+        bindAnimatorDuration(animator)
+        animator.addUpdateListener(updateBackgroundMovement())
+        animator
+    }
+
+    val viewModel = binding.viewModel!!
+
+    init {
+        viewModel.isStarted.observe(binding.lifecycleOwner!!, Observer {isStarted ->
+            if (isStarted) {
+                _animator.value.start()
+                return@Observer
+            }
+            _animator.value.end()
+        })
+    }
 
     fun start(){
         val animator = createValueAnimator()
