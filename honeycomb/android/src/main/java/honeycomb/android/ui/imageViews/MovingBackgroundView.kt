@@ -39,15 +39,6 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
         })
     }
 
-    fun start(){
-        val animator = createValueAnimator()
-        animator.repeatCount = ValueAnimator.INFINITE
-        animator.interpolator = LinearInterpolator()
-        bindAnimatorDuration(animator)
-        animator.addUpdateListener(updateBackgroundMovement())
-        animator.start()
-    }
-
     private fun createValueAnimator() = when(binding.viewModel!!.isReversed.value) {
         true ->  ValueAnimator.ofFloat(0.0f, -1.0f)
         else -> ValueAnimator.ofFloat(0.0f, 1.0f)
