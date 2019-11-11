@@ -14,14 +14,6 @@ class MovingBackgroundViewModel : ViewModel() {
     val duration: LiveData<Long> = _duration
     val isReversed : LiveData<Boolean> = _isReversed
 
-    fun slowDown() {
-        _duration.value = _duration.value!! * 2
-    }
-
-    fun speedUp() {
-        _duration.value = _duration.value!! / 2
-    }
-
     fun setSpeed(speed: Speed){
         _duration.value = when(speed) {
             Speed.SLOW -> DURATION_NORMAL * 2
@@ -32,6 +24,14 @@ class MovingBackgroundViewModel : ViewModel() {
 
     fun setDuration(duration: Long) {
         _duration.value = duration
+    }
+
+    fun slowDown() {
+        _duration.value = _duration.value!! * 2
+    }
+
+    fun speedUp() {
+        _duration.value = _duration.value!! / 2
     }
 
     companion object {
