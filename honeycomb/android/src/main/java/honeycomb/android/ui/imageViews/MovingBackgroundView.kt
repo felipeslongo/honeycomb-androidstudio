@@ -6,6 +6,7 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import honeycomb.android.R
 import honeycomb.android.databinding.ViewMovingbackgroundBinding
@@ -53,16 +54,21 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
     companion object{
         fun createFromActivity(activity: AppCompatActivity) : MovingBackgroundView{
             val binding = createBinding(activity.findViewById(R.id.view_movingbackground))
-            binding.lifecycleOwner = activity
-            binding.viewModel = MovingBackgroundViewModel.create()
-            return MovingBackgroundView(binding)
+            return createFromBinding(binding, activity)
         }
 
         fun createFromFragment(fragment: Fragment) = createFromFragment(fragment, R.id.view_movingbackground)
 
         fun createFromFragment(fragment: Fragment, id: Int) : MovingBackgroundView {
             val binding = createBinding(fragment.view!!.findViewById(id))
-            binding.lifecycleOwner = fragment
+            return createFromBinding(binding, fragment)
+        }
+
+        private fun createFromBinding(
+            binding: ViewMovingbackgroundBinding,
+            lifecycleOwner: LifecycleOwner
+        ): MovingBackgroundView {
+            binding.lifecycleOwner = lifecycleOwner
             binding.viewModel = MovingBackgroundViewModel.create()
             return MovingBackgroundView(binding)
         }
