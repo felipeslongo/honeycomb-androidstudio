@@ -22,6 +22,10 @@ class MovingBackgroundViewModel : ViewModel() {
         _duration.value = _duration.value!! / 2
     }
 
+    fun setDuration(duration: Long) {
+        _duration.value = duration
+    }
+
     companion object {
         fun create() = MovingBackgroundViewModel()
     }
