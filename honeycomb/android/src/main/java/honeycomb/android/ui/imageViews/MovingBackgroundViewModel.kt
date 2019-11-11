@@ -7,7 +7,7 @@ import honeycomb.android.R
 
 class MovingBackgroundViewModel : ViewModel() {
     private val _background = MutableLiveData(R.drawable.mercos_full)
-    private val _duration = MutableLiveData(10000L)
+    private val _duration = MutableLiveData(DURATION_NORMAL)
     private val _isReversed = MutableLiveData(false)
 
     val background : LiveData<Int> = _background
@@ -22,11 +22,27 @@ class MovingBackgroundViewModel : ViewModel() {
         _duration.value = _duration.value!! / 2
     }
 
+    fun setSpeed(speed: Speed){
+        _duration.value = when(speed) {
+            Speed.SLOW -> DURATION_NORMAL * 2
+            Speed.NORMAL -> DURATION_NORMAL
+            Speed.FAST -> DURATION_NORMAL / 2
+        }
+    }
+
     fun setDuration(duration: Long) {
         _duration.value = duration
     }
 
     companion object {
+        private const val DURATION_NORMAL = 10000L
+
         fun create() = MovingBackgroundViewModel()
+    }
+
+    enum class Speed {
+        SLOW,
+        NORMAL,
+        FAST,
     }
 }
