@@ -1,12 +1,13 @@
 package com.example.honeycomb
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
 import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
 import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabActivity
 import com.example.honeycomb.ui.imageViews.CircleImageShowcaseFragment
+import com.example.honeycomb.ui.imageViews.MovingBackgroundShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 import com.example.honeycomb.ui.sync.SincronizacaoFragment
@@ -57,6 +58,12 @@ class MainActivity : AppCompatActivity() {
                 if (it.itemId == R.id.view_binding) {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container, ViewBindingShowcaseFragment.newInstance())
+                        .commitNow()
+                }
+
+                if (it.itemId == R.id.view_movingbackground) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, MovingBackgroundShowcaseFragment.newInstance())
                         .commitNow()
                 }
 

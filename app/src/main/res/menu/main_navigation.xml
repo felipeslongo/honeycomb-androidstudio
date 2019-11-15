@@ -23,5 +23,8 @@
         <item
                 android:id="@+id/view_binding"
                 android:title="View Binding" />
+        <item
+                android:id="@+id/view_movingbackground"
+                android:title="Moving Background" />
     </group>
 </menu>

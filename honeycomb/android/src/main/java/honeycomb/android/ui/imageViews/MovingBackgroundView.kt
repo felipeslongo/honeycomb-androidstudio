@@ -1,7 +1,6 @@
 package honeycomb.android.ui.imageViews
 
 import android.animation.ValueAnimator
-import android.os.Build
 import android.view.animation.LinearInterpolator
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -68,20 +67,22 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
             return createFromBinding(binding, activity)
         }
 
-        fun createFromFragment(fragment: Fragment) = createFromFragment(fragment, R.id.view_movingbackground)
-
-        fun createFromFragment(fragment: Fragment, id: Int) : MovingBackgroundView {
-            val binding = createBinding(fragment.view!!.findViewById(id))
-            return createFromBinding(binding, fragment)
-        }
-
-        private fun createFromBinding(
+        fun createFromBinding(
             binding: ViewMovingbackgroundBinding,
             lifecycleOwner: LifecycleOwner
         ): MovingBackgroundView {
             binding.lifecycleOwner = lifecycleOwner
-            binding.viewModel = MovingBackgroundViewModel.create()
+            if (binding.viewModel == null)
+                binding.viewModel = MovingBackgroundViewModel.create()
             return MovingBackgroundView(binding)
+        }
+
+        fun createFromFragment(fragment: Fragment) =
+            createFromFragment(fragment, R.id.view_movingbackground)
+
+        fun createFromFragment(fragment: Fragment, id: Int): MovingBackgroundView {
+            val binding = createBinding(fragment.view!!.findViewById(id))
+            return createFromBinding(binding, fragment)
         }
 
         private fun createBinding(root: FrameLayout): ViewMovingbackgroundBinding {
