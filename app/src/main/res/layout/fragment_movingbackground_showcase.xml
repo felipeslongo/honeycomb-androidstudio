@@ -24,5 +24,29 @@
                 android:layout_height="32dp"
                 app:viewModel="@{viewModel.movingBackgroundViewModel}" />
 
+        <include
+                android:id="@+id/view_movingbackground_slow"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundSlowViewModel}" />
+
+        <include
+                android:id="@+id/view_movingbackground_fast"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundFastViewModel}" />
+
+        <include
+                android:id="@+id/view_movingbackground_inverse"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundInverseViewModel}" />
+
     </LinearLayout>
 </layout>

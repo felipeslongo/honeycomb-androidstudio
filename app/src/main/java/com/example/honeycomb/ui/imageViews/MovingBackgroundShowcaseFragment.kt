@@ -18,6 +18,9 @@ class MovingBackgroundShowcaseFragment : Fragment() {
     private lateinit var binding: FragmentMovingbackgroundShowcaseBinding
     private lateinit var viewModel: MovingBackgroundShowcaseViewModel
 
+    private lateinit var movingBackgroundFastView: MovingBackgroundView
+    private lateinit var movingBackgroundInverseView: MovingBackgroundView
+    private lateinit var movingBackgroundSlowView: MovingBackgroundView
     private lateinit var movingBackgroundView: MovingBackgroundView
 
     override fun onCreateView(
@@ -42,12 +45,27 @@ class MovingBackgroundShowcaseFragment : Fragment() {
                 binding.viewMovingbackground,
                 binding.lifecycleOwner!!
             )
+
+            movingBackgroundSlowView = MovingBackgroundView.createFromBinding(
+                binding.viewMovingbackgroundSlow,
+                binding.lifecycleOwner!!
+            )
+
+            movingBackgroundFastView = MovingBackgroundView.createFromBinding(
+                binding.viewMovingbackgroundFast,
+                binding.lifecycleOwner!!
+            )
+
+            movingBackgroundInverseView = MovingBackgroundView.createFromBinding(
+                binding.viewMovingbackgroundInverse,
+                binding.lifecycleOwner!!
+            )
         }
 
         super.onActivityCreated(savedInstanceState)
         bindViewModel()
         bindViewModelsOfSubviews()
-        viewModel.movingBackgroundViewModel.start()
+        viewModel.notifyActivityCreated()
     }
 
 }

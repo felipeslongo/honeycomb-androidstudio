@@ -16,6 +16,10 @@ class MovingBackgroundViewModel : ViewModel() {
     val isReversed : LiveData<Boolean> = _isReversed
     val isStarted : LiveData<Boolean> = _isStarted
 
+    fun reverse() {
+        _isReversed.value = !_isReversed.value!!
+    }
+
     fun setSpeed(speed: Speed){
         _duration.value = when(speed) {
             Speed.SLOW -> DURATION_NORMAL * 2
