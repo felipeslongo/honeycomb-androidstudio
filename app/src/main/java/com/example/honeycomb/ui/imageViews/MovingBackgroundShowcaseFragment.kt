@@ -51,7 +51,7 @@ class MovingBackgroundShowcaseFragment : Fragment() {
 
         fun bindViewModelsOfSubviews() {
             movingBackgroundViewBindings.forEach {
-                MovingBackgroundView.createFromBinding(it, binding.lifecycleOwner!!)
+                MovingBackgroundView.factory.createFromBinding(it, binding.lifecycleOwner!!)
             }
         }
 

@@ -2,14 +2,10 @@ package honeycomb.android.ui.imageViews
 
 import android.animation.ValueAnimator
 import android.view.animation.LinearInterpolator
-import android.widget.FrameLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import honeycomb.android.R
 import honeycomb.android.databinding.ViewMovingbackgroundBinding
+import honeycomb.android.ui.dataBindings.ViewFactory
 
 /**
  * View that provides an moving background animation horizontally.
@@ -62,31 +58,12 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
     }
 
     companion object{
-        fun createFromActivity(activity: AppCompatActivity) : MovingBackgroundView{
-            val binding = createBinding(activity.findViewById(R.id.view_movingbackground))
-            return createFromBinding(binding, activity)
-        }
 
-        fun createFromBinding(
-            binding: ViewMovingbackgroundBinding,
-            lifecycleOwner: LifecycleOwner
-        ): MovingBackgroundView {
-            binding.lifecycleOwner = lifecycleOwner
-            if (binding.viewModel == null)
-                binding.viewModel = MovingBackgroundViewModel.create()
-            return MovingBackgroundView(binding)
-        }
-
-        fun createFromFragment(fragment: Fragment) =
-            createFromFragment(fragment, R.id.view_movingbackground)
-
-        fun createFromFragment(fragment: Fragment, id: Int): MovingBackgroundView {
-            val binding = createBinding(fragment.view!!.findViewById(id))
-            return createFromBinding(binding, fragment)
-        }
-
-        private fun createBinding(root: FrameLayout): ViewMovingbackgroundBinding {
-            return DataBindingUtil.bind(root)!!
+        val factory =
+            ViewFactory<ViewMovingbackgroundBinding, MovingBackgroundView>(R.id.view_movingbackground) {
+                if (it.viewModel == null)
+                    it.viewModel = MovingBackgroundViewModel.create()
+                return@ViewFactory MovingBackgroundView(it)
         }
     }
 
