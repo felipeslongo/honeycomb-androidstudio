@@ -32,6 +32,10 @@ class MovingBackgroundViewModel : ViewModel() {
         _duration.value = duration
     }
 
+    fun setMovingBackground(drawableId: Int) {
+        _background.value = drawableId
+    }
+
     fun slowDown() {
         _duration.value = _duration.value!! * 2
     }

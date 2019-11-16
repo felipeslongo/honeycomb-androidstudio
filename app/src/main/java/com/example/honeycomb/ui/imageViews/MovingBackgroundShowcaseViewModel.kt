@@ -1,6 +1,7 @@
 package com.example.honeycomb.ui.imageViews
 
 import androidx.lifecycle.ViewModel
+import com.example.honeycomb.R
 import honeycomb.android.ui.imageViews.MovingBackgroundViewModel
 
 class MovingBackgroundShowcaseViewModel : ViewModel() {
@@ -9,6 +10,7 @@ class MovingBackgroundShowcaseViewModel : ViewModel() {
     val movingBackgroundInverseViewModel = MovingBackgroundViewModel.create()
     val movingBackgroundSlowViewModel = MovingBackgroundViewModel.create()
     val movingBackgroundViewModel = MovingBackgroundViewModel.create()
+    val movingBackgroundZeldaViewModel = MovingBackgroundViewModel.create()
 
     fun notifyActivityCreated() {
         movingBackgroundViewModel.start()
@@ -21,6 +23,9 @@ class MovingBackgroundShowcaseViewModel : ViewModel() {
 
         movingBackgroundInverseViewModel.reverse()
         movingBackgroundInverseViewModel.start()
+
+        movingBackgroundZeldaViewModel.setMovingBackground(R.drawable.image_skyward_sword)
+        movingBackgroundZeldaViewModel.start()
     }
 
 }

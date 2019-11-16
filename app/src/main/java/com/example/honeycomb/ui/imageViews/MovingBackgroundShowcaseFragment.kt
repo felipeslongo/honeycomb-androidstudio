@@ -33,7 +33,8 @@ class MovingBackgroundShowcaseFragment : Fragment() {
                 binding.viewMovingbackground,
                 binding.viewMovingbackgroundInverse,
                 binding.viewMovingbackgroundFast,
-                binding.viewMovingbackgroundSlow
+                binding.viewMovingbackgroundSlow,
+                binding.viewMovingbackgroundZelda
             )
         }
 
