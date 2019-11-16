@@ -13,19 +13,19 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
     val viewModel = binding.viewModel!!
 
     init {
-        fun notifyWidthChanges() {
+        fun notifyWidthChanges(){
             binding.viewMovingbackgroundBackgroundOne.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
                 viewModel.notifyWidthChanged(binding.viewMovingbackgroundBackgroundOne.width)
             }
         }
 
-        fun observeAndRenderBackgroundViewOneTranslationXChanges() {
+        fun observeAndRenderBackgroundViewOneTranslationXChanges(){
             viewModel.backgroundViewOneTranslationX.observe(binding.lifecycleOwner!!, Observer {
                 binding.viewMovingbackgroundBackgroundOne.translationX = it
             })
         }
 
-        fun observeAndRenderBackgroundViewTwoTranslationXChanges() {
+        fun observeAndRenderBackgroundViewTwoTranslationXChanges(){
             viewModel.backgroundViewTwoTranslationX.observe(binding.lifecycleOwner!!, Observer {
                 binding.viewMovingbackgroundBackgroundTwo.translationX = it
             })
