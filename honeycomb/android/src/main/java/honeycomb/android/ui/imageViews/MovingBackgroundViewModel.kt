@@ -41,12 +41,8 @@ class MovingBackgroundViewModel : ViewModel() {
         }
 
         fun observeIsReversedChangesIntoAnimator() {
-            isReversed.observeForever { isReversed ->
-                if (isReversed) {
-                    _animator.value.setFloatValues(0.0f, -1.0f)
-                    return@observeForever
-                }
-                _animator.value.setFloatValues(0.0f, 1.0f)
+            isReversed.observeForever {
+                _animator.value.setFloatValues(*getValueAnimatorValues())
             }
         }
 
@@ -57,16 +53,6 @@ class MovingBackgroundViewModel : ViewModel() {
     private fun createValueAnimator(): ValueAnimator {
         fun observeDurationChanges(animator: ValueAnimator) = duration.observeForever {
             animator.duration = it
-        }
-
-        fun getValueAnimatorValues() = FloatArray(2) {
-            when (it) {
-                0 -> 0.0f
-                else -> when (isReversed.value) {
-                    true -> -1.0f
-                    else -> 1.0f
-                }
-            }
         }
 
         fun updateBackgroundMovement(): (ValueAnimator?) -> Unit {
@@ -83,6 +69,16 @@ class MovingBackgroundViewModel : ViewModel() {
         observeDurationChanges(animator)
         animator.addUpdateListener(updateBackgroundMovement())
         return animator
+    }
+
+    private fun getValueAnimatorValues() = FloatArray(2) {
+        when (it) {
+            0 -> 0.0f
+            else -> when (isReversed.value) {
+                true -> -1.0f
+                else -> 1.0f
+            }
+        }
     }
 
     fun notifyWidthChanged(width: Int) {
