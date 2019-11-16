@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.honeycomb.databinding.FragmentMovingbackgroundShowcaseBinding
+import honeycomb.android.databinding.ViewMovingbackgroundBinding
 import honeycomb.android.ui.imageViews.MovingBackgroundView
 
 class MovingBackgroundShowcaseFragment : Fragment() {
@@ -18,17 +19,25 @@ class MovingBackgroundShowcaseFragment : Fragment() {
     private lateinit var binding: FragmentMovingbackgroundShowcaseBinding
     private lateinit var viewModel: MovingBackgroundShowcaseViewModel
 
-    private lateinit var movingBackgroundFastView: MovingBackgroundView
-    private lateinit var movingBackgroundInverseView: MovingBackgroundView
-    private lateinit var movingBackgroundSlowView: MovingBackgroundView
-    private lateinit var movingBackgroundView: MovingBackgroundView
+    private lateinit var movingBackgroundViewBindings: List<ViewMovingbackgroundBinding>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMovingbackgroundShowcaseBinding.inflate(inflater)
-        binding.lifecycleOwner = this
+        fun bindViews() {
+            binding = FragmentMovingbackgroundShowcaseBinding.inflate(inflater)
+            binding.lifecycleOwner = this
+
+            movingBackgroundViewBindings = listOf(
+                binding.viewMovingbackground,
+                binding.viewMovingbackgroundInverse,
+                binding.viewMovingbackgroundFast,
+                binding.viewMovingbackgroundSlow
+            )
+        }
+
+        bindViews()
         return binding.root
     }
 
@@ -41,25 +50,9 @@ class MovingBackgroundShowcaseFragment : Fragment() {
         }
 
         fun bindViewModelsOfSubviews() {
-            movingBackgroundView = MovingBackgroundView.createFromBinding(
-                binding.viewMovingbackground,
-                binding.lifecycleOwner!!
-            )
-
-            movingBackgroundSlowView = MovingBackgroundView.createFromBinding(
-                binding.viewMovingbackgroundSlow,
-                binding.lifecycleOwner!!
-            )
-
-            movingBackgroundFastView = MovingBackgroundView.createFromBinding(
-                binding.viewMovingbackgroundFast,
-                binding.lifecycleOwner!!
-            )
-
-            movingBackgroundInverseView = MovingBackgroundView.createFromBinding(
-                binding.viewMovingbackgroundInverse,
-                binding.lifecycleOwner!!
-            )
+            movingBackgroundViewBindings.forEach {
+                MovingBackgroundView.createFromBinding(it, binding.lifecycleOwner!!)
+            }
         }
 
         super.onActivityCreated(savedInstanceState)
