@@ -10,25 +10,33 @@ import honeycomb.android.ui.dataBindings.ViewFactory
  * @see https://stackoverflow.com/questions/36894384/android-move-background-continuously-with-animation
  */
 class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
-
     val viewModel = binding.viewModel!!
 
     init {
-        binding.viewMovingbackgroundBackgroundOne.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
-            viewModel.notifyWidthChanged(binding.viewMovingbackgroundBackgroundOne.width)
+        fun notifyWidthChanges() {
+            binding.viewMovingbackgroundBackgroundOne.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+                viewModel.notifyWidthChanged(binding.viewMovingbackgroundBackgroundOne.width)
+            }
         }
 
-        viewModel.backgroundViewOneTranslationX.observe(binding.lifecycleOwner!!, Observer {
-            binding.viewMovingbackgroundBackgroundOne.translationX = it
-        })
+        fun observeAndRenderBackgroundViewOneTranslationXChanges() {
+            viewModel.backgroundViewOneTranslationX.observe(binding.lifecycleOwner!!, Observer {
+                binding.viewMovingbackgroundBackgroundOne.translationX = it
+            })
+        }
 
-        viewModel.backgroundViewTwoTranslationX.observe(binding.lifecycleOwner!!, Observer {
-            binding.viewMovingbackgroundBackgroundTwo.translationX = it
-        })
+        fun observeAndRenderBackgroundViewTwoTranslationXChanges() {
+            viewModel.backgroundViewTwoTranslationX.observe(binding.lifecycleOwner!!, Observer {
+                binding.viewMovingbackgroundBackgroundTwo.translationX = it
+            })
+        }
+
+        notifyWidthChanges()
+        observeAndRenderBackgroundViewOneTranslationXChanges()
+        observeAndRenderBackgroundViewTwoTranslationXChanges()
     }
 
     companion object{
-
         val factory =
             ViewFactory<ViewMovingbackgroundBinding, MovingBackgroundView>(R.id.view_movingbackground) {
                 if (it.viewModel == null)
@@ -36,5 +44,4 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
                 return@ViewFactory MovingBackgroundView(it)
         }
     }
-
 }
