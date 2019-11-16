@@ -30,21 +30,28 @@ class MovingBackgroundViewModel : ViewModel() {
     val isStarted : LiveData<Boolean> = _isStarted
 
     init {
-        isStarted.observeForever { isStarted ->
-            if (isStarted) {
-                _animator.value.start()
-                return@observeForever
+        fun observeIsStartedChangesIntoAnimator() {
+            isStarted.observeForever { isStarted ->
+                if (isStarted) {
+                    _animator.value.start()
+                    return@observeForever
+                }
+                _animator.value.end()
             }
-            _animator.value.end()
         }
 
-        isReversed.observeForever { isReversed ->
-            if (isReversed) {
-                _animator.value.setFloatValues(0.0f, -1.0f)
-                return@observeForever
+        fun observeIsReversedChangesIntoAnimator() {
+            isReversed.observeForever { isReversed ->
+                if (isReversed) {
+                    _animator.value.setFloatValues(0.0f, -1.0f)
+                    return@observeForever
+                }
+                _animator.value.setFloatValues(0.0f, 1.0f)
             }
-            _animator.value.setFloatValues(0.0f, 1.0f)
         }
+
+        observeIsStartedChangesIntoAnimator()
+        observeIsReversedChangesIntoAnimator()
     }
 
     private fun createValueAnimator(): ValueAnimator {
