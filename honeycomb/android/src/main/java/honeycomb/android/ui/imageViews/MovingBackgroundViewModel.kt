@@ -8,6 +8,10 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import honeycomb.android.R
 
+/**
+ * ViewModel that provides an moving background animation horizontally.
+ * @see https://stackoverflow.com/questions/36894384/android-move-background-continuously-with-animation
+ */
 class MovingBackgroundViewModel : ViewModel() {
     private val _animator = lazy { createValueAnimator() }
     private val _background = MutableLiveData(R.drawable.mercos_full)
