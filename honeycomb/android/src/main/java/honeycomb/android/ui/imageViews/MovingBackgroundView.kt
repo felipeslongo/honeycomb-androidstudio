@@ -4,6 +4,7 @@ import androidx.lifecycle.Observer
 import honeycomb.android.R
 import honeycomb.android.databinding.ViewMovingbackgroundBinding
 import honeycomb.android.ui.dataBindings.ViewFactory
+import honeycomb.platform.android.view.addOnWidthChangeListener
 
 /**
  * View that provides an moving background animation horizontally.
@@ -14,8 +15,8 @@ class MovingBackgroundView(val binding: ViewMovingbackgroundBinding) {
 
     init {
         fun notifyWidthChanges(){
-            binding.viewMovingbackgroundBackgroundOne.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
-                viewModel.notifyWidthChanged(binding.viewMovingbackgroundBackgroundOne.width)
+            binding.viewMovingbackgroundBackgroundOne.addOnWidthChangeListener {
+                viewModel.notifyWidthChanged(it)
             }
         }
 
