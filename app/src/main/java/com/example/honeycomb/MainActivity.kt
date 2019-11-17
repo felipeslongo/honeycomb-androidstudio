@@ -10,6 +10,7 @@ import com.example.honeycomb.ui.imageViews.CircleImageShowcaseFragment
 import com.example.honeycomb.ui.imageViews.MovingBackgroundShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
+import com.example.honeycomb.ui.seekBars.SwipeViewShowcaseFragment
 import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.example.honeycomb.ui.viewBindings.ViewBindingShowcaseFragment
 import com.google.android.material.navigation.NavigationView
@@ -64,6 +65,12 @@ class MainActivity : AppCompatActivity() {
                 if (it.itemId == R.id.view_movingbackground) {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.container, MovingBackgroundShowcaseFragment.newInstance())
+                        .commitNow()
+                }
+
+                if (it.itemId == R.id.view_swipe) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, SwipeViewShowcaseFragment.newInstance())
                         .commitNow()
                 }
 

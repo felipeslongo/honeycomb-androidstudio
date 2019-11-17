@@ -26,5 +26,8 @@
         <item
                 android:id="@+id/view_movingbackground"
                 android:title="Moving Background" />
+        <item
+                android:id="@+id/view_swipe"
+                android:title="Swipe" />
     </group>
 </menu>
