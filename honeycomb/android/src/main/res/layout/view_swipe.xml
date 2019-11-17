@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
         <SeekBar
-                android:id="@+id/view_swipe_checkincheckout_seekbar"
+                android:id="@+id/view_swipe_seekbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
