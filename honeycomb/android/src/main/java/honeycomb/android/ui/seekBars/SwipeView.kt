@@ -4,6 +4,7 @@ import android.widget.SeekBar
 import honeycomb.android.R
 import honeycomb.android.databinding.ViewSwipeBinding
 import honeycomb.android.ui.dataBindings.ViewFactory
+import honeycomb.domain.valuetypes.Percentage
 import honeycomb.platform.android.widget.getProgressPercentage
 
 class SwipeView(val binding: ViewSwipeBinding) {
@@ -26,7 +27,7 @@ class SwipeView(val binding: ViewSwipeBinding) {
                 if (seekBar == null)
                     return
 
-                if (seekBar.getProgressPercentage() < 0.90) {
+                if (seekBar.getProgressPercentage().isLessThan(Percentage.Percent.V090)) {
                     seekBar.progress = 0
                     return
                 }
