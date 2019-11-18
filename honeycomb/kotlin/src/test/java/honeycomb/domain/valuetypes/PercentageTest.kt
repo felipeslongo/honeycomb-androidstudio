@@ -5,30 +5,30 @@ import org.junit.jupiter.api.*;
 class PercentageTest {
 
     @BeforeEach
-    void setUp() {
+    fun setUp() {
     }
 
     @AfterEach
-    void tearDown() {
+    fun tearDown() {
     }
 
     @Test
-    void compareTo() {
+    fun compareTo() {
     }
 
     @Test
-    void isLessThan() {
+    fun isLessThan() {
     }
 
     @Test
-    void getValue() {
+    fun getValue() {
     }
 
     @Test
-    void component1() {
+    fun component1() {
     }
 
     @Test
-    void testEquals() {
+    fun testEquals() {
     }
 }
