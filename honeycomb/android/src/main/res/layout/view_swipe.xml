@@ -29,7 +29,7 @@
                 android:max="1000"
                 android:progress="300"
                 android:progressDrawable="@android:color/transparent"
-                android:thumbTint="@color/selector_rainbow"
+                android:thumb="@drawable/animation_swipe"
                 style="@style/Widget.AppCompat.SeekBar" />
 
     </LinearLayout>

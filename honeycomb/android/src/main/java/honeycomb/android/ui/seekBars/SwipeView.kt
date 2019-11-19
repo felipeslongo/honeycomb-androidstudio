@@ -1,9 +1,12 @@
 package honeycomb.android.ui.seekBars
 
+import android.graphics.drawable.AnimationDrawable
+import android.graphics.drawable.TransitionDrawable
 import android.widget.SeekBar
 import honeycomb.android.R
 import honeycomb.android.databinding.ViewSwipeBinding
 import honeycomb.android.ui.dataBindings.ViewFactory
+import honeycomb.android.ui.drawable.AnimationDrawableService
 import honeycomb.domain.valuetypes.Percentage
 import honeycomb.platform.android.widget.getProgressPercentage
 
@@ -35,6 +38,11 @@ class SwipeView(val binding: ViewSwipeBinding) {
                 seekBar.progress = seekBar.max
             }
         })
+
+        AnimationDrawableService.startAnimationDrawable(binding.viewSwipeSeekbar.thumb){
+            it.setExitFadeDuration(250)
+            it.setEnterFadeDuration(500)
+        }
     }
 
     companion object {
