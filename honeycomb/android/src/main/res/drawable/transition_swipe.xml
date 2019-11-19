@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transition xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/ic_swipe_forward"/>
-    <item android:drawable="@drawable/ic_swipe_backward"/>
+    <item android:drawable="@drawable/ic_swipe_forward_legacy"/>
+    <item android:drawable="@drawable/ic_swipe_backward_legacy"/>
 </transition>

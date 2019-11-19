@@ -11,15 +11,29 @@ import honeycomb.domain.valuetypes.Percentage
 import honeycomb.platform.android.widget.getProgressPercentage
 
 class SwipeView(val binding: ViewSwipeBinding) {
+    var _isSwiped = false
+
     val viewModel = binding.viewModel!!
 
     init {
         binding.viewSwipeSeekbar.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-//                if (progress > 95) {
-//                    seekBar?.thumb = seekBar!!.resources.getDrawable(R.drawable.ic_where_to_vote_32dp)
-//                }
+                if (seekBar == null)
+                    return
+
+                if (seekBar.getProgressPercentage().isLessThan(Percentage.Percent.V090)) {
+                    if(_isSwiped) {
+                        _isSwiped = false
+                        (binding.viewSwipeSeekbar.thumb as TransitionDrawable).reverseTransition(250)
+                    }
+                    return
+                }
+
+                if(!_isSwiped) {
+                    _isSwiped = true
+                    (binding.viewSwipeSeekbar.thumb as TransitionDrawable).startTransition(250)
+                }
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -39,10 +53,10 @@ class SwipeView(val binding: ViewSwipeBinding) {
             }
         })
 
-        AnimationDrawableService.startAnimationDrawable(binding.viewSwipeSeekbar.thumb){
-            it.setExitFadeDuration(250)
-            it.setEnterFadeDuration(500)
-        }
+//        AnimationDrawableService.startAnimationDrawable(binding.viewSwipeSeekbar.thumb){
+//            it.setExitFadeDuration(250)
+//            it.setEnterFadeDuration(500)
+//        }
     }
 
     companion object {
