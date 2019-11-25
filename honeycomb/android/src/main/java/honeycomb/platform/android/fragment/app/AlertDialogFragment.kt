@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import honeycomb.android.R
+import honeycomb.platform.android.content.DimensionService
 
 
 class AlertDialogFragment : DialogFragment() {
@@ -32,8 +33,8 @@ class AlertDialogFragment : DialogFragment() {
 
         val window = dialog!!.window
         val layoutParams = window!!.attributes
-        layoutParams.width = context!!.resources.getDimensionPixelSize(R.dimen._200dp)
-        layoutParams.height = context!!.resources.getDimensionPixelSize(R.dimen._150dp)
+        layoutParams.width = DimensionService.get200Dp(context!!)
+        layoutParams.height = DimensionService.get150Dp(context!!)
         window.attributes = layoutParams
     }
 
