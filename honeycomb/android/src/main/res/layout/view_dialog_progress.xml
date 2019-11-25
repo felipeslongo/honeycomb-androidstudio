@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="@dimen/_200dp"
+        android:layout_height="@dimen/_150dp"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:orientation="vertical"
+        tools:layout_gravity="center"
+        >
+
+    <ProgressBar
+            android:id="@+id/progresso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateBehavior="repeat"
+            android:progressTint="@color/mercos_roxo_900"
+            />
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Fazendo Check-in..."
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            />
+
+</LinearLayout>
