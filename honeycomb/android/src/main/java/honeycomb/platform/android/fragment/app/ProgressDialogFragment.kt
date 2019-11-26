@@ -43,5 +43,15 @@ class ProgressDialogFragment(private val _progressText: String) : DialogFragment
             fragment.show(fragmentManager, FRAGMENT_TAG)
             return fragment
         }
+
+        suspend fun presentSuspendable(
+            fragmentManager: FragmentManager,
+            progressText: String,
+            task: suspend () -> Unit
+        ) {
+            val fragment = present(fragmentManager, progressText)
+            task()
+            fragment.dismiss()
+        }
     }
 }

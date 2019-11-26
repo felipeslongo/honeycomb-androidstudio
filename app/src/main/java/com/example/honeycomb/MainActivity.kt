@@ -15,6 +15,9 @@ import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.example.honeycomb.ui.viewBindings.ViewBindingShowcaseFragment
 import com.google.android.material.navigation.NavigationView
 import honeycomb.platform.android.fragment.app.ProgressDialogFragment
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,7 +79,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (it.itemId == R.id.view_dialog_progress) {
-                    ProgressDialogFragment.present(supportFragmentManager, "Performing Check-In...")
+                    GlobalScope.launch {
+                        ProgressDialogFragment.presentSuspendable(
+                            supportFragmentManager,
+                            "Performing Check-In..."
+                        ) {
+                            delay(3000)
+                        }
+                    }
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
