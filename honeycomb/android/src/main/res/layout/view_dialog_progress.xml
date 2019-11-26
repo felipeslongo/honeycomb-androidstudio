@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:orientation="vertical"
-        tools:layout_gravity="center">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <ProgressBar
-            android:id="@+id/progresso"
+    <data>
+
+    </data>
+
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:indeterminateBehavior="repeat"
-            android:progressTint="@color/mercos_roxo_900"
-            />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:layout_gravity="center">
 
-    <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Please wait ..."
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            />
+        <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@color/mercos_roxo_900" />
 
-</LinearLayout>
+        <TextView
+                android:id="@+id/view_dialog_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Please wait ..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    </LinearLayout>
+</layout>

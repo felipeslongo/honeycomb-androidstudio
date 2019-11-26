@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import honeycomb.android.R
+import honeycomb.android.databinding.ViewDialogProgressBinding
 
 
 class ProgressDialogFragment : DialogFragment() {
+
+    private lateinit var binding: ViewDialogProgressBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,8 +19,8 @@ class ProgressDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return activity?.let {
-            val contentView = inflater.inflate(R.layout.view_dialog_progress, null)
-            contentView
+            binding = ViewDialogProgressBinding.inflate(inflater)
+            binding.root
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
