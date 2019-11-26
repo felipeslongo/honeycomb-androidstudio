@@ -31,6 +31,11 @@ class ProgressDialogFragment(private val _progressText: String) : DialogFragment
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
+    override fun onResume() {
+        super.onResume()
+        DialogFragmentService.preventUserCancellation(this)
+    }
+
     companion object {
         private const val FRAGMENT_TAG =
             "honeycomb.platform.android.fragment.app.ProgressDialogFragment"
@@ -50,8 +55,11 @@ class ProgressDialogFragment(private val _progressText: String) : DialogFragment
             task: suspend () -> Unit
         ) {
             val fragment = present(fragmentManager, progressText)
-            task()
-            fragment.dismiss()
+            try {
+                task()
+            } finally {
+                fragment.dismiss()
+            }
         }
     }
 }
