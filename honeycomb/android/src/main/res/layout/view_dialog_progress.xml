@@ -13,7 +13,7 @@
             android:minWidth="@dimen/_200dp"
             android:minHeight="@dimen/_150dp"
             android:orientation="vertical"
-            android:padding="16dp"
+            android:padding="@dimen/_16dp"
             tools:layout_gravity="center">
 
         <ProgressBar
@@ -27,9 +27,9 @@
                 android:id="@+id/view_dialog_progress_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Please wait ..."
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:layout_marginTop="@dimen/_16dp"
+                android:text="@string/body_please_wait"
+                android:textAppearance="@style/TextAppearance.HoneyComb.Body1" />
 
     </LinearLayout>
 </layout>
