@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (it.itemId == R.id.view_dialog_progress) {
-                    ProgressDialogFragment.present(supportFragmentManager)
+                    ProgressDialogFragment.present(supportFragmentManager, "Performing Check-In...")
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()

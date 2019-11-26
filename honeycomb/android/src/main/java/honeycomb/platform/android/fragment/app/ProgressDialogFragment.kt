@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager
 import honeycomb.android.databinding.ViewDialogProgressBinding
 
 
-class ProgressDialogFragment : DialogFragment() {
+class ProgressDialogFragment(private val _progressText: String) : DialogFragment() {
 
     private lateinit var binding: ViewDialogProgressBinding
 
@@ -19,18 +19,27 @@ class ProgressDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return activity?.let {
+            fun initText() {
+                _progressText.let {
+                    binding.viewDialogProgressText.text = _progressText
+                }
+            }
+
             binding = ViewDialogProgressBinding.inflate(inflater)
+            initText()
             binding.root
         } ?: throw IllegalStateException("Activity cannot be null")
     }
-
 
     companion object {
         private const val FRAGMENT_TAG =
             "honeycomb.platform.android.fragment.app.ProgressDialogFragment"
 
-        fun present(fragmentManager: FragmentManager): ProgressDialogFragment {
-            val fragment = ProgressDialogFragment()
+        fun present(
+            fragmentManager: FragmentManager,
+            progressText: String
+        ): ProgressDialogFragment {
+            val fragment = ProgressDialogFragment(progressText)
             fragment.show(fragmentManager, FRAGMENT_TAG)
             return fragment
         }
