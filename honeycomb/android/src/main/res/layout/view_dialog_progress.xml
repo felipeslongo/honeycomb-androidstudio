@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+                name="viewModel"
+                type="honeycomb.platform.android.fragment.app.ProgressDialogViewModel" />
     </data>
 
     <LinearLayout
@@ -28,7 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_16dp"
-                android:text="@string/body_please_wait"
+                android:text="@{viewModel.progressText}"
+                tools:text="@string/body_please_wait"
                 android:textAppearance="@style/TextAppearance.HoneyComb.Body1" />
 
     </LinearLayout>
