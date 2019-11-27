@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentManager
 import honeycomb.android.databinding.ViewDialogProgressBinding
 
 
-class ProgressDialogFragment(private val _progressText: String) : DialogFragment() {
+class ProgressDialogFragment private constructor(private val _progressText: String) : DialogFragment() {
 
     private lateinit var binding: ViewDialogProgressBinding
 
