@@ -6,7 +6,7 @@ import androidx.fragment.app.DialogFragment
 
 class DialogFragmentService {
     companion object {
-        fun preventUserCancellation(fragment: DialogFragment) {
+        fun preventUserCancellationOnResume(fragment: DialogFragment) {
             fragment.isCancelable = false
             fragment.dialog?.let {
                 it.setCancelable(false)

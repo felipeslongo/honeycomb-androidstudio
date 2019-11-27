@@ -40,7 +40,7 @@ class ProgressDialogFragment(private val _progressText: String) : DialogFragment
 
     override fun onResume() {
         super.onResume()
-        DialogFragmentService.preventUserCancellation(this)
+        DialogFragmentService.preventUserCancellationOnResume(this)
     }
 
     companion object {
