@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ProgressDialogViewModel(progressText: String) : ViewModel() {
-    private val _progressText = MutableLiveData<String>(progressText)
+class ProgressDialogViewModel(viewState: ProgressDialogViewState) : ViewModel() {
+    private val _progressText = MutableLiveData<String>(viewState.progressText)
 
     val progressText: LiveData<String> = _progressText
 

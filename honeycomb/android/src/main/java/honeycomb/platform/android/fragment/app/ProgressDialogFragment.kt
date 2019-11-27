@@ -13,9 +13,10 @@ import honeycomb.android.databinding.ViewDialogProgressBinding
 
 class ProgressDialogFragment : DialogFragment() {
 
+    private var initialViewState: ProgressDialogViewState = ProgressDialogViewState("Bla bla bla")
     private lateinit var binding: ViewDialogProgressBinding
     val viewModel by lazy {
-        ViewModelProviders.of(this, ProgressDialogViewModelFactory(context!!))
+        ViewModelProviders.of(this, ProgressDialogViewModelFactory(initialViewState))
             .get(ProgressDialogViewModel::class.java)
     }
 
@@ -44,10 +45,23 @@ class ProgressDialogFragment : DialogFragment() {
         DialogFragmentService.preventUserCancellationOnResume(this)
     }
 
+    private fun setInitialViewState(viewState: ProgressDialogViewState) {
+        initialViewState = viewState
+    }
+
     companion object {
         private const val FRAGMENT_TAG =
             "honeycomb.platform.android.fragment.app.ProgressDialogFragment"
 
+        fun present(
+            fragmentManager: FragmentManager,
+            viewState: ProgressDialogViewState
+        ): ProgressDialogFragment {
+            val fragment = ProgressDialogFragment()
+            fragment.setInitialViewState(viewState)
+            fragment.show(fragmentManager, FRAGMENT_TAG)
+            return fragment
+        }
 
         fun present(
             fragmentManager: FragmentManager,
