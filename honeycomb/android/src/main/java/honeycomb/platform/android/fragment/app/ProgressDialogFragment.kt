@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import honeycomb.android.databinding.ViewDialogProgressBinding
+import honeycomb.platform.android.databinding.setProgressText
 
 
 class ProgressDialogFragment private constructor(private val _progressText: String) : DialogFragment() {
@@ -26,14 +27,8 @@ class ProgressDialogFragment private constructor(private val _progressText: Stri
         savedInstanceState: Bundle?
     ): View? {
         return activity?.let {
-            fun initText() {
-                _progressText.let {
-                    binding.viewDialogProgressText.text = _progressText
-                }
-            }
-
             binding = ViewDialogProgressBinding.inflate(inflater)
-            initText()
+            binding.setProgressText(_progressText)
             binding.root
         } ?: throw IllegalStateException("Activity cannot be null")
     }
