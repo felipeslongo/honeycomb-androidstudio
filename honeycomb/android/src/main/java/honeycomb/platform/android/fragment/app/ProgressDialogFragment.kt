@@ -1,5 +1,6 @@
 package honeycomb.platform.android.fragment.app
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,12 @@ import honeycomb.android.databinding.ViewDialogProgressBinding
 class ProgressDialogFragment(private val _progressText: String) : DialogFragment() {
 
     private lateinit var binding: ViewDialogProgressBinding
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState)
+        DialogFragmentService.removeTitleOnCreateDialog(dialog)
+        return dialog
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
