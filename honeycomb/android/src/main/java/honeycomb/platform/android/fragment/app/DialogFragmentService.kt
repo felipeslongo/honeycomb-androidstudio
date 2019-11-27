@@ -1,5 +1,7 @@
 package honeycomb.platform.android.fragment.app
 
+import android.app.Dialog
+import android.view.Window
 import androidx.fragment.app.DialogFragment
 
 class DialogFragmentService {
@@ -10,6 +12,10 @@ class DialogFragmentService {
                 it.setCancelable(false)
                 it.setCanceledOnTouchOutside(false)
             }
+        }
+
+        fun removeTitleOnCreateDialog(dialog: Dialog) {
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         }
     }
 }
