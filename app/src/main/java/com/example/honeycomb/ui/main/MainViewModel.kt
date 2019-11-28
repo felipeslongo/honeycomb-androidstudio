@@ -1,7 +1,8 @@
 package com.example.honeycomb.ui.main
 
 import androidx.lifecycle.ViewModel
+import honeycomb.platform.android.fragment.app.ProgressDialogViewModel
 
 class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    val progressDialogViewModel = ProgressDialogViewModel(false, "Performing Check-In...")
 }

@@ -9,19 +9,25 @@ import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabActivity
 import com.example.honeycomb.ui.imageViews.CircleImageShowcaseFragment
 import com.example.honeycomb.ui.imageViews.MovingBackgroundShowcaseFragment
 import com.example.honeycomb.ui.main.MainFragment
+import com.example.honeycomb.ui.main.MainViewModel
 import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 import com.example.honeycomb.ui.seekBars.SwipeViewShowcaseFragment
 import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.example.honeycomb.ui.viewBindings.ViewBindingShowcaseFragment
 import com.google.android.material.navigation.NavigationView
-import honeycomb.platform.android.fragment.app.ProgressDialogFragment
-import honeycomb.platform.android.fragment.app.ProgressDialogViewModel
+import honeycomb.platform.android.fragment.app.ProgressDialogView
+import honeycomb.platform.android.lifecycle.getViewModel
 
 class MainActivity : AppCompatActivity() {
+
+    val viewModel by lazy { getViewModel { MainViewModel() } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+
+        ProgressDialogView(this, viewModel.progressDialogViewModel)
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment.newInstance())
@@ -77,14 +83,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (it.itemId == R.id.view_dialog_progress) {
-                    val progressViewModel = ProgressDialogFragment.presentWithViewModel(this) {
-                        val progressViewModel =
-                            ProgressDialogViewModel(true, "Performing Check-In...")
-                        progressViewModel
-                    }
-
-                    progressViewModel.present()
-                    progressViewModel.dismissAfter(5000)
+                    viewModel.progressDialogViewModel.present()
+                    viewModel.progressDialogViewModel.dismissAfter(5000)
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
