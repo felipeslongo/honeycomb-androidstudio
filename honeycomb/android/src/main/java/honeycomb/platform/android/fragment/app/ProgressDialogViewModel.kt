@@ -11,25 +11,26 @@ class ProgressDialogViewModel() : ViewModel() {
     private val _isVisible = MutableLiveData(false)
     private val _progressText = MutableLiveData("Please wait...")
 
-    constructor(progressText: String) : this() {
+    constructor(isVisible: Boolean, progressText: String) : this() {
+        _isVisible.value = isVisible
         _progressText.value = progressText
     }
 
     val isVisible: LiveData<Boolean> = _isVisible
     val progressText: LiveData<String> = _progressText
 
-    fun show() {
+    fun present() {
         _isVisible.value = true
     }
 
-    fun hide() {
+    fun dismiss() {
         _isVisible.value = false
     }
 
-    fun hideAfter(timeMillis: Long) {
+    fun dismissAfter(timeMillis: Long) {
         viewModelScope.launch {
             delay(timeMillis)
-            _isVisible.value = false
+            dismiss()
         }
     }
 }

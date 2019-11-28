@@ -69,7 +69,6 @@ class ProgressDialogFragment : DialogFragment() {
             creator: (() -> ProgressDialogViewModel)
         ): ProgressDialogViewModel {
             val viewModel = activity.getViewModel(creator)
-            viewModel.show()
             val fragment = ProgressDialogFragment()
             fragment.show(activity.supportFragmentManager, FRAGMENT_TAG)
             return viewModel

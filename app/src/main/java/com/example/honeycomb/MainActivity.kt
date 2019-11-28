@@ -78,9 +78,13 @@ class MainActivity : AppCompatActivity() {
 
                 if (it.itemId == R.id.view_dialog_progress) {
                     val progressViewModel = ProgressDialogFragment.presentWithViewModel(this) {
-                        return@presentWithViewModel ProgressDialogViewModel("Performing Check-In...")
+                        val progressViewModel =
+                            ProgressDialogViewModel(true, "Performing Check-In...")
+                        progressViewModel
                     }
-                    progressViewModel.hideAfter(5000)
+
+                    progressViewModel.present()
+                    progressViewModel.dismissAfter(5000)
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
