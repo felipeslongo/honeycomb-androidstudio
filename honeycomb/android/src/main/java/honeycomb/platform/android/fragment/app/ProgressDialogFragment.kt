@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
@@ -61,6 +62,17 @@ class ProgressDialogFragment : DialogFragment() {
             val fragment = ProgressDialogFragment()
             fragment.show(fragmentManager, FRAGMENT_TAG)
             return fragment
+        }
+
+        fun presentWithViewModel(
+            activity: AppCompatActivity,
+            creator: (() -> ProgressDialogViewModel)
+        ): ProgressDialogViewModel {
+            val viewModel = activity.getViewModel(creator)
+            viewModel.show()
+            val fragment = ProgressDialogFragment()
+            fragment.show(activity.supportFragmentManager, FRAGMENT_TAG)
+            return viewModel
         }
     }
 }
