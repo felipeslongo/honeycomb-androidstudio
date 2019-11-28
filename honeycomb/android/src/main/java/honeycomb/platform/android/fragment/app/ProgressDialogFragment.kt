@@ -8,12 +8,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import honeycomb.android.databinding.ViewDialogProgressBinding
-import honeycomb.platform.android.databinding.setProgressText
+import honeycomb.platform.android.lifecycle.getViewModel
 
 
-class ProgressDialogFragment private constructor(private val _progressText: String) : DialogFragment() {
+class ProgressDialogFragment : DialogFragment() {
 
-    private lateinit var binding: ViewDialogProgressBinding
+    private lateinit var _binding: ViewDialogProgressBinding
+    private lateinit var _viewModel: ProgressDialogViewModel
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        _viewModel = activity!!.getViewModel()
+        _binding.viewModel = _viewModel
+        _binding.executePendingBindings()
+    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
@@ -27,9 +35,8 @@ class ProgressDialogFragment private constructor(private val _progressText: Stri
         savedInstanceState: Bundle?
     ): View? {
         return activity?.let {
-            binding = ViewDialogProgressBinding.inflate(inflater)
-            binding.setProgressText(_progressText)
-            binding.root
+            _binding = ViewDialogProgressBinding.inflate(inflater)
+            _binding.root
         } ?: throw IllegalStateException("Activity cannot be null")
     }
 
@@ -42,26 +49,10 @@ class ProgressDialogFragment private constructor(private val _progressText: Stri
         private const val FRAGMENT_TAG =
             "honeycomb.platform.android.fragment.app.ProgressDialogFragment"
 
-        fun present(
-            fragmentManager: FragmentManager,
-            progressText: String
-        ): ProgressDialogFragment {
-            val fragment = ProgressDialogFragment(progressText)
+        fun present(fragmentManager: FragmentManager): ProgressDialogFragment {
+            val fragment = ProgressDialogFragment()
             fragment.show(fragmentManager, FRAGMENT_TAG)
             return fragment
-        }
-
-        suspend fun presentSuspendable(
-            fragmentManager: FragmentManager,
-            progressText: String,
-            task: suspend () -> Unit
-        ) {
-            val fragment = present(fragmentManager, progressText)
-            try {
-                task()
-            } finally {
-                fragment.dismiss()
-            }
         }
     }
 }
