@@ -7,17 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.ViewModelProviders
 import honeycomb.android.databinding.ViewDialogProgressBinding
+import honeycomb.platform.android.databinding.setProgressText
 
 
-class ProgressDialogFragment : DialogFragment() {
+class ProgressDialogFragment private constructor(private val _progressText: String) : DialogFragment() {
 
     private lateinit var binding: ViewDialogProgressBinding
-    val viewModel by lazy {
-        ViewModelProviders.of(this, ProgressDialogViewModelFactory(context!!))
-            .get(ProgressDialogViewModel::class.java)
-    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
@@ -32,9 +28,7 @@ class ProgressDialogFragment : DialogFragment() {
     ): View? {
         return activity?.let {
             binding = ViewDialogProgressBinding.inflate(inflater)
-            binding.viewModel = viewModel
-            binding.lifecycleOwner = this
-            binding.executePendingBindings()
+            binding.setProgressText(_progressText)
             binding.root
         } ?: throw IllegalStateException("Activity cannot be null")
     }
@@ -48,12 +42,11 @@ class ProgressDialogFragment : DialogFragment() {
         private const val FRAGMENT_TAG =
             "honeycomb.platform.android.fragment.app.ProgressDialogFragment"
 
-
         fun present(
             fragmentManager: FragmentManager,
             progressText: String
         ): ProgressDialogFragment {
-            val fragment = ProgressDialogFragment()
+            val fragment = ProgressDialogFragment(progressText)
             fragment.show(fragmentManager, FRAGMENT_TAG)
             return fragment
         }
