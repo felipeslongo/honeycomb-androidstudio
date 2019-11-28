@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Observer
 import honeycomb.android.databinding.ViewDialogProgressBinding
 import honeycomb.platform.android.lifecycle.getViewModel
 
@@ -21,6 +22,12 @@ class ProgressDialogFragment : DialogFragment() {
         _viewModel = activity!!.getViewModel()
         _binding.viewModel = _viewModel
         _binding.executePendingBindings()
+
+        _viewModel.isVisible.observe(this, Observer {
+            if (it)
+                return@Observer
+            dismiss()
+        })
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -36,6 +43,7 @@ class ProgressDialogFragment : DialogFragment() {
     ): View? {
         return activity?.let {
             _binding = ViewDialogProgressBinding.inflate(inflater)
+            _binding.lifecycleOwner = this
             _binding.root
         } ?: throw IllegalStateException("Activity cannot be null")
     }

@@ -78,18 +78,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (it.itemId == R.id.view_dialog_progress) {
-                    getViewModel {
+                    val progressViewModel = getViewModel {
                         return@getViewModel ProgressDialogViewModel("Performing Check-In...")
                     }
+                    progressViewModel.show()
                     ProgressDialogFragment.present(supportFragmentManager)
-//                    GlobalScope.launch {
-//                        ProgressDialogFragment.presentSuspendable(
-//                            supportFragmentManager,
-//                            "Performing Check-In..."
-//                        ) {
-//                            delay(3000)
-//                        }
-//                    }
+                    progressViewModel.hideAfter(5000)
                 }
 
                 findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
