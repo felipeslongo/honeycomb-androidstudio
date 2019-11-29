@@ -18,7 +18,7 @@
             android:padding="@dimen/_16dp"
             tools:layout_gravity="center">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <ImageView
                 android:layout_width="@dimen/_48dp"
                 android:layout_height="@dimen/_48dp"
                 app:srcCompat="@drawable/ic_done_black_24dp"
