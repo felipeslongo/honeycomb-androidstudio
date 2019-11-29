@@ -2,7 +2,7 @@ package honeycomb.platform.android.fragment.app
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import honeycomb.platform.android.lifecycle.getViewModel
+import honeycomb.platform.android.lifecycle.registerViewModelScope
 
 class ProgressDialogView(
     private val _activity: AppCompatActivity,
@@ -10,10 +10,7 @@ class ProgressDialogView(
 ) {
 
     init {
-        _activity.getViewModel {
-            _viewModel
-        }
-
+        _activity.registerViewModelScope(_viewModel)
         initBindings()
     }
 
