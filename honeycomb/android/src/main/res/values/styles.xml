@@ -2,4 +2,7 @@
 <resources>
 
     <style name="TextAppearance.HoneyComb.Body1" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <style name="TextAppearance.HoneyComb.Headline6" parent="TextAppearance.MaterialComponents.Headline6" />
+
 </resources>

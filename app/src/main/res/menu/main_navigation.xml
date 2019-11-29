@@ -32,5 +32,8 @@
         <item
                 android:id="@+id/view_dialog_progress"
                 android:title="Dialog Progress" />
+        <item
+                android:id="@+id/view_dialog_status"
+                android:title="Dialog Status" />
     </group>
 </menu>

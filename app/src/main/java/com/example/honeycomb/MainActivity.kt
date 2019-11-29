@@ -16,6 +16,7 @@ import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.example.honeycomb.ui.viewBindings.ViewBindingShowcaseFragment
 import com.google.android.material.navigation.NavigationView
 import honeycomb.platform.android.fragment.app.ProgressDialogView
+import honeycomb.platform.android.fragment.app.StatusDialogView
 import honeycomb.platform.android.lifecycle.getViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
 
         ProgressDialogView(this, viewModel.progressDialogViewModel)
-
+        StatusDialogView(this, viewModel.statusDialogViewModel)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, MainFragment.newInstance())
@@ -85,6 +86,10 @@ class MainActivity : AppCompatActivity() {
             if (it.itemId == R.id.view_dialog_progress) {
                 viewModel.progressDialogViewModel.present()
                 viewModel.progressDialogViewModel.dismissAfter(5000)
+            }
+
+            if (it.itemId == R.id.view_dialog_status) {
+                viewModel.statusDialogViewModel.present()
             }
 
             findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()
