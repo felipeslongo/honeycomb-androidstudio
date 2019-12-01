@@ -6,6 +6,9 @@ import androidx.fragment.app.DialogFragment
 
 class DialogFragmentService {
     companion object {
+        fun getOnDismissObservable(fragment: DialogFragment) =
+            DialogFragmentOnDismissObservable(fragment)
+
         fun preventUserCancellationOnResume(fragment: DialogFragment) {
             fragment.isCancelable = false
             fragment.dialog?.let {
