@@ -33,7 +33,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                app:srcCompat="@drawable/ic_done_black_24dp"
+                app:srcCompat="@drawable/ic_pin_drop_black_24dp"
                 android:tint="@color/mercos_cinza_400"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
