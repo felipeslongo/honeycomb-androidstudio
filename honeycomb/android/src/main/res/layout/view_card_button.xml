@@ -6,6 +6,7 @@
         android:layout_width="160dp"
         android:layout_height="80dp"
         app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
