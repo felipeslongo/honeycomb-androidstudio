@@ -5,7 +5,11 @@
         android:id="@+id/view_card_button"
         android:layout_width="160dp"
         android:layout_height="80dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
