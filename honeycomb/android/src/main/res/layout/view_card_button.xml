@@ -27,7 +27,7 @@
                 tools:text="Fazer um \nCheck-Out"
                 android:textAllCaps="true"
                 android:textSize="13sp"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textAppearance="?attr/textAppearanceButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
