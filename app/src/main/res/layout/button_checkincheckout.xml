@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.honeycomb.ui.buttons.CheckInCheckOutViewModel"/>
+        <variable
+                name="viewModel"
+                type="com.example.honeycomb.ui.buttons.CheckInCheckOutViewModel" />
+    </data>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_checkincheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="@{!viewModel.isBusy}"
+            app:drawableTintBinding="@{viewModel.iconTint}"
+            app:drawableTopBinding="@{viewModel.icon}"
+            app:isActivatedBinding="@{viewModel.isBusy}"
+            app:isCheckedBinding="@{viewModel.isCheckedIn}"
+            android:text="@{viewModel.textStringId, default=@string/checkincheckout_checkin}"
+            app:textColorResourceBinding="@{viewModel.textColor}"
+            style="@style/Widget.Honeycomb.Button.CheckInCheckOut"/>
+</layout>

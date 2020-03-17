@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.example.honeycomb.ui.imageViews.MovingBackgroundShowcaseViewModel" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".ui.imageViews.MovingBackgroundShowcaseFragment">
+
+        <include
+                android:id="@+id/view_movingbackground"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                app:viewModel="@{viewModel.movingBackgroundViewModel}" />
+
+        <include
+                android:id="@+id/view_movingbackground_slow"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundSlowViewModel}" />
+
+        <include
+                android:id="@+id/view_movingbackground_fast"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundFastViewModel}" />
+
+        <include
+                android:id="@+id/view_movingbackground_inverse"
+                layout="@layout/view_movingbackground"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundInverseViewModel}" />
+
+        <include
+                android:id="@+id/view_movingbackground_zelda"
+                layout="@layout/view_movingbackground"
+                android:layout_width="256dp"
+                android:layout_height="256dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                app:viewModel="@{viewModel.movingBackgroundZeldaViewModel}" />
+
+    </LinearLayout>
+</layout>

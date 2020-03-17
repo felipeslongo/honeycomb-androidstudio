@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.HoneyComb.Button.UnelevatedButton.White" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:backgroundTint">@color/selector_button_white</item>
+        <item name="rippleColor">@color/ripple_on_white</item>
+    </style>
+</resources>

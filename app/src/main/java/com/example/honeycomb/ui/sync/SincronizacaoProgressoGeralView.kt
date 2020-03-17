@@ -13,6 +13,7 @@ import android.view.animation.LinearInterpolator
 import androidx.core.content.ContextCompat
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import com.example.honeycomb.R
+import com.example.honeycomb.ui.colors.ColorServices
 import kotlinx.coroutines.*
 
 
@@ -62,7 +63,7 @@ class SincronizacaoProgressoGeralView(val status: TextView, val tempo: TextView,
     }
 
     private fun atribuirCor(resourceId: Int){
-        val color = ContextCompat.getColorStateList(context, resourceId)
+        val color = ColorServices.getColorStateList(context, resourceId)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             progresso.progressTintList = color
         }

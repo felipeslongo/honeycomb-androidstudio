@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.HoneyComb.Body1" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <style name="TextAppearance.HoneyComb.Headline6" parent="TextAppearance.MaterialComponents.Headline6" />
+
+</resources>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Honeycomb</string>
+    <string name="checkincheckout_checkin">Check-In</string>
+    <string name="checkincheckout_checkout">Check-Out</string>
 </resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="honeycomb.platform.android.fragment.app.StatusDialogViewModel" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_16dp"
+            tools:layout_gravity="center">
+
+        <ImageView
+                android:layout_width="@dimen/_48dp"
+                android:layout_height="@dimen/_48dp"
+                app:srcCompat="@drawable/ic_done_black_24dp"
+                app:tint="@color/mercos_verde_600" />
+
+        <TextView
+                android:id="@+id/view_dialog_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:gravity="center_horizontal"
+                android:text="@{viewModel.statusText}"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.HoneyComb.Headline6"
+                android:textStyle="bold"
+                tools:text="Check-In realizado com sucesso!" />
+
+    </LinearLayout>
+</layout>

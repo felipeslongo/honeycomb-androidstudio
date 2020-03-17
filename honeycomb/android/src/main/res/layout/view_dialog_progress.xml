@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="honeycomb.platform.android.fragment.app.ProgressDialogViewModel" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="@dimen/_200dp"
+            android:minHeight="@dimen/_150dp"
+            android:orientation="vertical"
+            android:padding="@dimen/_16dp"
+            tools:layout_gravity="center">
+
+        <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateBehavior="repeat"
+                android:progressTint="@color/mercos_roxo_900" />
+
+        <TextView
+                android:id="@+id/view_dialog_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:text="@{viewModel.progressText}"
+                tools:text="@string/body_please_wait"
+                android:textAppearance="@style/TextAppearance.HoneyComb.Body1" />
+
+    </LinearLayout>
+</layout>

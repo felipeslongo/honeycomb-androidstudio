@@ -23,5 +23,17 @@
         <item
                 android:id="@+id/view_binding"
                 android:title="View Binding" />
+        <item
+                android:id="@+id/view_movingbackground"
+                android:title="Moving Background" />
+        <item
+                android:id="@+id/view_swipe"
+                android:title="Swipe" />
+        <item
+                android:id="@+id/view_dialog_progress"
+                android:title="Dialog Progress" />
+        <item
+                android:id="@+id/view_dialog_status"
+                android:title="Dialog Status" />
     </group>
 </menu>
