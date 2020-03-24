@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="AppTheme.Base" />
+    <style name="AppTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorControlNormal">#ababab</item>
+        <item name="colorControlActivated">#5A7BB3</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- Material Colors-->
+        <item name="colorPrimary">@color/roxo_mercos</item>
+        <item name="colorPrimaryDark">@color/preto_mercos</item>
+        <item name="colorAccent">@color/mercos_azul_500</item>
+    </style>
+</resources>
