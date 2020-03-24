@@ -1,3 +1,4 @@
+include ':mercos'
 include ':app'
 rootProject.name='Honeycomb'
 include ':honeycomb:kotlin'

@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/honeycomb" />
             <option value="$PROJECT_DIR$/honeycomb/android" />
             <option value="$PROJECT_DIR$/honeycomb/kotlin" />
+            <option value="$PROJECT_DIR$/mercos" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
