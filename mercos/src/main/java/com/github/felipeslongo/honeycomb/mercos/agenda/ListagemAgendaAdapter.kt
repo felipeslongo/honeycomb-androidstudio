@@ -12,7 +12,7 @@ class ListagemAgendaAdapter(
     val viewModel: ListagemAgendaAndroidViewModel
 ) : RecyclerView.Adapter<ListagemAgendaViewHolder>() {
 
-    private val itens: MutableList<ItemAgendaAndroidViewModel> = mutableListOf()
+    private val itens: MutableList<ItemAgendaViewState> = mutableListOf()
 
     init {
         viewModel.itens.observe(lifecycleOwner, Observer { newItens ->
@@ -25,14 +25,12 @@ class ListagemAgendaAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListagemAgendaViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val viewBinding = ViewItemAgendaBinding.inflate(inflater, parent, false)
-        viewBinding.lifecycleOwner = lifecycleOwner
-        viewBinding.viewModel = ItemAgendaAndroidViewModel.placeholder
-        return ListagemAgendaViewHolder(viewBinding)
+        return ListagemAgendaViewHolder(lifecycleOwner, viewBinding)
     }
 
     override fun getItemCount() = itens.size
 
     override fun onBindViewHolder(holder: ListagemAgendaViewHolder, position: Int) {
-        holder.viewModel = itens.getOrNull(position) ?: ItemAgendaAndroidViewModel.placeholder
+        holder.viewModel.atualizarViewState(itens.getOrNull(position))
     }
 }

@@ -9,7 +9,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ListagemAgendaAndroidViewModel : ViewModel() {
-    private val _itens: MutableLiveData<List<ItemAgendaAndroidViewModel>> =
+    private val _itens: MutableLiveData<List<ItemAgendaViewState>> =
         MutableLiveData(listOf())
     private var initAsyncJob: Job
 
@@ -17,7 +17,7 @@ class ListagemAgendaAndroidViewModel : ViewModel() {
         initAsyncJob = initAsync()
     }
 
-    val itens: LiveData<List<ItemAgendaAndroidViewModel>> = _itens
+    val itens: LiveData<List<ItemAgendaViewState>> = _itens
 
     private fun initAsync() = viewModelScope.launch {
         loadDataAsync()
@@ -25,9 +25,9 @@ class ListagemAgendaAndroidViewModel : ViewModel() {
 
     private suspend fun loadDataAsync() {
         delay(3000)
-        val newItens = mutableListOf<ItemAgendaAndroidViewModel>()
-        for (index in 0..999)
-            newItens.add(ItemAgendaAndroidViewModel())
+        val newItens = mutableListOf<ItemAgendaViewState>()
+        for (index in 1..1000)
+            newItens.add(ItemAgendaViewState.createLoremIpsum(index))
         _itens.value = newItens
     }
 }
