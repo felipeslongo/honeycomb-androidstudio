@@ -1,8 +1,8 @@
 package com.github.felipeslongo.honeycomb.mercos.agenda
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.github.felipeslongo.honeycomb.mercos.databinding.ContentListagemAgendaBinding
 import honeycomb.platform.android.lifecycle.getViewModel
 
@@ -19,10 +19,15 @@ class ListagemAgenda : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
+        initRecyclerView()
     }
 
-    companion object{
-        fun present(caller: AppCompatActivity){
+    private fun initRecyclerView() {
+        viewBinding.recyclerView.adapter = ListagemAgendaAdapter(this, viewModel)
+    }
+
+    companion object {
+        fun present(caller: AppCompatActivity) {
             caller.startActivity(Intent(caller, ListagemAgenda::class.java))
         }
     }
