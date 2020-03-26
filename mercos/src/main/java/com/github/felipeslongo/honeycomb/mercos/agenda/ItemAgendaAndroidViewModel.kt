@@ -32,6 +32,11 @@ class ItemAgendaAndroidViewModel {
     }
 
     fun atualizarEstadoParaPlaceholder() {
-
+        _nomeDoCliente.value = ""
+        _nomeDoRoteiro.value = ""
+        _horario.value = ""
+        _nomeDoResponsavel.value = ""
+        _telefone.value = ""
+        _endereco.value = ""
     }
 }
