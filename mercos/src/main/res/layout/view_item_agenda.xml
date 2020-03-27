@@ -77,9 +77,19 @@
                     android:text="Cliente"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/frameLayout_tipo"
                     app:layout_constraintTop_toTopOf="@+id/guideline_top"
                     tools:text="Lima Luminárias e Acessórios" />
+
+            <ImageView
+                    android:id="@+id/imageView_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_top"
+                    app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
             <TextView
                     android:id="@+id/textView_roteiro"
