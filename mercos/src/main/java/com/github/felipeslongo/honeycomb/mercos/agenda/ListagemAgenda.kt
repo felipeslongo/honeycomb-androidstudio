@@ -2,7 +2,10 @@ package com.github.felipeslongo.honeycomb.mercos.agenda
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
+import com.github.felipeslongo.honeycomb.mercos.R
 import com.github.felipeslongo.honeycomb.mercos.databinding.ContentListagemAgendaBinding
 import honeycomb.platform.android.lifecycle.getViewModel
 
@@ -20,6 +23,11 @@ class ListagemAgenda : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         initRecyclerView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_listagem_agenda, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun initRecyclerView() {
