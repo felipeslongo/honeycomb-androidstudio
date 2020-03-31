@@ -3,7 +3,8 @@
         package="com.github.felipeslongo.honeycomb.mercos">
 
     <application>
-        <activity android:name=".agenda.ListagemAgenda"></activity>
+        <activity android:name=".agenda.ListagemAgenda"
+                android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
