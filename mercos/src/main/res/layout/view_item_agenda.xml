@@ -24,28 +24,28 @@
                 android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_begin"
+                    android:id="@+id/guideline_esquerda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintGuide_begin="12dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_end"
+                    android:id="@+id/guideline_direita"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintGuide_end="12dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_top"
+                    android:id="@+id/guideline_superior"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintGuide_begin="12dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_bottom"
+                    android:id="@+id/guideline_inferior"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -60,8 +60,8 @@
                     android:backgroundTint="@color/mercos_cinza_100"
                     android:padding="8dp"
                     app:srcCompat="@drawable/ic_baseline_location_on_24"
-                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_top"/>
+                    app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_superior"/>
 
             <TextView
                     android:id="@+id/textView_cliente_nome"
@@ -75,15 +75,15 @@
                     app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView_tipo"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_top"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_superior"
                     tools:text="Lima Luminárias e Acessórios" />
 
             <ImageView
                     android:id="@+id/imageView_menu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_top"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_superior"
                     app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
             <TextView
@@ -150,10 +150,10 @@
                     android:gravity="start|center_vertical"
                     android:text="Realizar"
                     android:textAlignment="textStart"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
                     app:layout_constraintEnd_toStartOf="@+id/imageView_telefone"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline_begin"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
                     tools:text="Fazer Check-In" />
 
             <ImageView
@@ -171,8 +171,8 @@
                     android:id="@+id/imageView_mapa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
                     app:layout_constraintTop_toTopOf="@+id/button_acao"
                     app:srcCompat="@drawable/ic_baseline_map_24" />
 
