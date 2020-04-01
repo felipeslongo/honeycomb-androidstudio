@@ -3,10 +3,10 @@ package com.github.felipeslongo.honeycomb.mercos.agenda
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.github.felipeslongo.honeycomb.mercos.R
 import com.github.felipeslongo.honeycomb.mercos.databinding.ContentListagemAgendaBinding
+import com.google.android.material.tabs.TabLayout
 import honeycomb.platform.android.lifecycle.getViewModel
 
 class ListagemAgenda : AppCompatActivity() {
@@ -23,6 +23,7 @@ class ListagemAgenda : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         initRecyclerView()
+        initTabLayout()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -32,6 +33,21 @@ class ListagemAgenda : AppCompatActivity() {
 
     private fun initRecyclerView() {
         viewBinding.recyclerView.adapter = ListagemAgendaAdapter(this, viewModel)
+    }
+
+    private fun initTabLayout() {
+        viewBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                viewBinding.recyclerView.adapter = null
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                initRecyclerView()
+            }
+        })
     }
 
     companion object {
