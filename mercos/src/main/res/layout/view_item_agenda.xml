@@ -57,7 +57,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:background="@drawable/shape_circle"
-                    android:backgroundTint="@color/mercos_cinza_100"
+                    app:backgroundTint="@color/mercos_cinza_100"
                     android:padding="8dp"
                     app:srcCompat="@drawable/ic_baseline_location_on_24"
                     app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
