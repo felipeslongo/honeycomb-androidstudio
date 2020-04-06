@@ -52,32 +52,14 @@
                     android:orientation="horizontal"
                     app:layout_constraintGuide_end="4dp" />
 
-            <ImageView
-                    android:id="@+id/imageView_tipo"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shape_circle"
-                    app:backgroundTint="@color/mercos_cinza_100"
-                    android:padding="8dp"
-                    app:srcCompat="@drawable/ic_baseline_location_on_24"
-                    app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_superior"/>
-
-            <TextView
-                    android:id="@+id/textView_cliente_nome"
+            <include
+                    layout="@layout/view_item_sumario_agenda"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="Cliente"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/imageView_tipo"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_superior"
-                    tools:text="Lima Luminárias e Acessórios" />
+                    app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_superior" />
 
             <ImageView
                     android:id="@+id/imageView_menu"
@@ -87,51 +69,6 @@
                     app:layout_constraintTop_toTopOf="@+id/guideline_superior"
                     app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
-            <TextView
-                    android:id="@+id/textView_roteiro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:text="Roteiro"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView_roteiro"
-                    app:layout_constraintStart_toEndOf="@+id/imageView_roteiro"
-                    app:layout_constraintTop_toTopOf="@+id/imageView_roteiro"
-                    tools:text="Rota Zona Sul" />
-
-            <ImageView
-                    android:id="@+id/imageView_roteiro"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:layout_marginTop="4dp"
-                    android:tint="@color/mercos_cinza_500"
-                    app:layout_constraintStart_toStartOf="@+id/textView_cliente_nome"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_cliente_nome"
-                    app:srcCompat="@drawable/ic_baseline_directions_24" />
-
-            <TextView
-                    android:id="@+id/textView_horario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="às 00:00"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView_cliente_nome"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView_roteiro"
-                    tools:text="às 15:32" />
-
-            <TextView
-                    android:id="@+id/textView_responsavel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="Responsável"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/textView_horario"
-                    app:layout_constraintTop_toTopOf="@+id/textView_horario"
-                    tools:text="João Martins" />
-
             <View
                     android:id="@+id/view_divider"
                     style="@style/Divider"
@@ -140,7 +77,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/button_acao"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_horario" />
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_sumario" />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/button_acao"
