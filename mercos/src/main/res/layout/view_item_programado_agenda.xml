@@ -17,7 +17,8 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
+            app:cardUseCompatPadding="true"
+            android:theme="@style/AppTheme">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
