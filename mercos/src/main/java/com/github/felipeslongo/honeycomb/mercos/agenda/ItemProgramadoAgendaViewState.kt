@@ -1,6 +1,6 @@
 package com.github.felipeslongo.honeycomb.mercos.agenda
 
-data class ItemAgendaViewState(
+data class ItemProgramadoAgendaViewState(
     val id: Int,
     val nomeDoCliente: String = "",
     val nomeDoRoteiro: String = "",
@@ -11,7 +11,7 @@ data class ItemAgendaViewState(
 ) {
 
     companion object {
-        fun createLoremIpsum(id: Int) = ItemAgendaViewState(
+        fun createLoremIpsum(id: Int) = ItemProgramadoAgendaViewState(
             id,
             "Lima Luminárias e Acessórios",
             "Rota Zona Sul",

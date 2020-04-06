@@ -3,7 +3,7 @@ package com.github.felipeslongo.honeycomb.mercos.agenda
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-class ItemAgendaAndroidViewModel {
+class ItemProgramadoAgendaAndroidViewModel {
     val _nomeDoCliente: MutableLiveData<String> = MutableLiveData("")
     val _nomeDoRoteiro: MutableLiveData<String> = MutableLiveData("")
     val _horario: MutableLiveData<String> = MutableLiveData("")
@@ -18,7 +18,7 @@ class ItemAgendaAndroidViewModel {
     val telefone: LiveData<String> = _telefone
     val endereco: LiveData<String> = _endereco
 
-    fun atualizarViewState(viewState: ItemAgendaViewState?) {
+    fun atualizarViewState(viewState: ItemProgramadoAgendaViewState?) {
         if (viewState == null) {
             atualizarEstadoParaPlaceholder()
             return

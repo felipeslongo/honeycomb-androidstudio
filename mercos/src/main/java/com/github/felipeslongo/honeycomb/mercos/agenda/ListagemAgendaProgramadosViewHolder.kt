@@ -2,21 +2,21 @@ package com.github.felipeslongo.honeycomb.mercos.agenda
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
-import com.github.felipeslongo.honeycomb.mercos.databinding.ViewItemAgendaBinding
+import com.github.felipeslongo.honeycomb.mercos.databinding.ViewItemProgramadoAgendaBinding
 
-class ListagemAgendaViewHolder(
+class ListagemAgendaProgramadosViewHolder(
     lifecycleOwner: LifecycleOwner,
-    val viewBinding: ViewItemAgendaBinding
+    val viewBinding: ViewItemProgramadoAgendaBinding
 ) :
     RecyclerView.ViewHolder(viewBinding.root) {
 
     init {
         viewBinding.lifecycleOwner = lifecycleOwner
         viewBinding.viewModel =
-            ItemAgendaAndroidViewModel().apply { this.atualizarEstadoParaPlaceholder() }
+            ItemProgramadoAgendaAndroidViewModel().apply { this.atualizarEstadoParaPlaceholder() }
     }
 
-    val viewModel: ItemAgendaAndroidViewModel
+    val viewModel: ItemProgramadoAgendaAndroidViewModel
         get() {
             return viewBinding.viewModel
                 ?: throw IllegalStateException("ViewBinding ViewModel is Null")

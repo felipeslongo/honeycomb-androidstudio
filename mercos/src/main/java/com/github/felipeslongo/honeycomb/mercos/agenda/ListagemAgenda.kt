@@ -32,7 +32,7 @@ class ListagemAgenda : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        viewBinding.recyclerView.adapter = ListagemAgendaAdapter(this, viewModel)
+        viewBinding.recyclerViewProgramados.adapter = ListagemAgendaProgramadosAdapter(this, viewModel)
     }
 
     private fun initTabLayout() {
@@ -41,7 +41,7 @@ class ListagemAgenda : AppCompatActivity() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                viewBinding.recyclerView.adapter = null
+                viewBinding.recyclerViewProgramados.adapter = null
             }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {

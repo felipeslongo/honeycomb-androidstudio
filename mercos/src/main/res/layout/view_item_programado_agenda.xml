@@ -7,7 +7,7 @@
 
         <variable
                 name="viewModel"
-                type="com.github.felipeslongo.honeycomb.mercos.agenda.ItemAgendaAndroidViewModel" />
+                type="com.github.felipeslongo.honeycomb.mercos.agenda.ItemProgramadoAgendaAndroidViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
