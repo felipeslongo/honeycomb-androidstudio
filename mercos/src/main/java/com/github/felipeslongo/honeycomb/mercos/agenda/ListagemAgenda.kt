@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.adapters.Converters
+import androidx.lifecycle.Observer
 import com.github.felipeslongo.honeycomb.mercos.R
 import com.github.felipeslongo.honeycomb.mercos.databinding.ContentListagemAgendaBinding
 import com.google.android.material.tabs.TabLayout
@@ -33,19 +35,26 @@ class ListagemAgenda : AppCompatActivity() {
 
     private fun initRecyclerView() {
         viewBinding.recyclerViewProgramados.adapter = ListagemAgendaProgramadosAdapter(this, viewModel)
+        viewBinding.recyclerViewRealizados.adapter = ListagemAgendaRealizadosAdapter(this, viewModel)
     }
 
     private fun initTabLayout() {
+        viewModel.abaSelecionada.observe(this, Observer {
+            when(it){
+                AbaDaListagemAgendaEnum.PROGRAMADOS -> viewBinding.selecionarAbaProgramados()
+                AbaDaListagemAgendaEnum.REALIZADOS -> viewBinding.selecionarAbaRealizados()
+            }
+        })
+
         viewBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                viewBinding.recyclerViewProgramados.adapter = null
             }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                initRecyclerView()
+                viewModel.notificarAbaSelecionada(AbaDaListagemAgendaEnum.fromInt(tab!!.position))
             }
         })
     }

@@ -32,16 +32,36 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_programados"
+        <ViewSwitcher
+                android:id="@+id/viewSwitcher"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                android:inAnimation="@anim/slide_in_right_viewpager"
+                android:outAnimation="@anim/slide_out_left_viewpager">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_programados"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_realizados"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </ViewSwitcher>
 
     </LinearLayout>
 </layout>

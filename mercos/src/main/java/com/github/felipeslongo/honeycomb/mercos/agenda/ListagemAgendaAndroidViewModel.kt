@@ -9,7 +9,11 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ListagemAgendaAndroidViewModel : ViewModel() {
+
+    private val _abaSelecionada = MutableLiveData(AbaDaListagemAgendaEnum.PROGRAMADOS)
     private val _itensProgramados: MutableLiveData<List<ItemProgramadoAgendaViewState>> =
+        MutableLiveData(listOf())
+    private val _itensRealizados: MutableLiveData<List<ItemRealizadoAgendaViewState>> =
         MutableLiveData(listOf())
     private var initAsyncJob: Job
 
@@ -17,7 +21,9 @@ class ListagemAgendaAndroidViewModel : ViewModel() {
         initAsyncJob = initAsync()
     }
 
+    val abaSelecionada: LiveData<AbaDaListagemAgendaEnum> = _abaSelecionada
     val itensProgramados: LiveData<List<ItemProgramadoAgendaViewState>> = _itensProgramados
+    val itensRealizados: LiveData<List<ItemRealizadoAgendaViewState>> = _itensRealizados
 
     private fun initAsync() = viewModelScope.launch {
         loadDataAsync()
@@ -25,9 +31,17 @@ class ListagemAgendaAndroidViewModel : ViewModel() {
 
     private suspend fun loadDataAsync() {
         delay(3000)
-        val newItens = mutableListOf<ItemProgramadoAgendaViewState>()
-        for (index in 1..1000)
-            newItens.add(ItemProgramadoAgendaViewState.createLoremIpsum(index))
-        _itensProgramados.value = newItens
+        val novosItensProgramados = mutableListOf<ItemProgramadoAgendaViewState>()
+        val novoItensRealizados = mutableListOf<ItemRealizadoAgendaViewState>()
+        for (index in 1..1000){
+            novosItensProgramados.add(ItemProgramadoAgendaViewState.createLoremIpsum(index))
+            novoItensRealizados.add(ItemRealizadoAgendaViewState.createLoremIpsum(index))
+        }
+        _itensProgramados.value = novosItensProgramados
+        _itensRealizados.value = novoItensRealizados
+    }
+
+    fun notificarAbaSelecionada(abaSelecionada: AbaDaListagemAgendaEnum?) {
+        _abaSelecionada.value = abaSelecionada
     }
 }

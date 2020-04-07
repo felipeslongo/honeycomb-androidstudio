@@ -4,6 +4,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+                name="viewModel"
+                type="com.github.felipeslongo.honeycomb.mercos.agenda.ItemRealizadoAgendaViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -84,7 +87,7 @@
                     android:id="@+id/textView_resultado_descricao"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Descrição do Resultado do Atendimento"
+                    android:text="@{viewModel.descricaoDoResultado, default=`Descrição do Resultado do Atendimento`}"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
                     app:layout_constraintHorizontal_bias="0.0"
