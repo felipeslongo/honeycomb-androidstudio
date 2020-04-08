@@ -79,6 +79,7 @@
                     android:text="Motivo do Resultado"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                     app:chipBackgroundColor="@android:color/transparent"
+                    app:chipMinHeight="26dp"
                     app:chipStrokeColor="@color/preto_mercos"
                     app:chipStrokeWidth="0.5dp"
                     app:ensureMinTouchTargetSize="false"
