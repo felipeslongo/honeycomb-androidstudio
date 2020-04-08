@@ -39,24 +39,32 @@ class ListagemAgenda : AppCompatActivity() {
     }
 
     private fun initTabLayout() {
-        viewModel.abaSelecionada.observe(this, Observer {
-            when(it){
-                AbaDaListagemAgendaEnum.PROGRAMADOS -> viewBinding.selecionarAbaProgramados()
-                AbaDaListagemAgendaEnum.REALIZADOS -> viewBinding.selecionarAbaRealizados()
-            }
-        })
+        fun observarViewModel() {
+            viewModel.abaSelecionada.observe(this, Observer {
+                when (it) {
+                    AbaDaListagemAgendaEnum.PROGRAMADOS -> viewBinding.selecionarAbaProgramados()
+                    AbaDaListagemAgendaEnum.REALIZADOS -> viewBinding.selecionarAbaRealizados()
+                }
+            })
+        }
 
-        viewBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-            }
+        fun notificarViewModel() {
+            viewBinding.tabLayout.addOnTabSelectedListener(object :
+                TabLayout.OnTabSelectedListener {
+                override fun onTabReselected(tab: TabLayout.Tab?) {
+                }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-            }
+                override fun onTabUnselected(tab: TabLayout.Tab?) {
+                }
 
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                viewModel.notificarAbaSelecionada(AbaDaListagemAgendaEnum.fromInt(tab!!.position))
-            }
-        })
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    viewModel.notificarAbaSelecionada(AbaDaListagemAgendaEnum.fromInt(tab!!.position))
+                }
+            })
+        }
+
+        observarViewModel()
+        notificarViewModel()
     }
 
     companion object {
