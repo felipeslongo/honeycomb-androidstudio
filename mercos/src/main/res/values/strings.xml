@@ -1,0 +1,4 @@
+<resources>
+    <string name="content_listagem_agenda_tabitem_1">Programados</string>
+    <string name="content_listagem_agenda_tabitem_2">Realizados</string>
+</resources>

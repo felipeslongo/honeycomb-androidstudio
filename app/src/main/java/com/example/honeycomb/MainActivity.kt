@@ -14,6 +14,7 @@ import com.example.honeycomb.ui.navigationViews.NavigationViewShowcaseActivity
 import com.example.honeycomb.ui.seekBars.SwipeViewShowcaseFragment
 import com.example.honeycomb.ui.sync.SincronizacaoFragment
 import com.example.honeycomb.ui.viewBindings.ViewBindingShowcaseFragment
+import com.github.felipeslongo.honeycomb.mercos.agenda.ListagemAgenda
 import com.google.android.material.navigation.NavigationView
 import honeycomb.platform.android.fragment.app.ProgressDialogView
 import honeycomb.platform.android.fragment.app.StatusDialogView
@@ -90,6 +91,10 @@ class MainActivity : AppCompatActivity() {
 
             if (it.itemId == R.id.view_dialog_status) {
                 viewModel.statusDialogViewModel.present()
+            }
+
+            if (it.itemId == R.id.activity_listagem_agenda) {
+                ListagemAgenda.present(this)
             }
 
             findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()

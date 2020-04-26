@@ -35,5 +35,8 @@
         <item
                 android:id="@+id/view_dialog_status"
                 android:title="Dialog Status" />
+        <item
+                android:id="@+id/activity_listagem_agenda"
+                android:title="Mercos Agenda" />
     </group>
 </menu>
