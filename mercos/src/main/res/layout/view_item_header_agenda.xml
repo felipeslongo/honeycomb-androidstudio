@@ -4,6 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:showIn="@layout/view_item_programado_agenda">
     <TextView
+            android:id="@+id/textView_horario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="9dp"
