@@ -10,113 +10,122 @@
                 type="com.github.felipeslongo.honeycomb.mercos.agenda.ItemProgramadoAgendaAndroidViewModel" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true"
-            android:theme="@style/AppTheme">
+            android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <include layout="@layout/view_item_header_agenda" />
+
+        <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                android:theme="@style/AppTheme">
 
-            <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_esquerda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="12dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_direita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_end="12dp" />
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_esquerda"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="12dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_superior"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_begin="12dp" />
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_direita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="12dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_inferior"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_end="4dp" />
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_superior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="12dp" />
 
-            <include
-                    layout="@layout/view_item_sumario_agenda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_superior" />
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline_inferior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_end="4dp" />
 
-            <ImageView
-                    android:id="@+id/imageView_menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
-                    app:layout_constraintTop_toTopOf="@+id/guideline_superior"
-                    app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+                <include
+                        layout="@layout/view_item_sumario_agenda"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
+                        app:layout_constraintTop_toTopOf="@+id/guideline_superior" />
 
-            <View
-                    android:id="@+id/view_divider"
-                    style="@style/Divider"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/button_acao"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_sumario" />
+                <ImageView
+                        android:id="@+id/imageView_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
+                        app:layout_constraintTop_toTopOf="@+id/guideline_superior"
+                        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
 
-            <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_acao"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="171dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="start|center_vertical"
-                    android:text="Realizar"
-                    android:textAlignment="textStart"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView_telefone"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                    tools:text="Fazer Check-In" />
+                <View
+                        android:id="@+id/view_divider"
+                        style="@style/Divider"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/button_acao"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_sumario" />
 
-            <ImageView
-                    android:id="@+id/imageView_telefone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginRight="24dp"
-                    app:layout_goneMarginEnd="0dp"
-                    app:layout_goneMarginRight="0dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView_mapa"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView_mapa"
-                    app:layout_constraintTop_toTopOf="@+id/imageView_mapa"
-                    app:srcCompat="@drawable/ic_baseline_call_24" />
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_acao"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="171dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="start|center_vertical"
+                        android:text="Realizar"
+                        android:textAlignment="textStart"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView_telefone"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
+                        tools:text="Fazer Check-In" />
 
-            <ImageView
-                    android:id="@+id/imageView_mapa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
-                    app:layout_constraintTop_toTopOf="@+id/button_acao"
-                    app:srcCompat="@drawable/ic_baseline_map_24" />
+                <ImageView
+                        android:id="@+id/imageView_telefone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        app:layout_goneMarginEnd="0dp"
+                        app:layout_goneMarginRight="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView_mapa"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView_mapa"
+                        app:layout_constraintTop_toTopOf="@+id/imageView_mapa"
+                        app:srcCompat="@drawable/ic_baseline_call_24" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                        android:id="@+id/imageView_mapa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
+                        app:layout_constraintTop_toTopOf="@+id/button_acao"
+                        app:srcCompat="@drawable/ic_baseline_map_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 
 </layout>
