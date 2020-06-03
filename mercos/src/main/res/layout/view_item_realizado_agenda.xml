@@ -140,13 +140,13 @@
                         android:layout_marginEnd="4dp"
                         android:layout_marginRight="4dp"
                         android:tint="@color/mercos_cinza_500"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView_resultado_pedido2"
-                        app:layout_constraintEnd_toStartOf="@+id/textView_resultado_pedido2"
-                        app:layout_constraintTop_toTopOf="@+id/textView_resultado_pedido2"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView_resultado_checkIn"
+                        app:layout_constraintEnd_toStartOf="@+id/textView_resultado_checkIn"
+                        app:layout_constraintTop_toTopOf="@+id/textView_resultado_checkIn"
                         app:srcCompat="@drawable/ic_baseline_where_to_vote_24" />
 
                 <TextView
-                        android:id="@+id/textView_resultado_pedido2"
+                        android:id="@+id/textView_resultado_checkIn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Check-in realizado"
