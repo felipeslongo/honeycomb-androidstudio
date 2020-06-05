@@ -2,6 +2,7 @@ package honeycomb.androidx.emoji.text
 
 
 import android.content.Context
+import android.util.Log
 import androidx.core.provider.FontRequest
 import androidx.emoji.text.EmojiCompat
 import androidx.emoji.text.FontRequestEmojiCompatConfig
@@ -12,7 +13,12 @@ import kotlin.Exception
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-class EmojiCompatBootstrap() {
+class EmojiCompatBootstrap {
+
+    companion object {
+
+        private val TAG = "EmojiCompatBootstrap"
+    }
 
     suspend fun bootstrapAsync(context: Context) = suspendCancellableCoroutine<Unit> { coroutine ->
         val fontRequest = createEmojiFontRequest()
@@ -35,12 +41,14 @@ class EmojiCompatBootstrap() {
 
         override fun onInitialized() {
             super.onInitialized()
+            Log.i(TAG, "EmojiCompat initialized");
             coroutine.resume(Unit)
             config.unregisterInitCallback(this)
         }
 
         override fun onFailed(throwable: Throwable?) {
             super.onFailed(throwable)
+            Log.i(TAG, "EmojiCompat Initialization Failed");
             val exception = throwable?.wrapWithException()
                 ?: Exception("EmojiCompat Initialization Failed")
             coroutine.resumeWithException(exception)
