@@ -13,12 +13,9 @@ import kotlin.Exception
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-class EmojiCompatBootstrap {
+object EmojiCompatBootstrap {
 
-    companion object {
-
-        private val TAG = "EmojiCompatBootstrap"
-    }
+    private val TAG = "EmojiCompatBootstrap"
 
     suspend fun bootstrapAsync(context: Context) = suspendCancellableCoroutine<Unit> { coroutine ->
         val fontRequest = createEmojiFontRequest()

@@ -10,7 +10,7 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         MainScope().launch {
-            EmojiCompatBootstrap().bootstrapAsync(this@MainApplication)
+            EmojiCompatBootstrap.bootstrapAsync(this@MainApplication)
         }
     }
 
