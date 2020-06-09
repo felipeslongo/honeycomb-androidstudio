@@ -78,7 +78,7 @@
 
 
                 <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_resultado_motivo"
+                        android:id="@+id/chip_resultado_atendimento"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -95,7 +95,7 @@
                         tools:text="Cliente estava ocupado" />
 
                 <TextView
-                        android:id="@+id/textView_resultado_descricao"
+                        android:id="@+id/textView_atendimento_descricao"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -104,7 +104,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                        app:layout_constraintTop_toBottomOf="@+id/chip_resultado_motivo"
+                        app:layout_constraintTop_toBottomOf="@+id/chip_resultado_atendimento"
                         tools:text="What is your attitude as a small town businessman when it comes to advertising or taking help of an advertising design agency to provide creative desig…" />
 
                 <ImageView
@@ -115,7 +115,7 @@
                         android:tint="@color/mercos_cinza_500"
                         app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
                         app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                        app:layout_constraintTop_toBottomOf="@+id/textView_resultado_descricao"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_atendimento_descricao"
                         app:srcCompat="@drawable/ic_baseline_description_24" />
 
                 <TextView
