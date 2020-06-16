@@ -9,33 +9,49 @@
                 type="com.github.felipeslongo.honeycomb.mercos.agenda.ListagemAgendaAndroidViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             tools:context=".agenda.ListagemAgenda">
 
-        <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
+        <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:elevation="0dp">
 
-            <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/content_listagem_agenda_tabitem_1" />
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:scrimAnimationDuration="0">
 
-            <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/content_listagem_agenda_tabitem_2" />
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-        </com.google.android.material.tabs.TabLayout>
+                    <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/content_listagem_agenda_tabitem_1" />
+
+                    <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/content_listagem_agenda_tabitem_2" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ViewSwitcher
                 android:id="@+id/viewSwitcher"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:inAnimation="@anim/slide_in_right_viewpager"
                 android:outAnimation="@anim/slide_out_left_viewpager">
 
@@ -55,5 +71,5 @@
 
         </ViewSwitcher>
 
-    </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
