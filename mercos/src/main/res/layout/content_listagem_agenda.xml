@@ -49,6 +49,7 @@
                     </com.google.android.material.tabs.TabLayout>
 
                     <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_eventos_atrasados"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -63,6 +64,7 @@
                             tools:visibility="visible"/>
 
                     <View
+                            android:id="@+id/divider_eventos_atrasados"
                             style="@style/Divider"
                             android:layout_marginBottom="16dp"
                             android:layout_marginTop="16dp"
