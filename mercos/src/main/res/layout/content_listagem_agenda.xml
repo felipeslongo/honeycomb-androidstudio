@@ -58,12 +58,17 @@
                             style="@style/Widget.Mercos.Button"
                             android:text="Ver eventos atrasados"
                             tools:text="Ver 6 eventos atrasados"
-                            android:textColor="?colorOnError" />
+                            android:textColor="?colorOnError"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
 
                     <View
                             style="@style/Divider"
+                            android:layout_marginBottom="16dp"
                             android:layout_marginTop="16dp"
-                            android:layout_marginHorizontal="16dp"/>
+                            android:layout_marginHorizontal="16dp"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
 
                 </LinearLayout>
 
@@ -76,7 +81,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                android:layout_marginTop="16dp"
                 android:inAnimation="@anim/slide_in_right_viewpager"
                 android:outAnimation="@anim/slide_out_left_viewpager">
 
