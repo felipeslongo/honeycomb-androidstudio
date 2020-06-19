@@ -54,14 +54,19 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="16dp"
-                            android:backgroundTint="?colorError"
+                            android:backgroundTint="@color/mercos_vermelho"
                             app:icon="@drawable/ic_baseline_arrow_upward_24"
-                            style="@style/Widget.Mercos.Button"
+                            app:iconSize="12dp"
+                            app:iconPadding="4dp"
+                            android:letterSpacing="0"
+                            android:minHeight="0dp"
                             android:text="Ver eventos atrasados"
                             tools:text="Ver 6 eventos atrasados"
                             android:textColor="?colorOnError"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            android:textSize="10sp"
+                            android:visibility="visible"
+                            tools:visibility="visible"
+                            style="@style/Widget.Mercos.Button"/>
 
                     <View
                             android:id="@+id/divider_eventos_atrasados"
