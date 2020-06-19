@@ -62,12 +62,26 @@
 
                 <include
                         layout="@layout/view_item_sumario_agenda"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
+                        app:layout_constraintEnd_toStartOf="@+id/chip_checkin"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
                         app:layout_constraintTop_toTopOf="@+id/guideline_superior" />
+
+                <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_checkin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipMinTouchTargetSize="0dp"
+                        android:backgroundTint="@color/mercos_verde_400"
+                        android:text="Check-in aberto"
+                        android:textAppearance="@style/TextAppearance.Mercos.Chip.CheckIn"
+                        app:textEndPadding="0dp"
+                        app:textStartPadding="4dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView_menu"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView_menu"
+                        app:layout_constraintTop_toTopOf="@+id/imageView_menu" />
 
                 <ImageView
                         android:id="@+id/imageView_menu"
