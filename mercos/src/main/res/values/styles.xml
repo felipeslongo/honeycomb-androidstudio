@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     /*===================================TextAppearance.*=========================================*/
+    <style name="TextAppearance.Mercos.Button" parent="TextAppearance.MaterialComponents.Button"/>
+    <style name="TextAppearance.Mercos.Button.Light" parent="TextAppearance.Mercos.Button">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
     <style name="TextAppearance.Mercos.Chip.CheckIn" parent="TextAppearance.MaterialComponents.Chip">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextAppearance.Mercos.TextView.Label" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextAppearance.Mercos.TextView.Value" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">16sp</item>
+    </style>
+
     /*=======================================Widget.*=============================================*/
-    <style name="Widget.Mercos.Button" parent="Widget.MaterialComponents.Button"/>
+    <style name="Widget.Mercos.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?colorPrimaryDark</item>
+        <item name="cornerRadius">2dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+    </style>
+    <style name="Widget.Mercos.Button.Light" parent="Widget.Mercos.Button">
+        <item name="backgroundTint">@color/mercos_cinza_50</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="rippleColor">@color/ripple_material_light</item>
+    </style>
 </resources>
