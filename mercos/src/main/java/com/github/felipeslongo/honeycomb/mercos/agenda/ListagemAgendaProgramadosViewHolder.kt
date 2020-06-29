@@ -14,6 +14,7 @@ class ListagemAgendaProgramadosViewHolder(
         viewBinding.lifecycleOwner = lifecycleOwner
         viewBinding.viewModel =
             ItemProgramadoAgendaAndroidViewModel().apply { this.atualizarEstadoParaPlaceholder() }
+        viewBinding.cardView.setOnClickListener { DetalheAgenda.present(viewBinding.root.context) }
     }
 
     val viewModel: ItemProgramadoAgendaAndroidViewModel

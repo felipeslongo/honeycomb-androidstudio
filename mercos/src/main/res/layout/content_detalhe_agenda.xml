@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.github.felipeslongo.honeycomb.mercos.agenda.DetalheAgendaViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/AppTheme"
+                tools:context=".agenda.DetalheAgenda"
+                android:paddingVertical="@dimen/margem_grande">
+
+            <include
+                    android:id="@+id/detalhes"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botao_primario"
+                    style="@style/Widget.Mercos.Button"
+                    android:textAppearance="@style/TextAppearance.Mercos.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_normal"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detalhes"
+                    app:layout_constraintWidth_max="@dimen/button_width_max"
+                    tools:text="Fazer Check-In" />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botao_secundario"
+                    style="@style/Widget.Mercos.Button.Light"
+                    android:textAppearance="@style/TextAppearance.Mercos.Button.Light"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/botao_primario"
+                    app:layout_constraintWidth_max="@dimen/button_width_max"
+                    tools:text="Apenas Marcar Como Realizado" />
+
+            <View
+                    android:id="@+id/divisor"
+                    style="@style/Divider"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/margem_divisor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/botao_secundario" />
+
+            <include
+                    android:id="@+id/cliente"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande_extra"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divisor" />
+
+            <include
+                    android:id="@+id/cnpj"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cliente" />
+
+            <include
+                    android:id="@+id/responsavel"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cnpj" />
+
+            <include
+                    android:id="@+id/tipo"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/responsavel" />
+
+            <include
+                    android:id="@+id/roteiro"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tipo" />
+
+            <View
+                    android:id="@+id/divisor2"
+                    style="@style/Divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/margem_divisor"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginLeft="45dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roteiro" />
+
+            <include
+                    android:id="@+id/telefone"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande_extra"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divisor2" />
+
+            <include
+                    android:id="@+id/endereco"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/telefone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
