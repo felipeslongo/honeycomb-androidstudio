@@ -23,6 +23,7 @@ class DetalheAgenda : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
+        setSupportActionBar(viewBinding.toolbar)
         initBindings()
     }
 
