@@ -23,7 +23,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimaryDark"
-                android:paddingBottom="@dimen/margem_grande"
                 android:animateLayoutChanges="true"
                 android:fitsSystemWindows="true"
                 android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
@@ -42,6 +41,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_collapseMode="pin"
+                        android:paddingBottom="@dimen/margem_grande"
                         android:background="@android:color/transparent"
                         app:contentInsetStartWithNavigation="0dp"
                         app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
