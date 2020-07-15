@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ====================================Button =============================================-->
+    <dimen name="button_width_max">320dp</dimen>
+
+    <!-- ============================Floating Action Button======================================-->
+    <!-- Per Material Design specs: -->
+    <!-- https://material.io/design/components/buttons-floating-action-button.html#specs -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Padding on the bottom of a screen so that the FAB won't overlap scrolled text. -->
+    <dimen name="fab_bottom_padding">72dp</dimen>
+
+    <!-- ====================================Margem=============================================-->
+    <dimen name="margem_divisor">30dp</dimen>
+    <dimen name="margem_grande_extra">24dp</dimen>
+    <dimen name="margem_grande">20dp</dimen>
+    <dimen name="margem_normal">16dp</dimen>
+    <dimen name="margem_media">12dp</dimen>
+    <dimen name="margem_pequena">8dp</dimen>
+    <dimen name="margem_pequena_extra">4dp</dimen>
+
+</resources>

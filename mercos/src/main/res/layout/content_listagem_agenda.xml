@@ -9,33 +9,86 @@
                 type="com.github.felipeslongo.honeycomb.mercos.agenda.ListagemAgendaAndroidViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             tools:context=".agenda.ListagemAgenda">
 
-        <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
+        <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:elevation="0dp">
 
-            <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/content_listagem_agenda_tabitem_1" />
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:scrimAnimationDuration="0">
 
-            <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/content_listagem_agenda_tabitem_2" />
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:animateLayoutChanges="true">
 
-        </com.google.android.material.tabs.TabLayout>
+                    <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tabLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/content_listagem_agenda_tabitem_1" />
+
+                        <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/content_listagem_agenda_tabitem_2" />
+
+                    </com.google.android.material.tabs.TabLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_eventos_atrasados"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="@color/mercos_vermelho"
+                            app:icon="@drawable/ic_baseline_arrow_upward_24"
+                            app:iconSize="12dp"
+                            app:iconPadding="4dp"
+                            android:letterSpacing="0"
+                            android:minHeight="0dp"
+                            android:text="Ver eventos atrasados"
+                            tools:text="Ver 6 eventos atrasados"
+                            android:textColor="?colorOnError"
+                            android:textSize="10sp"
+                            android:visibility="visible"
+                            tools:visibility="visible"
+                            style="@style/Widget.Mercos.Button"/>
+
+                    <View
+                            android:id="@+id/divider_eventos_atrasados"
+                            style="@style/Divider"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ViewSwitcher
                 android:id="@+id/viewSwitcher"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:inAnimation="@anim/slide_in_right_viewpager"
                 android:outAnimation="@anim/slide_out_left_viewpager">
 
@@ -43,25 +96,17 @@
                     android:id="@+id/recyclerView_programados"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:scrollbars="vertical" />
 
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView_realizados"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:scrollbars="vertical"/>
 
         </ViewSwitcher>
 
-    </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

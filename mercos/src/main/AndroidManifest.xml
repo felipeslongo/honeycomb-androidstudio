@@ -5,6 +5,8 @@
     <application>
         <activity android:name=".agenda.ListagemAgenda"
                 android:theme="@style/AppTheme"/>
+        <activity android:name=".agenda.DetalheAgenda"
+                android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
