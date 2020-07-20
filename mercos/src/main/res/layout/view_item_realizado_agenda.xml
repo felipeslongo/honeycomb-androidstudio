@@ -79,87 +79,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/constraintLayout_sumario" />
 
 
-                <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_resultado_atendimento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constrainedWidth="true"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                        app:chipBackgroundColor="@android:color/transparent"
-                        app:chipMinHeight="26dp"
-                        app:chipStrokeColor="@color/preto_mercos"
-                        app:chipStrokeWidth="0.5dp"
-                        android:text="Motivo do Resultado"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                        app:layout_constraintTop_toBottomOf="@+id/view_divider"
-                        tools:text="Cliente estava ocupado" />
-
-                <TextView
-                        android:id="@+id/textView_atendimento_descricao"
+                <include layout="@layout/view_resultado_atendimento"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@{viewModel.descricaoDoResultado, default=`Descrição do Resultado do Atendimento`}"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                        app:layout_constraintTop_toBottomOf="@+id/chip_resultado_atendimento"
-                        tools:text="What is your attitude as a small town businessman when it comes to advertising or taking help of an advertising design agency to provide creative desig…" />
-
-                <ImageView
-                        android:id="@+id/imageView_resultado_pedido"
-                        android:layout_width="17dp"
-                        android:layout_height="17dp"
                         android:layout_marginTop="16dp"
-                        android:tint="@color/mercos_cinza_500"
-                        app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
-                        app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
-                        app:layout_constraintTop_toBottomOf="@+id/textView_atendimento_descricao"
-                        app:srcCompat="@drawable/ic_baseline_description_24" />
-
-                <TextView
-                        android:id="@+id/textView_resultado_pedido"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginLeft="4dp"
-                        android:text="Pedido #0000"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                        android:fontFamily="sans-serif-medium"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView_resultado_pedido"
-                        app:layout_constraintStart_toEndOf="@+id/imageView_resultado_pedido"
-                        app:layout_constraintTop_toTopOf="@+id/imageView_resultado_pedido"
-                        tools:text="Pedido cancelado #1234" />
-
-
-                <ImageView
-                        android:id="@+id/imageView_resultado_checkIn"
-                        android:layout_width="17dp"
-                        android:layout_height="17dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
-                        android:tint="@color/mercos_cinza_500"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView_resultado_checkIn"
-                        app:layout_constraintEnd_toStartOf="@+id/textView_resultado_checkIn"
-                        app:layout_constraintTop_toTopOf="@+id/textView_resultado_checkIn"
-                        app:srcCompat="@drawable/ic_baseline_where_to_vote_24" />
-
-                <TextView
-                        android:id="@+id/textView_resultado_checkIn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Check-in realizado"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                        android:fontFamily="sans-serif-medium"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView_resultado_pedido"
                         app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
-                        app:layout_constraintTop_toTopOf="@+id/imageView_resultado_pedido"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintStart_toStartOf="@+id/guideline_esquerda"
+                        app:layout_constraintTop_toBottomOf="@+id/view_divider"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline_inferior"
+                        />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
