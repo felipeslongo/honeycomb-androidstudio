@@ -38,5 +38,9 @@
         <item
                 android:id="@+id/activity_listagem_agenda"
                 android:title="Mercos Agenda" />
+
+        <item
+                android:id="@+id/fragment_bottom_sheet_dialog_full_screen.xml"
+                android:title="BottomSheetDialogFragment Full Screen" />
     </group>
 </menu>
