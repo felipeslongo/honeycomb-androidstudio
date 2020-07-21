@@ -48,21 +48,11 @@ class BottomSheetDialogFullScreenFragment : BottomSheetDialogFragment() {
         setUpBottomSheet();
     }
 
+
     private fun setUpBottomSheet() {
         var bottomSheetBehavior = BottomSheetBehavior.from(this.view!!.parent as View)
         bottomSheetBehavior.isHideable = false
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-        bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                if (newState == BottomSheetBehavior.STATE_DRAGGING){
-                    bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-                }
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-
-            }
-        })
 
 
         val childLayoutParams = view!!.layoutParams
@@ -76,6 +66,7 @@ class BottomSheetDialogFullScreenFragment : BottomSheetDialogFragment() {
         childLayoutParams.height = displayMetrics.heightPixels;
 
         view!!.layoutParams = childLayoutParams
+        bottomSheetBehavior.peekHeight = childLayoutParams.height
     }
 
     companion object {
