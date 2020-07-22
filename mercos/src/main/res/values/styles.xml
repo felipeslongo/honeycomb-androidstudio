@@ -47,4 +47,35 @@
         <item name="tint">@android:color/white</item>
         <item name="android:tint">@android:color/white</item>
     </style>
+
+
+    /*=======================================LEGADO=============================================*/
+    <style name="CampoCadastroWrapper">
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dip</item>
+    </style>
+    <style name="CampoLabel">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingLeft">3dip</item>
+    </style>
+    <style name="CampoTextAreaExpansivel">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">top|left</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="android:minLines">4</item>
+        <item name="android:textColorHint">#D3D3D3</item>
+    </style>
+    <style name="CampoPadrao" parent="android:Widget.EditText">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>
