@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     /*===================================TextAppearance.*=========================================*/
+    <style name="TextAppearance.AppTheme.Body1" parent="TextAppearance.MaterialComponents.Body1"/>
+
     <style name="TextAppearance.Mercos.Button" parent="TextAppearance.MaterialComponents.Button"/>
     <style name="TextAppearance.Mercos.Button.Light" parent="TextAppearance.Mercos.Button">
         <item name="android:textColor">?android:textColorPrimary</item>
