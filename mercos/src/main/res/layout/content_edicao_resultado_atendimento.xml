@@ -39,9 +39,7 @@
                     app:layout_collapseMode="pin"
                     app:menu="@menu/toolbar_edicao_resultado_atendimento"
                     app:navigationIcon="@drawable/ic_baseline_close_24"
-                    >
-
-            </com.google.android.material.appbar.MaterialToolbar>
+                    />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
