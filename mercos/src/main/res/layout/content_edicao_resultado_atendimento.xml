@@ -1,50 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/content_edicao_resultado_atendimento"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_edicao_resultado_atendimento"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"
+        >
 
-    <LinearLayout
-            android:id="@+id/resultado_atendimento"
-            style="@style/CampoCadastroWrapper"
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="130dp"
+            android:background="?attr/colorPrimaryDark"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
-        <TextView
-                android:id="@+id/resultado_atendimento_label"
-                style="@style/CampoLabel"
-                android:text="Resultado do atendimento" />
-
-        <AutoCompleteTextView
-                android:id="@+id/resultado_atendimento_valor"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-    </LinearLayout>
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="Descreva o atendimento"
+                app:titleEnabled="true"
+                app:expandedTitleMarginStart="12dp"
+                app:expandedTitleMarginEnd="12dp"
+                app:toolbarId="@id/toolbar"
+                >
 
-    <LinearLayout
-            android:id="@+id/detalhe_atendimento"
-            style="@style/CampoCadastroWrapper"
+            <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
+                    app:menu="@menu/toolbar_edicao_resultado_atendimento"
+                    app:navigationIcon="@drawable/ic_baseline_close_24"
+                    >
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margem_normal"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resultado_atendimento">
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:clipToPadding="false"
+            >
 
-        <TextView
-                android:id="@+id/detalhe_atendimento_label"
-                style="@style/CampoLabel"
-                android:text="Resultado do atendimento" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="@dimen/margem_grande_extra">
 
-        <EditText style="@style/CampoTextAreaExpansivel"
-                android:id="@+id/detalhe_atendimento_valor"/>
-    </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/resultado_atendimento"
+                    style="@style/CampoCadastroWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                        android:id="@+id/resultado_atendimento_label"
+                        style="@style/CampoLabel"
+                        android:text="Resultado do atendimento" />
+
+                <AutoCompleteTextView
+                        android:id="@+id/resultado_atendimento_valor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/detalhe_atendimento"
+                    style="@style/CampoCadastroWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_normal"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/resultado_atendimento">
+
+                <TextView
+                        android:id="@+id/detalhe_atendimento_label"
+                        style="@style/CampoLabel"
+                        android:text="Resultado do atendimento" />
+
+                <EditText style="@style/CampoTextAreaExpansivel"
+                        android:id="@+id/detalhe_atendimento_valor"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
