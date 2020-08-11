@@ -34,7 +34,7 @@
                     android:background="@android:color/transparent"
                     app:contentInsetStartWithNavigation="0dp"
                     app:layout_collapseMode="pin"
-                    app:menu="@menu/toolbar_edicao_resultado_atendimento"
+                    app:menu="@menu/toolbar_edicao_evento"
                     app:navigationIcon="@drawable/ic_baseline_close_24"
                     app:title="Novo evento"
                     />
