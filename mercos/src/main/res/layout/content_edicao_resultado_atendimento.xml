@@ -58,16 +58,27 @@
                 android:layout_height="match_parent"
                 android:paddingVertical="@dimen/margem_grande_extra">
 
+            <include
+                    android:id="@+id/cliente"
+                    layout="@layout/view_campo_detalhe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margem_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             <LinearLayout
                     android:id="@+id/resultado_atendimento"
                     style="@style/CampoCadastroWrapper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_grande_extra"
                     android:layout_marginHorizontal="@dimen/margem_normal"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/cliente">
 
                 <TextView
                         android:id="@+id/resultado_atendimento_label"
