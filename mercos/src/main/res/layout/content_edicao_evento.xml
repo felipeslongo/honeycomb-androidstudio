@@ -104,8 +104,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/data"
-                    app:layout_constraintWidth_max="400dp" />
+                    app:layout_constraintTop_toBottomOf="@+id/data" />
 
             <include
                     android:id="@+id/detalhes"
@@ -118,8 +117,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tipo"
-                    app:layout_constraintWidth_max="400dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/tipo" />
 
             <include
                     android:id="@+id/responsavel"
@@ -132,8 +130,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/detalhes"
-                    app:layout_constraintWidth_max="400dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/detalhes" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
