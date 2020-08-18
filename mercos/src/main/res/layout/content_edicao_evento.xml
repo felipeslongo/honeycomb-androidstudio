@@ -58,7 +58,7 @@
 
             <include
                     android:id="@+id/cliente"
-                    layout="@layout/view_campo_edicao_selecao_navegacao"
+                    layout="@layout/view_campo_edicao_selecao_cliente"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
                     app:layout_constraintEnd_toEndOf="parent"
