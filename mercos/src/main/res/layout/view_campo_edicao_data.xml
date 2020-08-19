@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<com.google.android.material.textfield.TextInputLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/view_campo_edicao_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <TextView
-            android:id="@+id/label"
-            style="@style/CampoLabel"
-            android:text="Data" />
-    <EditText
+        app:boxBackgroundColor="@android:color/transparent"
+        android:hint="Data"
+        app:hintTextColor="#9B9B9B"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+    <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valor"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Data" />
-</LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+</com.google.android.material.textfield.TextInputLayout>
