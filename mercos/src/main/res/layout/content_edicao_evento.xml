@@ -67,7 +67,7 @@
 
             <include
                     android:id="@+id/data"
-                    layout="@layout/view_campo_edicao_data"
+                    layout="@layout/view_campo_edicao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margem_normal"
@@ -80,7 +80,7 @@
 
             <include
                     android:id="@+id/hora"
-                    layout="@layout/view_campo_edicao_horario"
+                    layout="@layout/view_campo_edicao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margem_grande"
@@ -108,7 +108,7 @@
 
             <include
                     android:id="@+id/detalhes"
-                    layout="@layout/view_campo_edicao_texto_multilinha"
+                    layout="@layout/view_campo_edicao"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
