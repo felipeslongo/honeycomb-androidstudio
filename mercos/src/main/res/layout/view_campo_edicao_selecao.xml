@@ -16,5 +16,6 @@
     <AutoCompleteTextView
             android:id="@+id/valor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:theme="@style/EditTextHintAppearance"/>
 </LinearLayout>
