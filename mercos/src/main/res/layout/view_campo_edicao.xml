@@ -19,7 +19,6 @@
             android:layout_gravity="center_horizontal"
             android:importantForAutofill="noExcludeDescendants"
             android:padding="18dp"
-            android:inputType="text"
             android:textColor="@color/preto_mercos"
             />
 </com.google.android.material.textfield.TextInputLayout>
