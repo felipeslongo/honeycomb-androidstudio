@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:importantForAutofill="noExcludeDescendants"
+            android:padding="18dp"
             android:inputType="text"
             android:textColor="@color/preto_mercos"
             />
