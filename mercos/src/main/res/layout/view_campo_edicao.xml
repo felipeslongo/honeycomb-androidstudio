@@ -8,11 +8,19 @@
         android:layout_height="wrap_content"
         app:boxBackgroundColor="@android:color/transparent"
         android:hint="Hint"
-        app:hintTextColor="#9B9B9B"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        android:textColorHint="#9B9B9B"
+        app:errorTextAppearance="@style/EditTextErrorAppearance"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:theme="@style/EditTextHintAppearance">
     <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:importantForAutofill="noExcludeDescendants"
+            android:padding="18dip"
+            android:singleLine="true"
+            android:textColor="@color/preto_mercos"
+            />
 </com.google.android.material.textfield.TextInputLayout>
 

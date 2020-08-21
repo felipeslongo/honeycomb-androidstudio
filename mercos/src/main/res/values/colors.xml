@@ -67,4 +67,7 @@
     <color name="mercos_roxo_800">#663991</color>
     <color name="mercos_roxo_900">#4B2F7E</color>
     <color name="mercos_roxo_1000">#3E2F68</color>
+
+    /*=======================================LEGADO=============================================*/
+    <color name="error_hint_text_color">#ffb6b6</color>
 </resources>

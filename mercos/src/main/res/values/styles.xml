@@ -80,4 +80,18 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="EditTextErrorAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/error_hint_text_color</item>
+        <item name="android:textColorHint">@color/error_hint_text_color</item>
+        <item name="colorControlNormal">@color/preto_mercos</item>
+        <item name="colorControlActivated">@color/error_hint_text_color</item>
+        <item name="colorControlHighlight">@color/preto_mercos</item>
+    </style>
+    <style name="EditTextHintAppearance">
+        <item name="android:textColor">@color/preto_mercos</item>
+        <item name="android:textColorHint">@color/preto_mercos</item>
+        <item name="colorControlNormal">@color/preto_mercos</item>
+        <item name="colorControlActivated">@color/preto_mercos</item>
+        <item name="colorControlHighlight">@color/preto_mercos</item>
+    </style>
 </resources>
