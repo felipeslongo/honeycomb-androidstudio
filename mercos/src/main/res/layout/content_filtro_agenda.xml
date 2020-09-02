@@ -135,25 +135,26 @@
             <include
                     android:id="@+id/periodo_inicial"
                     layout="@layout/view_campo_edicao"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margem_normal"
                     android:layout_marginTop="@dimen/margem_grande"
                     app:layout_constrainedWidth="true"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/periodo_final"
                     app:layout_constraintTop_toBottomOf="@+id/periodo"
                     app:layout_constraintWidth_min="120dp" />
 
             <include
                     android:id="@+id/periodo_final"
                     layout="@layout/view_campo_edicao"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margem_normal"
                     app:layout_constrainedWidth="true"
                     app:layout_constraintBottom_toBottomOf="@+id/periodo_inicial"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/periodo_inicial"
                     app:layout_constraintTop_toTopOf="@+id/periodo_inicial"
                     app:layout_constraintWidth_min="120dp" />
