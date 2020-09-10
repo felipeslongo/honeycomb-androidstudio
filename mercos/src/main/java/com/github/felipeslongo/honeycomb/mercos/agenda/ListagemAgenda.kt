@@ -13,7 +13,7 @@ import honeycomb.platform.android.lifecycle.getViewModel
 
 class ListagemAgenda : AppCompatActivity() {
 
-    val viewModel by lazy { getViewModel { ListagemAgendaAndroidViewModel() } }
+    lateinit var viewModel: ListagemAgendaAndroidViewModel
     val viewBinding by lazy {
         val binding = ContentListagemAgendaBinding.inflate(layoutInflater)
         binding.lifecycleOwner = this
@@ -23,6 +23,7 @@ class ListagemAgenda : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel = getViewModel { ListagemAgendaAndroidViewModel() }
         setContentView(viewBinding.root)
         initRecyclerView()
         initTabLayout()
@@ -35,7 +36,6 @@ class ListagemAgenda : AppCompatActivity() {
 
     private fun initRecyclerView() {
         viewBinding.recyclerViewProgramados.adapter = ListagemAgendaProgramadosAdapter(this, viewModel)
-        viewBinding.recyclerViewRealizados.adapter = ListagemAgendaRealizadosAdapter(this, viewModel)
     }
 
     private fun initTabLayout() {
