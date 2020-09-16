@@ -11,6 +11,11 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="TextAppearance.AppTheme.Chip.AtrasadosContador" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textColor">@color/mercos_vermelho</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
 
     <style name="TextAppearance.Mercos.TextView.Label" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">14sp</item>
@@ -41,6 +46,19 @@
         <item name="backgroundTint">@color/mercos_cinza_50</item>
         <item name="android:textColor">?android:textColorPrimary</item>
         <item name="rippleColor">@color/ripple_material_light</item>
+    </style>
+
+    <style name="Widget.AppTheme.Chip.AtrasadosContador" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+        <item name="chipMinHeight">20dp</item>
+        <item name="chipBackgroundColor">?colorSurface</item>
+        <item name="chipStrokeColor">@color/mercos_vermelho</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppTheme.Chip.AtrasadosContador</item>
+        <item name="textStartPadding">3dp</item>
+        <item name="textEndPadding">3dp</item>
     </style>
 
     <style name="Widget.Mercos.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
