@@ -19,19 +19,4 @@
             style="@style/Widget.AppTheme.Chip.AtrasadosContador"
             tools:text="Atrasado há 15 dias"
             />
-
-<!--    <com.google.android.material.chip.Chip-->
-<!--            android:id="@+id/atrasado_contador"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="20dp"-->
-<!--            app:ensureMinTouchTargetSize="false"-->
-<!--            app:chipMinHeight="20dp"-->
-<!--            app:chipBackgroundColor="?colorSurface"-->
-<!--            app:chipStrokeColor="@color/mercos_vermelho"-->
-<!--            app:chipStrokeWidth="1dp"-->
-<!--            tools:text="Atrasado há 15 dias"-->
-<!--            android:textAppearance="@style/TextAppearance.AppTheme.Chip.AtrasadosContador"-->
-<!--            app:textStartPadding="3dp"-->
-<!--            app:textEndPadding="3dp"-->
-<!--            />-->
 </LinearLayout>
