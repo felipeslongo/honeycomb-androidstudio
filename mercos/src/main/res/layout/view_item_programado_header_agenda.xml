@@ -16,7 +16,7 @@
 
     <com.google.android.material.chip.Chip
             android:id="@+id/atrasado_contador"
-            style="@style/Widget.AppTheme.Chip.AtrasadosContador"
+            style="@style/Widget.AppTheme.Chip.AtrasadoContador"
             tools:text="Atrasado há 15 dias"
             />
 </LinearLayout>
