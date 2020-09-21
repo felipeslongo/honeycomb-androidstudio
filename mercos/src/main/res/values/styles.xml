@@ -11,7 +11,7 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TextAppearance.AppTheme.Chip.AtrasadoContador" parent="TextAppearance.MaterialComponents.Chip">
+    <style name="TextAppearance.AppTheme.Chip.ContadorDeDiasAtrasados" parent="TextAppearance.MaterialComponents.Chip">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
@@ -47,7 +47,7 @@
         <item name="rippleColor">@color/ripple_material_light</item>
     </style>
 
-    <style name="Widget.AppTheme.Chip.AtrasadoContador" parent="Widget.MaterialComponents.Chip.Action">
+    <style name="Widget.AppTheme.Chip.ContadorDeDiasAtrasados" parent="Widget.MaterialComponents.Chip.Action">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">20dp</item>
         <item name="ensureMinTouchTargetSize">false</item>
@@ -55,7 +55,7 @@
         <item name="chipBackgroundColor">?colorSurface</item>
         <item name="chipStrokeColor">@color/mercos_vermelho</item>
         <item name="chipStrokeWidth">1dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppTheme.Chip.AtrasadoContador</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppTheme.Chip.ContadorDeDiasAtrasados</item>
         <item name="android:textColor">@color/mercos_vermelho</item>
         <item name="textStartPadding">3dp</item>
         <item name="textEndPadding">3dp</item>
