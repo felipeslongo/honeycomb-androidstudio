@@ -17,7 +17,6 @@
             android:layout_marginHorizontal="@dimen/margem_normal"
             android:layout_marginTop="@dimen/margem_grande_extra"/>
 
-
     <include layout="@layout/view_campo_detalhe_skeleton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
