@@ -9,14 +9,23 @@
                 type="com.github.felipeslongo.honeycomb.mercos.agenda.DetalheAgendaViewModel" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/colorSurface"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme"
             tools:context=".agenda.DetalheAgenda"
             tools:ignore="MergeRootFrame">
+
+        <include layout="@layout/content_detalhe_agenda_skeleton"/>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorSurface">
 
         <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"
@@ -245,4 +254,6 @@
                 style="@style/Widget.Mercos.FloatingActionButton"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </FrameLayout>
 </layout>

@@ -7,18 +7,21 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp">
 
-    <View
+    <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icone"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:background="@drawable/skeleton"
+            app:srcCompat="@drawable/shape_circle"
+            android:scaleType="centerInside"
+            app:tint="@color/skeleton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
     <View
             android:id="@+id/label"
-            android:layout_width="150dp"
+            android:layout_width="100dp"
             android:layout_height="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"

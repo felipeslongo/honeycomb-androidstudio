@@ -9,6 +9,7 @@
     <color name="ripple_material_light">#1f000000</color>
 
     <!-- NOVO STYLEGUIDE CORES MERCOS -->
+    <color name="skeleton">#C9D3D3</color>
     <color name="mercos_vermelho">#EF5350</color>
 
     <color name="mercos_azul_50">#E3F2FD</color>
