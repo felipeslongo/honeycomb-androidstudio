@@ -92,12 +92,22 @@
                 android:inAnimation="@anim/slide_in_right_viewpager"
                 android:outAnimation="@anim/slide_out_left_viewpager">
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView_programados"
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:scrollbars="vertical" />
+                    android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView_programados"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:scrollbars="vertical" />
+
+                <include layout="@layout/view_nenhum_registro_encontrado"
+                        android:id="@+id/recyclerView_programados_vazia"/>
+
+            </LinearLayout>
 
             <fragment
                     android:id="@+id/realizados"
