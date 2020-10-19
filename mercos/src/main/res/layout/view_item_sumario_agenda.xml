@@ -27,7 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-                android:id="@+id/textView_cliente_nome"
+                android:id="@+id/textView_titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -60,8 +60,8 @@
                 android:layout_height="17dp"
                 android:layout_marginTop="4dp"
                 android:tint="@color/mercos_cinza_500"
-                app:layout_constraintStart_toStartOf="@+id/textView_cliente_nome"
-                app:layout_constraintTop_toBottomOf="@+id/textView_cliente_nome"
+                app:layout_constraintStart_toStartOf="@+id/textView_titulo"
+                app:layout_constraintTop_toBottomOf="@+id/textView_titulo"
                 app:srcCompat="@drawable/ic_baseline_directions_24" />
 
         <TextView
@@ -71,7 +71,7 @@
                 android:layout_marginTop="4dp"
                 android:text="às 00:00"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/textView_cliente_nome"
+                app:layout_constraintStart_toStartOf="@+id/textView_titulo"
                 app:layout_constraintTop_toBottomOf="@+id/imageView_roteiro"
                 tools:text="às 15:32" />
 
