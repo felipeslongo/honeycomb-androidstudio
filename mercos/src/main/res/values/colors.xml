@@ -9,6 +9,7 @@
     <color name="ripple_material_light">#1f000000</color>
 
     <!-- NOVO STYLEGUIDE CORES MERCOS -->
+    <color name="skeleton">#C9D3D3</color>
     <color name="mercos_vermelho">#EF5350</color>
 
     <color name="mercos_azul_50">#E3F2FD</color>
@@ -67,4 +68,7 @@
     <color name="mercos_roxo_800">#663991</color>
     <color name="mercos_roxo_900">#4B2F7E</color>
     <color name="mercos_roxo_1000">#3E2F68</color>
+
+    /*=======================================LEGADO=============================================*/
+    <color name="error_hint_text_color">#ffb6b6</color>
 </resources>

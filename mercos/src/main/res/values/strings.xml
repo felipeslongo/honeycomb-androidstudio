@@ -1,4 +1,6 @@
 <resources>
     <string name="content_listagem_agenda_tabitem_1">Programados</string>
     <string name="content_listagem_agenda_tabitem_2">Realizados</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

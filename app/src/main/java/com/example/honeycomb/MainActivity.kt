@@ -3,6 +3,7 @@ package com.example.honeycomb
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.honeycomb.ui.bottomSheets.BottomSheetDialogFullScreenFragment
 import com.example.honeycomb.ui.chips.ExpandableChipShowcaseFragment
 import com.example.honeycomb.ui.chips.GmailInputChipsShowcaseFragment
 import com.example.honeycomb.ui.dataBindings.AndroidDataBindingCodelabActivity
@@ -95,6 +96,11 @@ class MainActivity : AppCompatActivity() {
 
             if (it.itemId == R.id.activity_listagem_agenda) {
                 ListagemAgenda.present(this)
+            }
+
+            if (it.itemId == R.id.fragment_bottom_sheet_dialog_full_screen_xml) {
+                BottomSheetDialogFullScreenFragment.newInstance("param1", "param2")
+                    .show(supportFragmentManager, BottomSheetDialogFullScreenFragment.TAG)
             }
 
             findViewById<DrawerLayout>(R.id.main_drawer).closeDrawers()

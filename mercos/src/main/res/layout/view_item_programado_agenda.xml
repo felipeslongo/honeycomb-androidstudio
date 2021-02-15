@@ -16,7 +16,7 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-        <include layout="@layout/view_item_header_agenda" />
+        <include layout="@layout/view_item_programado_header_agenda"/>
 
         <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view"
